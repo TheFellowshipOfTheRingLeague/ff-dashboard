@@ -120,7 +120,18 @@ def player_points_since(league, player_cache, player_name, since_dt):
         game_date = game.get("date") if isinstance(game, dict) else None
         if not game_date or game_date <= since_dt:
             continue
-        week_stats = stats.get(week)
+        # espn_api's Player.schedule is keyed by scoring-period-id STRINGS
+        # (e.g. "1", "2", ...) straight from the raw JSON, while Player.stats
+        # is keyed by the same scoring period as an INT. Without normalizing,
+        # stats.get(week) always misses and every player looks like they had
+        # "no games since trade" even when they clearly played.
+        try:
+            week_num = int(week)
+        except (TypeError, ValueError):
+            week_num = week
+        week_stats = stats.get(week_num)
+        if week_stats is None:
+            week_stats = stats.get(week)
         if not week_stats or "points" not in week_stats:
             continue  # bye week, or game not played/scored yet
         total += week_stats["points"] or 0
