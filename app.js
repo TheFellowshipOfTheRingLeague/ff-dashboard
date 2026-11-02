@@ -593,6 +593,72 @@ function renderMatchups(data) {
   }
 }
 
+function renderHeadToHead(data) {
+  const root = document.getElementById("panel-h2h");
+  root.innerHTML = "";
+
+  const h2h = data.head_to_head || {};
+  const owners = Object.keys(h2h).sort((a, b) => a.localeCompare(b));
+
+  if (!owners.length) {
+    root.appendChild(el("div", { class: "empty-state" }, "No head-to-head data available yet. Run the data refresh workflow to generate it."));
+    return;
+  }
+
+  const controls = el("div", { class: "controls" });
+  const select = el("select", { id: "h2h-select" });
+  owners.forEach((o) => select.appendChild(el("option", { value: o }, o)));
+  controls.appendChild(el("label", {}, "Manager"));
+  controls.appendChild(select);
+  root.appendChild(controls);
+
+  const body = el("div", { id: "h2h-body" });
+  root.appendChild(body);
+
+  function render(owner) {
+    body.innerHTML = "";
+    const opponents = h2h[owner] || {};
+    const rows = Object.entries(opponents).map(([opponent, rec]) => {
+      const games = rec.wins + rec.losses + rec.ties;
+      const winPct = games ? (rec.wins + 0.5 * rec.ties) / games : 0;
+      return { opponent, ...rec, games, win_pct: winPct };
+    });
+
+    const totalGames = rows.reduce((s, r) => s + r.games, 0);
+    root.querySelectorAll(".stat-row").forEach((n) => n.remove());
+    root.insertBefore(
+      el("div", { class: "stat-row" }, [
+        statTile(rows.length, "Opponents faced"),
+        statTile(totalGames, "Total matchups"),
+      ]),
+      body
+    );
+
+    const card = el("div", { class: "card" }, [
+      el("h2", {}, `${owner} · head-to-head`),
+      el("p", { class: "sub" }, "Every opponent this manager has ever faced, with the all-time record between them. Click a column to sort."),
+    ]);
+
+    if (!rows.length) {
+      card.appendChild(el("div", { class: "empty-state" }, "No matchups recorded yet for this manager."));
+    } else {
+      const columns = [
+        { label: "Opponent", value: (r) => r.opponent },
+        { label: "Record", value: (r) => r.wins, defaultDir: -1, render: (r) => fmtRecord(r) },
+        { label: "Win %", value: (r) => r.win_pct, defaultDir: -1, render: (r) => fmtPct(r.win_pct) },
+        { label: "Points for", value: (r) => r.points_for, defaultDir: -1, render: (r) => fmtNum(r.points_for) },
+        { label: "Points against", value: (r) => r.points_against, defaultDir: -1, render: (r) => fmtNum(r.points_against) },
+        { label: "Games", value: (r) => r.games, defaultDir: -1 },
+      ];
+      card.appendChild(sortableTable(columns, rows, 2, -1));
+    }
+    body.appendChild(card);
+  }
+
+  select.addEventListener("change", (e) => render(e.target.value));
+  render(owners[0]);
+}
+
 function initTheme() {
   const saved = (() => {
     try {
@@ -651,6 +717,7 @@ async function main() {
   renderTrades(data);
   renderWaivers(data);
   renderMatchups(data);
+  renderHeadToHead(data);
 }
 
 main();
