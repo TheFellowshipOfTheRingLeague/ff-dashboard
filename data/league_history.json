@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T17:48:49.082449Z",
+  "generated_at": "2026-11-02T18:03:22.698113Z",
   "league_id": 1485136557,
   "start_year": 2021,
   "current_season_year": 2026,
@@ -9,6 +9,7 @@
       "teams": [],
       "champion": null,
       "runner_up": null,
+      "season_complete": false,
       "draft": [],
       "trades": [],
       "errors": [
@@ -20,6 +21,7 @@
       "teams": [],
       "champion": null,
       "runner_up": null,
+      "season_complete": false,
       "draft": [],
       "trades": [],
       "errors": [
@@ -128,6 +130,7 @@
         "team_name": "INTs are a QB Stat",
         "owner": "Thomas Goodroe"
       },
+      "season_complete": true,
       "draft": [
         {
           "round": 1,
@@ -1617,6 +1620,7 @@
         "team_name": "Trundles",
         "owner": "McGowin Jernigan"
       },
+      "season_complete": true,
       "draft": [
         {
           "round": 1,
@@ -3346,6 +3350,7 @@
         "team_name": "A Team Has No Name",
         "owner": "Walker Westlund"
       },
+      "season_complete": true,
       "draft": [
         {
           "round": 1,
@@ -5065,16 +5070,9 @@
           "final_rank": 9
         }
       ],
-      "champion": {
-        "team_id": 7,
-        "team_name": "Marietta Money Launderers",
-        "owner": "Austin Solomom"
-      },
-      "runner_up": {
-        "team_id": 1,
-        "team_name": "Woodland Powerbottoms",
-        "owner": "Thomas Goodroe"
-      },
+      "champion": null,
+      "runner_up": null,
+      "season_complete": false,
       "draft": [
         {
           "round": 1,
@@ -6939,7 +6937,7 @@
         "Woodland Powerbottoms"
       ],
       "championships": 2,
-      "runner_up_finishes": 2,
+      "runner_up_finishes": 1,
       "wins": 34,
       "losses": 15,
       "ties": 0,
@@ -6964,23 +6962,6 @@
       "win_pct": 0.694,
       "points_for": 6816.22,
       "points_against": 6376.14,
-      "seasons_played": 4
-    },
-    {
-      "owner": "Austin Solomom",
-      "team_names": [
-        "Alpharetta Arsonists",
-        "Mableton  Murderers",
-        "Marietta Money Launderers"
-      ],
-      "championships": 1,
-      "runner_up_finishes": 0,
-      "wins": 25,
-      "losses": 24,
-      "ties": 0,
-      "win_pct": 0.51,
-      "points_for": 6447.64,
-      "points_against": 6317.02,
       "seasons_played": 4
     },
     {
@@ -7029,6 +7010,23 @@
       "win_pct": 0.531,
       "points_for": 6533.62,
       "points_against": 6548.48,
+      "seasons_played": 4
+    },
+    {
+      "owner": "Austin Solomom",
+      "team_names": [
+        "Alpharetta Arsonists",
+        "Mableton  Murderers",
+        "Marietta Money Launderers"
+      ],
+      "championships": 0,
+      "runner_up_finishes": 0,
+      "wins": 25,
+      "losses": 24,
+      "ties": 0,
+      "win_pct": 0.51,
+      "points_for": 6447.64,
+      "points_against": 6317.02,
       "seasons_played": 4
     },
     {
