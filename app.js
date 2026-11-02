@@ -432,7 +432,6 @@ function renderWaivers(data) {
         { label: "Dropped", value: (a) => a.player_dropped || "", render: (a) => a.player_dropped || "—" },
         { label: "Team", value: (a) => a.owner || a.team },
         { label: "Type", value: (a) => a.type },
-        { label: "FAAB bid", value: (a) => a.bid_amount || 0, defaultDir: -1, render: (a) => (a.bid_amount ? `$${a.bid_amount}` : "-") },
       ];
       card.appendChild(sortableTable(columns, adds, 0, -1));
     }
