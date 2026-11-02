@@ -653,6 +653,7 @@ function matchupCard(m) {
     ]),
   ]);
   const children = [header, el("div", { class: "matchup-lineups" }, [lineupSection(m.home), lineupSection(m.away)])];
+  if (m.is_final === false) children.unshift(el("div", { class: "trade-date" }, "Live — not final yet, scores will keep moving"));
   if (m.is_playoff) children.unshift(el("div", { class: "trade-date" }, "Playoffs"));
   return el("div", { class: "matchup-card" }, children);
 }
@@ -780,7 +781,7 @@ function renderHeadToHead(data) {
 
     const card = el("div", { class: "card" }, [
       el("h2", {}, `${owner} · head-to-head`),
-      el("p", { class: "sub" }, "Every opponent this manager has ever faced, with the all-time record between them. Click a column to sort."),
+      el("p", { class: "sub" }, "Every opponent this manager has ever faced, with the all-time record between them (the current week isn't counted until every game in it is final). Click a column to sort."),
     ]);
 
     if (!rows.length) {
@@ -833,7 +834,7 @@ function renderPowerRankings(data) {
 
     const luckCard = el("div", { class: "card" }, [
       el("h2", {}, `${year} · luck index`),
-      el("p", { class: "sub" }, "Actual win% minus “all-play” win% (how a team would have done if it played every other team's score every week). Positive means winning more than their weekly scoring would predict; negative means the schedule hasn't been kind."),
+      el("p", { class: "sub" }, "Actual win% minus “all-play” win% (how a team would have done if it played every other team's score every week). Positive means winning more than their weekly scoring would predict; negative means the schedule hasn't been kind. The current week isn't counted here until every game in it is final."),
     ]);
     const luckRows = [...rows].sort((a, b) => b.luck - a.luck);
     if (luckRows.length) {
