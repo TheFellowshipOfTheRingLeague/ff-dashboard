@@ -144,7 +144,7 @@ function renderOverview(data) {
 
   const columns = [
     { label: "Manager", value: (r) => r.owner, render: (r) => managerCell(r) },
-    { label: "Titles", value: (r) => r.championships, defaultDir: -1, render: (r) => (r.championships ? `${"ð".repeat(Math.min(r.championships, 3))} ${r.championships}` : "0") },
+    { label: "Titles", value: (r) => r.championships, defaultDir: -1, render: (r) => (r.championships ? `${"🏆".repeat(Math.min(r.championships, 3))} ${r.championships}` : "0") },
     { label: "2nd place", value: (r) => r.runner_up_finishes, defaultDir: -1 },
     { label: "Record", value: (r) => r.wins, defaultDir: -1, render: (r) => `${r.wins}-${r.losses}${r.ties ? "-" + r.ties : ""}` },
     { label: "Win %", value: (r) => r.win_pct, defaultDir: -1, render: (r) => fmtPct(r.win_pct) },
@@ -214,7 +214,7 @@ function renderSeasons(data) {
     const summary = el("div", { class: "season-summary" });
     summary.appendChild(
       el("div", { class: "champ-card" }, [
-        el("div", { class: "title" }, "ð Champion"),
+        el("div", { class: "title" }, "🏆 Champion"),
         el("div", { class: "name" }, season.champion ? `${season.champion.owner} (${season.champion.team_name})` : "Season in progress"),
       ])
     );
@@ -264,9 +264,9 @@ function renderSeasons(data) {
             .forEach((p) => {
               board.appendChild(
                 el("div", { class: "pick-card" }, [
-                  el("div", { class: "pick-no" }, `Pick ${p.overall_pick ?? "?"}${p.keeper ? " Â· keeper" : ""}`),
+                  el("div", { class: "pick-no" }, `Pick ${p.overall_pick ?? "?"}${p.keeper ? " · keeper" : ""}`),
                   el("div", { class: "player" }, p.player_name || "Unknown player"),
-                  el("div", { class: "team" }, `${p.owner} Â· ${p.team_name}`),
+                  el("div", { class: "team" }, `${p.owner} · ${p.team_name}`),
                 ])
               );
             });
@@ -286,11 +286,11 @@ function renderSeasons(data) {
         tradeCard.appendChild(
           el("div", { class: "trade-item" }, [
             el("div", { class: "trade-date" }, fmtDate(t.date)),
-            el("div", { class: "trade-teams" }, t.teams_involved.join(" â ") || "Unknown teams"),
+            el("div", { class: "trade-teams" }, t.teams_involved.join(" ↔ ") || "Unknown teams"),
             el(
               "div",
               { class: "trade-players" },
-              t.items.map((i) => `${i.player || "Unknown player"} â ${i.team || "Unknown team"}`).join(", ")
+              t.items.map((i) => `${i.player || "Unknown player"} → ${i.team || "Unknown team"}`).join(", ")
             ),
           ])
         );
@@ -324,12 +324,12 @@ function renderTrades(data) {
     all.forEach((t) => {
       card.appendChild(
         el("div", { class: "trade-item" }, [
-          el("div", { class: "trade-date" }, `${t.year} Â· ${fmtDate(t.date)}`),
-          el("div", { class: "trade-teams" }, t.teams_involved.join(" â ") || "Unknown teams"),
+          el("div", { class: "trade-date" }, `${t.year} · ${fmtDate(t.date)}`),
+          el("div", { class: "trade-teams" }, t.teams_involved.join(" ↔ ") || "Unknown teams"),
           el(
             "div",
             { class: "trade-players" },
-            t.items.map((i) => `${i.player || "Unknown player"} â ${i.team || "Unknown team"}`).join(", ")
+            t.items.map((i) => `${i.player || "Unknown player"} → ${i.team || "Unknown team"}`).join(", ")
           ),
         ])
       );
@@ -381,7 +381,7 @@ async function main() {
   if (!data.seasons || !data.seasons.length) {
     document.querySelector(".banner").textContent = "The data file loaded, but no seasons were found. Check the Action's run log for warnings.";
   } else {
-    document.querySelector(".banner").innerHTML = `Tracking <strong>${data.seasons.length}</strong> season${data.seasons.length > 1 ? "s" : ""} (${data.start_year}â${data.current_season_year}) Â· League ID <strong>${data.league_id}</strong> Â· Last refreshed ${fmtDate(data.generated_at)}`;
+    document.querySelector(".banner").innerHTML = `Tracking <strong>${data.seasons.length}</strong> season${data.seasons.length > 1 ? "s" : ""} (${data.start_year}–${data.current_season_year}) · League ID <strong>${data.league_id}</strong> · Last refreshed ${fmtDate(data.generated_at)}`;
   }
 
   renderOverview(data);
