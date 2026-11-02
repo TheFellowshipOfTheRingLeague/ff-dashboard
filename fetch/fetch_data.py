@@ -32,6 +32,7 @@ START_YEAR = int(os.environ.get("START_YEAR", "2021"))
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT_PATH = os.path.join(REPO_ROOT, "data", "league_history.json")
+BOXSCORE_DIR = os.path.join(REPO_ROOT, "data", "boxscores")
 
 
 def fail(message):
@@ -190,6 +191,66 @@ def team_record_since(team, start_week):
     if wins == 0 and losses == 0 and ties == 0:
         return None
     return {"wins": wins, "losses": losses, "ties": ties}
+
+
+def box_team_payload(team, score, lineup):
+    """One side of a weekly matchup: the manager, final score, and full
+    lineup (starters and bench alike - the frontend decides what to show by
+    default) with each player's position, the slot they were started in, and
+    the points they scored that week. Returns None for a bye (no team on
+    this side of the matchup)."""
+    if team is None:
+        return None
+    players = []
+    for p in lineup or []:
+        players.append(
+            {
+                "name": getattr(p, "name", None) or "Unknown player",
+                "position": getattr(p, "position", None) or "",
+                "slot": getattr(p, "slot_position", None) or "",
+                "pro_team": getattr(p, "proTeam", None) or "",
+                "points": round(getattr(p, "points", 0) or 0, 2),
+            }
+        )
+    return {
+        "owner": safe_owner_name(team),
+        "score": round(score or 0, 2),
+        "lineup": players,
+    }
+
+
+def fetch_weekly_boxscores(league):
+    """Every week's matchups for a season - final score plus each team's full
+    lineup with per-player points, so the dashboard can show "who started
+    whom" and what they scored for any year/week a visitor picks. Loops
+    week-by-week (one ESPN request per week) up to the last week that's
+    actually been played; a problem on one week is skipped rather than
+    losing the whole season's worth of weeks already fetched."""
+    weeks = {}
+    errors = []
+    last_week = getattr(league, "current_week", None) or getattr(league, "finalScoringPeriod", 0) or 0
+    for week in range(1, last_week + 1):
+        try:
+            matchups = league.box_scores(week)
+        except Exception as e:
+            errors.append(f"Could not fetch box scores for week {week}: {e}")
+            continue
+        week_matchups = []
+        for m in matchups or []:
+            home = box_team_payload(getattr(m, "home_team", None), getattr(m, "home_score", 0), getattr(m, "home_lineup", []))
+            away = box_team_payload(getattr(m, "away_team", None), getattr(m, "away_score", 0), getattr(m, "away_lineup", []))
+            if home is None and away is None:
+                continue
+            week_matchups.append(
+                {
+                    "is_playoff": bool(getattr(m, "is_playoff", False)),
+                    "home": home,
+                    "away": away,
+                }
+            )
+        if week_matchups:
+            weeks[str(week)] = week_matchups
+    return weeks, errors
 
 
 def fetch_season(year):
@@ -491,6 +552,28 @@ def fetch_season(year):
                 season["errors"].append(f"Waiver add parse error for {year}: {e}")
     except Exception as e:
         season["errors"].append(f"Could not fetch waiver adds for {year}: {e}")
+
+    # --- Weekly matchups / box scores (starting lineups + per-player points) ---
+    # This is the one dataset big enough to matter: full lineups for every
+    # week of every season. Keeping it out of league_history.json (which
+    # every tab loads on every visit) in favor of its own per-season file
+    # means the weekly matchups page costs a network request only when
+    # someone actually opens it.
+    try:
+        weekly_boxscores, bs_errors = fetch_weekly_boxscores(league)
+        season["errors"].extend(bs_errors)
+    except Exception as e:
+        weekly_boxscores = {}
+        season["errors"].append(f"Could not fetch weekly box scores for {year}: {e}")
+
+    season["weeks_available"] = sorted((int(w) for w in weekly_boxscores.keys()))
+    if weekly_boxscores:
+        try:
+            os.makedirs(BOXSCORE_DIR, exist_ok=True)
+            with open(os.path.join(BOXSCORE_DIR, f"{year}.json"), "w") as f:
+                json.dump({"year": year, "weeks": weekly_boxscores}, f, indent=2)
+        except Exception as e:
+            season["errors"].append(f"Could not write box score file for {year}: {e}")
 
     return season
 
