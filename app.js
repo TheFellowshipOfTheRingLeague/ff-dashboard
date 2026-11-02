@@ -486,9 +486,12 @@ async function main() {
   }
 
   if (!data.seasons || !data.seasons.length) {
-    document.querySelector(".banner").textContent = "The data file loaded, but no seasons were found. Check the Action's run log for warnings.";
+        document.querySelector(".banner").textContent = "The data file loaded, but no seasons were found. Check the Action's run log for warnings.";
   } else {
-    document.querySelector(".banner").innerHTML = `Tracking <strong>${data.seasons.length}</strong> season${data.seasons.length > 1 ? "s" : ""} (${data.start_year}–${data.current_season_year}) · League ID <strong>${data.league_id}</strong> · Last refreshed ${fmtDate(data.generated_at)}`;
+        const trackedYears = data.seasons.map((s) => Number(s.year));
+        const trackedStart = Math.min(...trackedYears);
+        const trackedEnd = Math.max(...trackedYears, Number(data.current_season_year) || 0);
+        document.querySelector(".banner").innerHTML = `Tracking <strong>${data.seasons.length}</strong> season${data.seasons.length > 1 ? "s" : ""} (${trackedStart}–${trackedEnd}) · League ID <strong>${data.league_id}</strong> · Last refreshed ${fmtDate(data.generated_at)}`;
   }
 
   renderOverview(data);
