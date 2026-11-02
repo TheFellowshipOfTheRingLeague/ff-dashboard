@@ -282,25 +282,86 @@ function renderSeasons(data) {
     season.trades
       .slice()
       .sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0))
-      .forEach((t) => {
-        tradeCard.appendChild(
-          el("div", { class: "trade-item" }, [
-            el("div", { class: "trade-date" }, fmtDate(t.date)),
-            el("div", { class: "trade-teams" }, t.teams_involved.join(" ↔ ") || "Unknown teams"),
-            el(
-              "div",
-              { class: "trade-players" },
-              t.items.map((i) => `${i.player || "Unknown player"} → ${i.team || "Unknown team"}`).join(", ")
-            ),
-          ])
-        );
-      });
+      .forEach((t) => tradeCard.appendChild(renderTradeCard(t, false)));
     body.appendChild(tradeCard);
   }
 
   select.addEventListener("change", (e) => renderSeason(e.target.value));
   if (seasons.length) renderSeason(seasons[0].year);
   else body.appendChild(el("div", { class: "empty-state" }, "No seasons available yet."));
+}
+
+function perfLabel(item) {
+  // Post-trade performance for one player, same idea as the standalone
+  // trade tracker: points-per-game and total points scored since the deal,
+  // or an honest "nothing to show yet" when there's no post-trade data.
+  if (item.ppg_since_trade == null) {
+    return item.games_since_trade === 0 ? "no games since trade" : "no stat history";
+  }
+  return `${fmtNum(item.ppg_since_trade)} ppg · ${fmtNum(item.points_since_trade)} pts (${item.games_since_trade} gm)`;
+}
+
+function renderTradeCard(t, showYear) {
+  // Group this trade's players by the team that RECEIVED them, so each
+  // "side" of the trade lists what that team walked away with - mirroring
+  // the standalone trade tracker's two-sides-plus-verdict layout, but
+  // computed live from this season's actual data instead of a static
+  // snapshot.
+  const sides = {};
+  const order = [];
+  (t.items || []).forEach((item) => {
+    const side = item.to_team || item.from_team || "Unknown team";
+    if (!sides[side]) {
+      sides[side] = [];
+      order.push(side);
+    }
+    sides[side].push(item);
+  });
+
+  const sideEls = [];
+  order.forEach((team, i) => {
+    if (i > 0) sideEls.push(el("div", { class: "trade-vs" }, "↔"));
+    sideEls.push(
+      el("div", { class: "trade-side" }, [
+        el("p", { class: "team-name" }, team),
+        el(
+          "ul",
+          {},
+          sides[team].map((item) =>
+            el("li", { class: "player-row" }, [
+              el("span", { class: "name" }, item.player || "Unknown player"),
+              el("span", { class: "stats" }, perfLabel(item)),
+            ])
+          )
+        ),
+      ])
+    );
+  });
+
+  const children = [
+    el("div", { class: "trade-date" }, showYear ? `${t.year} · ${fmtDate(t.date)}` : fmtDate(t.date)),
+    el("div", { class: "trade-sides" }, sideEls),
+  ];
+
+  if (t.verdict) {
+    const totalsStr = Object.entries(t.verdict.side_totals || {})
+      .map(([team, pts]) => `${team}: ${fmtNum(pts)} pts`)
+      .join(" · ");
+    children.push(
+      el("div", { class: "trade-verdict" }, [
+        el(
+          "span",
+          {},
+          t.verdict.leader_team
+            ? [el("b", {}, t.verdict.leader_team), ` leads by ${fmtNum(t.verdict.margin)} pts since the trade`]
+            : "Even so far since the trade"
+        ),
+        el("span", {}, totalsStr),
+      ])
+    );
+  }
+
+  return el("div", { class: "trade-card" }, children);
 }
 
 function renderTrades(data) {
@@ -321,21 +382,62 @@ function renderTrades(data) {
   if (!all.length) {
     card.appendChild(el("div", { class: "empty-state" }, "No trades recorded yet."));
   } else {
-    all.forEach((t) => {
-      card.appendChild(
-        el("div", { class: "trade-item" }, [
-          el("div", { class: "trade-date" }, `${t.year} · ${fmtDate(t.date)}`),
-          el("div", { class: "trade-teams" }, t.teams_involved.join(" ↔ ") || "Unknown teams"),
-          el(
-            "div",
-            { class: "trade-players" },
-            t.items.map((i) => `${i.player || "Unknown player"} → ${i.team || "Unknown team"}`).join(", ")
-          ),
-        ])
-      );
-    });
+    all.forEach((t) => card.appendChild(renderTradeCard(t, true)));
   }
   root.appendChild(card);
+}
+
+function renderWaivers(data) {
+  const root = document.getElementById("panel-waivers");
+  root.innerHTML = "";
+
+  const seasons = [...data.seasons].sort((a, b) => b.year - a.year);
+  const controls = el("div", { class: "controls" });
+  const select = el("select", { id: "waiver-season-select" });
+  select.appendChild(el("option", { value: "all" }, "All seasons"));
+  seasons.forEach((s) => select.appendChild(el("option", { value: s.year }, String(s.year))));
+  controls.appendChild(el("label", {}, "Season"));
+  controls.appendChild(select);
+  root.appendChild(controls);
+
+  const body = el("div", { id: "waiver-body" });
+  root.appendChild(body);
+
+  function allAdds() {
+    const out = [];
+    data.seasons.forEach((s) => (s.waiver_adds || []).forEach((a) => out.push({ ...a, year: s.year })));
+    return out;
+  }
+
+  function render(yearFilter) {
+    body.innerHTML = "";
+    let adds = allAdds();
+    if (yearFilter !== "all") adds = adds.filter((a) => String(a.year) === String(yearFilter));
+    adds.sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
+
+    const card = el("div", { class: "card" }, [
+      el("h2", {}, yearFilter === "all" ? "Waiver wire & free agent adds, every season" : `${yearFilter} waiver wire & free agent adds`),
+      el("p", { class: "sub" }, `${adds.length} add${adds.length === 1 ? "" : "s"}${yearFilter === "all" ? " across all tracked seasons" : ""}.`),
+    ]);
+
+    if (!adds.length) {
+      card.appendChild(el("div", { class: "empty-state" }, "No waiver wire or free agent adds recorded yet."));
+    } else {
+      const columns = [
+        { label: "Date", value: (a) => new Date(a.date || 0).getTime(), defaultDir: -1, render: (a) => fmtDate(a.date) },
+        { label: "Season", value: (a) => a.year, defaultDir: -1 },
+        { label: "Player", value: (a) => a.player },
+        { label: "Team", value: (a) => a.owner || a.team },
+        { label: "Type", value: (a) => a.type },
+        { label: "FAAB bid", value: (a) => a.bid_amount || 0, defaultDir: -1, render: (a) => (a.bid_amount ? `$${a.bid_amount}` : "-") },
+      ];
+      card.appendChild(sortableTable(columns, adds, 0, -1));
+    }
+    body.appendChild(card);
+  }
+
+  select.addEventListener("change", (e) => render(e.target.value));
+  render("all");
 }
 
 function initTheme() {
@@ -387,6 +489,7 @@ async function main() {
   renderOverview(data);
   renderSeasons(data);
   renderTrades(data);
+  renderWaivers(data);
 }
 
 main();
