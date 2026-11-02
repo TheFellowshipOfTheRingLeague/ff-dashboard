@@ -57,6 +57,16 @@ jobs:
     steps:
       - name: Checkout latest
         uses: actions/checkout@v4
+        with:
+          # IMPORTANT: without this, checkout defaults to the commit that
+          # triggered the run (github.sha), which is captured BEFORE the
+          # update-data job's "Daily data refresh" commit exists. That
+          # silently deployed the previous run's data every time (the site
+          # was always one run behind). Pinning to the branch name instead
+          # makes checkout fetch whatever is actually at the tip of main
+          # right now, i.e. including the data commit update-data just
+          # pushed.
+          ref: main
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
