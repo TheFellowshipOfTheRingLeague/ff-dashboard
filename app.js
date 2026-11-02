@@ -424,17 +424,18 @@ function renderWaivers(data) {
     adds.sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
 
     const card = el("div", { class: "card" }, [
-      el("h2", {}, yearFilter === "all" ? "Waiver wire & free agent adds, every season" : `${yearFilter} waiver wire & free agent adds`),
-      el("p", { class: "sub" }, `${adds.length} add${adds.length === 1 ? "" : "s"}${yearFilter === "all" ? " across all tracked seasons" : ""}.`),
+      el("h2", {}, yearFilter === "all" ? "Waiver wire & free agent moves, every season" : `${yearFilter} waiver wire & free agent moves`),
+      el("p", { class: "sub" }, `${adds.length} move${adds.length === 1 ? "" : "s"}${yearFilter === "all" ? " across all tracked seasons" : ""}.`),
     ]);
 
     if (!adds.length) {
-      card.appendChild(el("div", { class: "empty-state" }, "No waiver wire or free agent adds recorded yet."));
+      card.appendChild(el("div", { class: "empty-state" }, "No waiver wire or free agent moves recorded yet."));
     } else {
       const columns = [
         { label: "Date", value: (a) => new Date(a.date || 0).getTime(), defaultDir: -1, render: (a) => fmtDate(a.date) },
         { label: "Season", value: (a) => a.year, defaultDir: -1 },
-        { label: "Player", value: (a) => a.player },
+        { label: "Added", value: (a) => a.player_added || "", render: (a) => a.player_added || "—" },
+        { label: "Dropped", value: (a) => a.player_dropped || "", render: (a) => a.player_dropped || "—" },
         { label: "Team", value: (a) => a.owner || a.team },
         { label: "Type", value: (a) => a.type },
         { label: "FAAB bid", value: (a) => a.bid_amount || 0, defaultDir: -1, render: (a) => (a.bid_amount ? `$${a.bid_amount}` : "-") },
