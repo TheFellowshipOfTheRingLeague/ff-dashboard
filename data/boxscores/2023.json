@@ -253,7 +253,8 @@
               "points": 7.0
             }
           ]
-        }
+        },
+        "is_final": true
       },
       {
         "is_playoff": false,
@@ -506,7 +507,8 @@
               "points": 13.0
             }
           ]
-        }
+        },
+        "is_final": true
       },
       {
         "is_playoff": false,
@@ -759,7 +761,8 @@
               "points": 0.9
             }
           ]
-        }
+        },
+        "is_final": true
       },
       {
         "is_playoff": false,
@@ -1012,7 +1015,8 @@
               "points": 18.0
             }
           ]
-        }
+        },
+        "is_final": true
       }
     ],
     "2": [
@@ -1281,7 +1285,8 @@
               "points": 12.5
             }
           ]
-        }
+        },
+        "is_final": true
       },
       {
         "is_playoff": false,
@@ -1541,7 +1546,8 @@
               "points": 0
             }
           ]
-        }
+        },
+        "is_final": true
       },
       {
         "is_playoff": false,
@@ -1794,7 +1800,8 @@
               "points": 7.8
             }
           ]
-        }
+        },
+        "is_final": true
       },
       {
         "is_playoff": false,
@@ -2054,7 +2061,8 @@
               "points": 0
             }
           ]
-        }
+        },
+        "is_final": true
       }
     ],
     "3": [
@@ -2316,7 +2324,8 @@
               "points": 22.5
             }
           ]
-        }
+        },
+        "is_final": true
       },
       {
         "is_playoff": false,
@@ -2576,7 +2585,8 @@
               "points": 2.7
             }
           ]
-        }
+        },
+        "is_final": true
       },
       {
         "is_playoff": false,
@@ -2829,7 +2839,8 @@
               "points": 22.4
             }
           ]
-        }
+        },
+        "is_final": true
       },
       {
         "is_playoff": false,
@@ -3082,7 +3093,8 @@
               "points": 3.7
             }
           ]
-        }
+        },
+        "is_final": true
       }
     ],
     "4": [
@@ -3337,7 +3349,8 @@
               "points": 3.0
             }
           ]
-        }
+        },
+        "is_final": true
       },
       {
         "is_playoff": false,
@@ -3604,7 +3617,8 @@
               "points": 8.6
             }
           ]
-        }
+        },
+        "is_final": true
       },
       {
         "is_playoff": false,
@@ -3871,7 +3885,8 @@
               "points": 22.2
             }
           ]
-        }
+        },
+        "is_final": true
       },
       {
         "is_playoff": false,
@@ -4145,7 +4160,8 @@
               "points": 27.9
             }
           ]
-        }
+        },
+        "is_final": true
       }
     ],
     "5": [
@@ -4407,7 +4423,8 @@
               "points": 4.0
             }
           ]
-        }
+        },
+        "is_final": true
       },
       {
         "is_playoff": false,
@@ -4667,7 +4684,8 @@
               "points": 23.38
             }
           ]
-        }
+        },
+        "is_final": true
       },
       {
         "is_playoff": false,
@@ -4934,7 +4952,8 @@
               "points": 8.74
             }
           ]
-        }
+        },
+        "is_final": true
       },
       {
         "is_playoff": false,
@@ -5194,7 +5213,8 @@
               "points": 2.0
             }
           ]
-        }
+        },
+        "is_final": true
       }
     ],
     "6": [
@@ -5456,7 +5476,8 @@
               "points": 11.2
             }
           ]
-        }
+        },
+        "is_final": true
       },
       {
         "is_playoff": false,
@@ -5723,7 +5744,8 @@
               "points": 9.0
             }
           ]
-        }
+        },
+        "is_final": true
       },
       {
         "is_playoff": false,
@@ -5990,7 +6012,8 @@
               "points": 3.4
             }
           ]
-        }
+        },
+        "is_final": true
       },
       {
         "is_playoff": false,
@@ -6250,7 +6273,8 @@
               "points": 18.1
             }
           ]
-        }
+        },
+        "is_final": true
       }
     ],
     "7": [
@@ -6505,7 +6529,8 @@
               "points": 0
             }
           ]
-        }
+        },
+        "is_final": true
       },
       {
         "is_playoff": false,
@@ -6765,7 +6790,8 @@
               "points": 9.36
             }
           ]
-        }
+        },
+        "is_final": true
       },
       {
         "is_playoff": false,
@@ -7025,7 +7051,8 @@
               "points": 4.0
             }
           ]
-        }
+        },
+        "is_final": true
       },
       {
         "is_playoff": false,
@@ -7292,7 +7319,8 @@
               "points": 0
             }
           ]
-        }
+        },
+        "is_final": true
       }
     ],
     "8": [
@@ -7561,7 +7589,8 @@
               "points": 17.5
             }
           ]
-        }
+        },
+        "is_final": true
       },
       {
         "is_playoff": false,
@@ -7828,7 +7857,8 @@
               "points": 27.62
             }
           ]
-        }
+        },
+        "is_final": true
       },
       {
         "is_playoff": false,
@@ -8095,7 +8125,8 @@
               "points": 8.0
             }
           ]
-        }
+        },
+        "is_final": true
       },
       {
         "is_playoff": false,
@@ -8355,7 +8386,8 @@
               "points": 14.0
             }
           ]
-        }
+        },
+        "is_final": true
       }
     ],
     "9": [
@@ -8624,7 +8656,8 @@
               "points": 10.3
             }
           ]
-        }
+        },
+        "is_final": true
       },
       {
         "is_playoff": false,
@@ -8891,7 +8924,8 @@
               "points": 0
             }
           ]
-        }
+        },
+        "is_final": true
       },
       {
         "is_playoff": false,
@@ -9151,7 +9185,8 @@
               "points": 16.74
             }
           ]
-        }
+        },
+        "is_final": true
       },
       {
         "is_playoff": false,
@@ -9404,7 +9439,8 @@
               "points": 9.7
             }
           ]
-        }
+        },
+        "is_final": true
       }
     ],
     "10": [
@@ -9680,7 +9716,8 @@
               "points": 9.0
             }
           ]
-        }
+        },
+        "is_final": true
       },
       {
         "is_playoff": false,
@@ -9940,7 +9977,8 @@
               "points": 23.2
             }
           ]
-        }
+        },
+        "is_final": true
       },
       {
         "is_playoff": false,
@@ -10200,7 +10238,8 @@
               "points": 6.5
             }
           ]
-        }
+        },
+        "is_final": true
       },
       {
         "is_playoff": false,
@@ -10467,7 +10506,8 @@
               "points": 3.8
             }
           ]
-        }
+        },
+        "is_final": true
       }
     ],
     "11": [
@@ -10736,7 +10776,8 @@
               "points": 8.9
             }
           ]
-        }
+        },
+        "is_final": true
       },
       {
         "is_playoff": false,
@@ -11003,7 +11044,8 @@
               "points": 6.0
             }
           ]
-        }
+        },
+        "is_final": true
       },
       {
         "is_playoff": false,
@@ -11284,7 +11326,8 @@
               "points": 15.0
             }
           ]
-        }
+        },
+        "is_final": true
       },
       {
         "is_playoff": false,
@@ -11551,7 +11594,8 @@
               "points": 19.8
             }
           ]
-        }
+        },
+        "is_final": true
       }
     ],
     "12": [
@@ -11827,7 +11871,8 @@
               "points": 11.9
             }
           ]
-        }
+        },
+        "is_final": true
       },
       {
         "is_playoff": false,
@@ -12101,7 +12146,8 @@
               "points": 3.6
             }
           ]
-        }
+        },
+        "is_final": true
       },
       {
         "is_playoff": false,
@@ -12375,7 +12421,8 @@
               "points": 23.0
             }
           ]
-        }
+        },
+        "is_final": true
       },
       {
         "is_playoff": false,
@@ -12642,7 +12689,8 @@
               "points": 5.5
             }
           ]
-        }
+        },
+        "is_final": true
       }
     ],
     "13": [
@@ -12918,7 +12966,8 @@
               "points": 6.0
             }
           ]
-        }
+        },
+        "is_final": true
       },
       {
         "is_playoff": false,
@@ -13192,7 +13241,8 @@
               "points": 6.0
             }
           ]
-        }
+        },
+        "is_final": true
       },
       {
         "is_playoff": false,
@@ -13459,7 +13509,8 @@
               "points": 0
             }
           ]
-        }
+        },
+        "is_final": true
       },
       {
         "is_playoff": false,
@@ -13740,7 +13791,8 @@
               "points": 1.6
             }
           ]
-        }
+        },
+        "is_final": true
       }
     ],
     "14": [
@@ -14009,7 +14061,8 @@
               "points": 20.0
             }
           ]
-        }
+        },
+        "is_final": true
       },
       {
         "is_playoff": false,
@@ -14283,7 +14336,8 @@
               "points": 20.34
             }
           ]
-        }
+        },
+        "is_final": true
       },
       {
         "is_playoff": false,
@@ -14557,7 +14611,8 @@
               "points": -0.2
             }
           ]
-        }
+        },
+        "is_final": true
       },
       {
         "is_playoff": false,
@@ -14831,7 +14886,8 @@
               "points": 4.0
             }
           ]
-        }
+        },
+        "is_final": true
       }
     ],
     "15": [
@@ -14976,7 +15032,8 @@
             }
           ]
         },
-        "away": null
+        "away": null,
+        "is_final": true
       },
       {
         "is_playoff": true,
@@ -15243,7 +15300,8 @@
               "points": 4.0
             }
           ]
-        }
+        },
+        "is_final": true
       },
       {
         "is_playoff": true,
@@ -15517,7 +15575,8 @@
               "points": 24.7
             }
           ]
-        }
+        },
+        "is_final": true
       },
       {
         "is_playoff": true,
@@ -15653,7 +15712,8 @@
             }
           ]
         },
-        "away": null
+        "away": null,
+        "is_final": true
       },
       {
         "is_playoff": true,
@@ -15920,7 +15980,8 @@
               "points": 2.8
             }
           ]
-        }
+        },
+        "is_final": true
       }
     ],
     "16": [
@@ -16189,7 +16250,8 @@
               "points": 6.0
             }
           ]
-        }
+        },
+        "is_final": true
       },
       {
         "is_playoff": true,
@@ -16463,7 +16525,8 @@
               "points": 24.82
             }
           ]
-        }
+        },
+        "is_final": true
       },
       {
         "is_playoff": true,
@@ -16730,7 +16793,8 @@
               "points": 7.7
             }
           ]
-        }
+        },
+        "is_final": true
       },
       {
         "is_playoff": true,
@@ -16997,7 +17061,8 @@
               "points": 5.6
             }
           ]
-        }
+        },
+        "is_final": true
       }
     ],
     "17": [
@@ -17273,7 +17338,8 @@
               "points": 16.0
             }
           ]
-        }
+        },
+        "is_final": true
       },
       {
         "is_playoff": true,
@@ -17547,7 +17613,8 @@
               "points": 11.9
             }
           ]
-        }
+        },
+        "is_final": true
       },
       {
         "is_playoff": true,
@@ -17814,7 +17881,8 @@
               "points": 9.4
             }
           ]
-        }
+        },
+        "is_final": true
       },
       {
         "is_playoff": true,
@@ -18081,7 +18149,8 @@
               "points": 6.4
             }
           ]
-        }
+        },
+        "is_final": true
       }
     ]
   }
