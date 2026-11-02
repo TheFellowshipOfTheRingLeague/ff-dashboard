@@ -94,6 +94,7 @@ def fetch_season(year):
         "teams": [],
         "champion": None,
         "runner_up": None,
+        "season_complete": False,
         "draft": [],
         "trades": [],
         "errors": [],
@@ -106,6 +107,22 @@ def fetch_season(year):
         return season
 
     num_teams = len(getattr(league, "teams", []) or [])
+
+    # --- Has this season actually finished? ---
+    # ESPN reports a "final_standing"/"standing" rank throughout the season,
+    # not just after it ends, so without this check a team merely leading
+    # mid-season would get mislabeled as league champion. A past season
+    # (year < the season currently being played) is always finished. For the
+    # season currently in progress, compare how many matchup periods have
+    # been played (currentMatchupPeriod) against how many the league's
+    # schedule has in total (settings.reg_season_count, which spans the
+    # playoffs too) - the season is only finished once that's exceeded.
+    current_mp = getattr(league, "currentMatchupPeriod", None)
+    total_mp = getattr(getattr(league, "settings", None), "reg_season_count", None)
+    season_complete = year < END_YEAR or (
+        current_mp is not None and total_mp is not None and current_mp > total_mp
+    )
+    season["season_complete"] = season_complete
 
     # --- Standings / season records ---
     for team in getattr(league, "teams", []):
@@ -129,32 +146,33 @@ def fetch_season(year):
         except Exception as e:
             season["errors"].append(f"Team parse error (team_id={getattr(team, 'team_id', '?')}): {e}")
 
-    # --- Champion / runner-up ---
-    ranked = [t for t in season["teams"] if t["final_rank"]]
-    if ranked:
-        ranked.sort(key=lambda t: t["final_rank"])
-        season["champion"] = {"team_id": ranked[0]["team_id"], "team_name": ranked[0]["team_name"], "owner": ranked[0]["owner"]}
-        if len(ranked) > 1:
-            season["runner_up"] = {"team_id": ranked[1]["team_id"], "team_name": ranked[1]["team_name"], "owner": ranked[1]["owner"]}
-    else:
-        try:
-            standings = league.standings()
-            if standings:
-                champ = standings[0]
-                season["champion"] = {
-                    "team_id": champ.team_id,
-                    "team_name": getattr(champ, "team_name", ""),
-                    "owner": safe_owner_name(champ),
-                }
-                if len(standings) > 1:
-                    ru = standings[1]
-                    season["runner_up"] = {
-                        "team_id": ru.team_id,
-                        "team_name": getattr(ru, "team_name", ""),
-                        "owner": safe_owner_name(ru),
+    # --- Champion / runner-up (only once the season has actually finished) ---
+    if season_complete:
+        ranked = [t for t in season["teams"] if t["final_rank"]]
+        if ranked:
+            ranked.sort(key=lambda t: t["final_rank"])
+            season["champion"] = {"team_id": ranked[0]["team_id"], "team_name": ranked[0]["team_name"], "owner": ranked[0]["owner"]}
+            if len(ranked) > 1:
+                season["runner_up"] = {"team_id": ranked[1]["team_id"], "team_name": ranked[1]["team_name"], "owner": ranked[1]["owner"]}
+        else:
+            try:
+                standings = league.standings()
+                if standings:
+                    champ = standings[0]
+                    season["champion"] = {
+                        "team_id": champ.team_id,
+                        "team_name": getattr(champ, "team_name", ""),
+                        "owner": safe_owner_name(champ),
                     }
-        except Exception as e:
-            season["errors"].append(f"Could not determine champion via standings() for {year}: {e}")
+                    if len(standings) > 1:
+                        ru = standings[1]
+                        season["runner_up"] = {
+                            "team_id": ru.team_id,
+                            "team_name": getattr(ru, "team_name", ""),
+                            "owner": safe_owner_name(ru),
+                        }
+            except Exception as e:
+                season["errors"].append(f"Could not determine champion via standings() for {year}: {e}")
 
     # --- Draft ---
     try:
