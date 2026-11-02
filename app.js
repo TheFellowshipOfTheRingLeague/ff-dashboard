@@ -1,0 +1,392 @@
+const SERIES_COLORS = [
+  "var(--series-1)",
+  "var(--series-2)",
+  "var(--series-3)",
+  "var(--series-4)",
+  "var(--series-5)",
+  "var(--series-6)",
+  "var(--series-7)",
+  "var(--series-8)",
+];
+
+function colorFor(index) {
+  return SERIES_COLORS[index % SERIES_COLORS.length];
+}
+
+function fmtNum(n, digits = 1) {
+  if (n === null || n === undefined || Number.isNaN(n)) return "-";
+  return Number(n).toLocaleString(undefined, { minimumFractionDigits: digits, maximumFractionDigits: digits });
+}
+
+function fmtPct(n) {
+  if (n === null || n === undefined) return "-";
+  return (n * 100).toFixed(1) + "%";
+}
+
+function fmtDate(iso) {
+  if (!iso) return "Unknown date";
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return "Unknown date";
+  return d.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
+}
+
+function el(tag, attrs = {}, children = []) {
+  const node = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (k === "class") node.className = v;
+    else if (k === "html") node.innerHTML = v;
+    else node.setAttribute(k, v);
+  }
+  for (const child of [].concat(children)) {
+    if (child === null || child === undefined) continue;
+    node.appendChild(typeof child === "string" ? document.createTextNode(child) : child);
+  }
+  return node;
+}
+
+function barChart(rows, { valueKey, maxValue, labelKey = "label", digits = 1 }) {
+  const max = maxValue || Math.max(1, ...rows.map((r) => r[valueKey] || 0));
+  const container = el("div", { class: "bar-chart" });
+  rows.forEach((row, i) => {
+    const pct = Math.max(2, Math.round(((row[valueKey] || 0) / max) * 100));
+    const track = el("div", { class: "bar-track" }, [
+      el("div", { class: "bar-fill", style: `width:${pct}%; background:${colorFor(i)};` }),
+    ]);
+    container.appendChild(
+      el("div", { class: "bar-row" }, [
+        el("div", { class: "name", title: row[labelKey] }, row[labelKey]),
+        track,
+        el("div", { class: "val" }, fmtNum(row[valueKey], digits)),
+      ])
+    );
+  });
+  return container;
+}
+
+function sortableTable(columns, rows, initialSortIdx = 0, initialDir = -1) {
+  let sortIdx = initialSortIdx;
+  let dir = initialDir;
+
+  const wrap = el("div", { class: "table-scroll" });
+  const table = el("table");
+  wrap.appendChild(table);
+
+  function render() {
+    const sorted = [...rows].sort((a, b) => {
+      const col = columns[sortIdx];
+      const av = col.value(a);
+      const bv = col.value(b);
+      if (typeof av === "string" || typeof bv === "string") {
+        return String(av).localeCompare(String(bv)) * dir;
+      }
+      return ((av ?? -Infinity) - (bv ?? -Infinity)) * dir;
+    });
+
+    table.innerHTML = "";
+    const thead = el("thead");
+    const headRow = el("tr");
+    columns.forEach((col, idx) => {
+      const th = el("th", { class: idx === sortIdx ? "sorted" : "" }, col.label);
+      th.addEventListener("click", () => {
+        if (sortIdx === idx) dir *= -1;
+        else {
+          sortIdx = idx;
+          dir = col.defaultDir || -1;
+        }
+        render();
+      });
+      headRow.appendChild(th);
+    });
+    thead.appendChild(headRow);
+    table.appendChild(thead);
+
+    const tbody = el("tbody");
+    sorted.forEach((row) => {
+      const tr = el("tr");
+      columns.forEach((col) => {
+        tr.appendChild(el("td", {}, col.render ? col.render(row) : String(col.value(row) ?? "-")));
+      });
+      tbody.appendChild(tr);
+    });
+    table.appendChild(tbody);
+  }
+
+  render();
+  return wrap;
+}
+
+function setTab(name) {
+  document.querySelectorAll("nav.tabs button").forEach((b) => b.classList.toggle("active", b.dataset.tab === name));
+  document.querySelectorAll(".panel").forEach((p) => p.classList.toggle("active", p.id === `panel-${name}`));
+}
+
+function renderOverview(data) {
+  const root = document.getElementById("panel-overview");
+  root.innerHTML = "";
+
+  const allTime = data.all_time || [];
+  const totalChamps = allTime.reduce((s, r) => s + r.championships, 0);
+  const seasonsCount = data.seasons.length;
+
+  root.appendChild(
+    el("div", { class: "stat-row" }, [
+      statTile(seasonsCount, "Seasons tracked"),
+      statTile(totalChamps, "Championships awarded"),
+      statTile(allTime.length, "Managers"),
+      statTile(data.current_season_year, "Current season"),
+    ])
+  );
+
+  const leaderCard = el("div", { class: "card" }, [
+    el("h2", {}, "All-time standings"),
+    el("p", { class: "sub" }, "Every manager's full league history, by owner identity (so a renamed team still counts toward the same manager). Click a column to sort."),
+  ]);
+
+  const columns = [
+    { label: "Manager", value: (r) => r.owner, render: (r) => managerCell(r) },
+    { label: "Titles", value: (r) => r.championships, defaultDir: -1, render: (r) => (r.championships ? `${"ð".repeat(Math.min(r.championships, 3))} ${r.championships}` : "0") },
+    { label: "2nd place", value: (r) => r.runner_up_finishes, defaultDir: -1 },
+    { label: "Record", value: (r) => r.wins, defaultDir: -1, render: (r) => `${r.wins}-${r.losses}${r.ties ? "-" + r.ties : ""}` },
+    { label: "Win %", value: (r) => r.win_pct, defaultDir: -1, render: (r) => fmtPct(r.win_pct) },
+    { label: "Points for", value: (r) => r.points_for, defaultDir: -1, render: (r) => fmtNum(r.points_for) },
+    { label: "Points against", value: (r) => r.points_against, defaultDir: -1, render: (r) => fmtNum(r.points_against) },
+    { label: "Seasons", value: (r) => r.seasons_played, defaultDir: -1 },
+  ];
+  leaderCard.appendChild(sortableTable(columns, allTime, 1, -1));
+  root.appendChild(leaderCard);
+
+  const champCard = el("div", { class: "card" }, [
+    el("h2", {}, "Championships by manager"),
+    el("p", { class: "sub" }, "Total league titles won."),
+  ]);
+  const champRows = [...allTime].sort((a, b) => b.championships - a.championships).filter((r) => r.championships > 0);
+  if (champRows.length) {
+    champCard.appendChild(barChart(champRows, { valueKey: "championships", labelKey: "owner", digits: 0 }));
+  } else {
+    champCard.appendChild(el("div", { class: "empty-state" }, "No completed seasons with a recorded champion yet."));
+  }
+  root.appendChild(champCard);
+
+  const pfCard = el("div", { class: "card" }, [
+    el("h2", {}, "All-time points for"),
+    el("p", { class: "sub" }, "Total regular-season points scored across all tracked seasons."),
+  ]);
+  const pfRows = [...allTime].sort((a, b) => b.points_for - a.points_for);
+  pfCard.appendChild(barChart(pfRows, { valueKey: "points_for", labelKey: "owner" }));
+  root.appendChild(pfCard);
+}
+
+function statTile(value, label) {
+  return el("div", { class: "stat-tile" }, [el("div", { class: "value" }, String(value ?? "-")), el("div", { class: "label" }, label)]);
+}
+
+function managerCell(r) {
+  const span = el("span", {}, r.owner);
+  if (r.team_names && r.team_names.length) {
+    span.title = r.team_names.join(", ");
+  }
+  return span;
+}
+
+function renderSeasons(data) {
+  const root = document.getElementById("panel-seasons");
+  root.innerHTML = "";
+
+  const seasons = [...data.seasons].sort((a, b) => b.year - a.year);
+  const controls = el("div", { class: "controls" });
+  const select = el("select", { id: "season-select" });
+  seasons.forEach((s) => select.appendChild(el("option", { value: s.year }, String(s.year))));
+  controls.appendChild(el("label", {}, "Season"));
+  controls.appendChild(select);
+  root.appendChild(controls);
+
+  const body = el("div", { id: "season-body" });
+  root.appendChild(body);
+
+  function renderSeason(year) {
+    const season = data.seasons.find((s) => String(s.year) === String(year));
+    body.innerHTML = "";
+    if (!season) {
+      body.appendChild(el("div", { class: "empty-state" }, "No data for this season."));
+      return;
+    }
+
+    const summary = el("div", { class: "season-summary" });
+    summary.appendChild(
+      el("div", { class: "champ-card" }, [
+        el("div", { class: "title" }, "ð Champion"),
+        el("div", { class: "name" }, season.champion ? `${season.champion.owner} (${season.champion.team_name})` : "Season in progress"),
+      ])
+    );
+    if (season.runner_up) {
+      summary.appendChild(
+        el("div", { class: "champ-card" }, [
+          el("div", { class: "title" }, "Runner-up"),
+          el("div", { class: "name" }, `${season.runner_up.owner} (${season.runner_up.team_name})`),
+        ])
+      );
+    }
+    body.appendChild(summary);
+
+    if (season.errors && season.errors.length) {
+      body.appendChild(el("div", { class: "banner" }, `Some data for ${season.year} could not be fetched (${season.errors.length} issue${season.errors.length > 1 ? "s" : ""}). The rest of the season's data below is still accurate.`));
+    }
+
+    const standingsCard = el("div", { class: "card" }, [el("h2", {}, `${season.year} standings`)]);
+    const standingsCols = [
+      { label: "Rank", value: (t) => t.final_rank ?? 99, render: (t) => (t.final_rank ? String(t.final_rank) : "-") },
+      { label: "Team", value: (t) => t.team_name },
+      { label: "Manager", value: (t) => t.owner },
+      { label: "Record", value: (t) => t.wins, render: (t) => `${t.wins}-${t.losses}${t.ties ? "-" + t.ties : ""}` },
+      { label: "Points for", value: (t) => t.points_for, render: (t) => fmtNum(t.points_for) },
+      { label: "Points against", value: (t) => t.points_against, render: (t) => fmtNum(t.points_against) },
+    ];
+    standingsCard.appendChild(sortableTable(standingsCols, season.teams, 0, 1));
+    body.appendChild(standingsCard);
+
+    const draftCard = el("div", { class: "card" }, [
+      el("h2", {}, `${season.year} draft board`),
+      el("p", { class: "sub" }, season.draft.length ? `${season.draft.length} picks` : "No draft data available for this season."),
+    ]);
+    if (season.draft.length) {
+      const byRound = {};
+      season.draft.forEach((p) => {
+        const r = p.round ?? "?";
+        (byRound[r] = byRound[r] || []).push(p);
+      });
+      Object.keys(byRound)
+        .sort((a, b) => Number(a) - Number(b))
+        .forEach((r) => {
+          draftCard.appendChild(el("div", { class: "round-heading" }, `Round ${r}`));
+          const board = el("div", { class: "draft-board" });
+          byRound[r]
+            .sort((a, b) => (a.round_pick ?? 0) - (b.round_pick ?? 0))
+            .forEach((p) => {
+              board.appendChild(
+                el("div", { class: "pick-card" }, [
+                  el("div", { class: "pick-no" }, `Pick ${p.overall_pick ?? "?"}${p.keeper ? " Â· keeper" : ""}`),
+                  el("div", { class: "player" }, p.player_name || "Unknown player"),
+                  el("div", { class: "team" }, `${p.owner} Â· ${p.team_name}`),
+                ])
+              );
+            });
+          draftCard.appendChild(board);
+        });
+    }
+    body.appendChild(draftCard);
+
+    const tradeCard = el("div", { class: "card" }, [
+      el("h2", {}, `${season.year} trades`),
+      el("p", { class: "sub" }, season.trades.length ? `${season.trades.length} trade${season.trades.length > 1 ? "s" : ""}` : "No trades recorded for this season."),
+    ]);
+    season.trades
+      .slice()
+      .sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0))
+      .forEach((t) => {
+        tradeCard.appendChild(
+          el("div", { class: "trade-item" }, [
+            el("div", { class: "trade-date" }, fmtDate(t.date)),
+            el("div", { class: "trade-teams" }, t.teams_involved.join(" â ") || "Unknown teams"),
+            el(
+              "div",
+              { class: "trade-players" },
+              t.items.map((i) => `${i.player || "Unknown player"} â ${i.team || "Unknown team"}`).join(", ")
+            ),
+          ])
+        );
+      });
+    body.appendChild(tradeCard);
+  }
+
+  select.addEventListener("change", (e) => renderSeason(e.target.value));
+  if (seasons.length) renderSeason(seasons[0].year);
+  else body.appendChild(el("div", { class: "empty-state" }, "No seasons available yet."));
+}
+
+function renderTrades(data) {
+  const root = document.getElementById("panel-trades");
+  root.innerHTML = "";
+
+  const all = [];
+  data.seasons.forEach((s) => {
+    s.trades.forEach((t) => all.push({ ...t, year: s.year }));
+  });
+  all.sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
+
+  const card = el("div", { class: "card" }, [
+    el("h2", {}, "All trades, every season"),
+    el("p", { class: "sub" }, `${all.length} trade${all.length === 1 ? "" : "s"} across all tracked seasons.`),
+  ]);
+
+  if (!all.length) {
+    card.appendChild(el("div", { class: "empty-state" }, "No trades recorded yet."));
+  } else {
+    all.forEach((t) => {
+      card.appendChild(
+        el("div", { class: "trade-item" }, [
+          el("div", { class: "trade-date" }, `${t.year} Â· ${fmtDate(t.date)}`),
+          el("div", { class: "trade-teams" }, t.teams_involved.join(" â ") || "Unknown teams"),
+          el(
+            "div",
+            { class: "trade-players" },
+            t.items.map((i) => `${i.player || "Unknown player"} â ${i.team || "Unknown team"}`).join(", ")
+          ),
+        ])
+      );
+    });
+  }
+  root.appendChild(card);
+}
+
+function initTheme() {
+  const saved = (() => {
+    try {
+      return localStorage.getItem("ff-dashboard-theme");
+    } catch (e) {
+      return null;
+    }
+  })();
+  if (saved) document.documentElement.setAttribute("data-theme", saved);
+
+  const btn = document.getElementById("theme-toggle");
+  btn.addEventListener("click", () => {
+    const current = document.documentElement.getAttribute("data-theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    const next = current === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    try {
+      localStorage.setItem("ff-dashboard-theme", next);
+    } catch (e) {
+      /* ignore - private browsing etc. */
+    }
+  });
+}
+
+async function main() {
+  initTheme();
+
+  document.querySelectorAll("nav.tabs button").forEach((b) => b.addEventListener("click", () => setTab(b.dataset.tab)));
+
+  let data;
+  try {
+    const res = await fetch("data/league_history.json", { cache: "no-store" });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    data = await res.json();
+  } catch (e) {
+    document.getElementById("app").innerHTML = "";
+    document.querySelector(".banner").textContent =
+      "No league data yet. Run the \"Update Fantasy Football Dashboard\" workflow from the Actions tab (or wait for the first scheduled run) to generate data/league_history.json.";
+    return;
+  }
+
+  if (!data.seasons || !data.seasons.length) {
+    document.querySelector(".banner").textContent = "The data file loaded, but no seasons were found. Check the Action's run log for warnings.";
+  } else {
+    document.querySelector(".banner").innerHTML = `Tracking <strong>${data.seasons.length}</strong> season${data.seasons.length > 1 ? "s" : ""} (${data.start_year}â${data.current_season_year}) Â· League ID <strong>${data.league_id}</strong> Â· Last refreshed ${fmtDate(data.generated_at)}`;
+  }
+
+  renderOverview(data);
+  renderSeasons(data);
+  renderTrades(data);
+}
+
+main();
