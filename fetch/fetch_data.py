@@ -338,7 +338,15 @@ def fetch_season(year):
     except Exception as e:
         season["errors"].append(f"Could not fetch trades for {year}: {e}")
 
-    # --- Waiver wire / free agent adds ---
+    # --- Waiver wire / free agent adds & drops ---
+    # A single ESPN activity topic (`act`) can bundle multiple moves a team
+    # made at once - most commonly a waiver claim that adds one player and
+    # drops another in the same transaction. Group actions by team within
+    # each activity and pair up ADDED/DROPPED entries in order, so a claim
+    # shows both halves (who came in, who got cut) instead of just the add
+    # with no context. A bare drop (cutting a player with no add attached)
+    # or a bare add (empty roster spot, no corresponding drop) still shows
+    # up as its own row with the other side left blank.
     try:
         add_activity = league.recent_activity(size=2000, msg_type=None)
         for act in add_activity:
@@ -347,27 +355,52 @@ def fetch_season(year):
                 act_date = (
                     datetime.datetime.utcfromtimestamp(raw_date / 1000).isoformat() + "Z" if raw_date else None
                 )
+                by_team = {}
+                team_order = []
                 for action in getattr(act, "actions", []) or []:
                     a_team = action[0] if len(action) > 0 else None
                     a_type = action[1] if len(action) > 1 else None
                     a_player = action[2] if len(action) > 2 else None
                     a_bid = action[3] if len(action) > 3 else 0
-                    if a_type not in ("FA ADDED", "WAIVER ADDED"):
+                    if a_type not in ("FA ADDED", "WAIVER ADDED", "DROPPED"):
                         continue
                     team_name = getattr(a_team, "team_name", None)
                     player_name = getattr(a_player, "name", None) or (str(a_player) if a_player else None)
                     if not player_name:
                         continue
-                    season["waiver_adds"].append(
-                        {
-                            "date": act_date,
-                            "team": team_name,
+                    key = team_name or "Unknown"
+                    if key not in by_team:
+                        by_team[key] = {
                             "owner": safe_owner_name(a_team) if a_team else "Unknown",
-                            "player": player_name,
-                            "type": "Waiver" if a_type == "WAIVER ADDED" else "Free Agent",
-                            "bid_amount": a_bid or 0,
+                            "added": [],
+                            "dropped": [],
                         }
-                    )
+                        team_order.append(key)
+                    if a_type == "DROPPED":
+                        by_team[key]["dropped"].append(player_name)
+                    else:
+                        by_team[key]["added"].append(
+                            (player_name, "Waiver" if a_type == "WAIVER ADDED" else "Free Agent", a_bid or 0)
+                        )
+
+                for team_name in team_order:
+                    bucket = by_team[team_name]
+                    added = bucket["added"]
+                    dropped = bucket["dropped"]
+                    for i in range(max(len(added), len(dropped))):
+                        add_info = added[i] if i < len(added) else None
+                        drop_name = dropped[i] if i < len(dropped) else None
+                        season["waiver_adds"].append(
+                            {
+                                "date": act_date,
+                                "team": team_name,
+                                "owner": bucket["owner"],
+                                "player_added": add_info[0] if add_info else None,
+                                "player_dropped": drop_name,
+                                "type": add_info[1] if add_info else "Drop",
+                                "bid_amount": add_info[2] if add_info else 0,
+                            }
+                        )
             except Exception as e:
                 season["errors"].append(f"Waiver add parse error for {year}: {e}")
     except Exception as e:
