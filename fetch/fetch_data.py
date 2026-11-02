@@ -141,6 +141,57 @@ def player_points_since(league, player_cache, player_name, since_dt):
     return {"total": round(total, 2), "games": games, "ppg": round(total / games, 2)}
 
 
+def build_week_date_map(league):
+    """Maps scoring-period/week number -> an actual game date for that week,
+    built by merging every rostered player's own schedule. This data is
+    already loaded on the league/team objects (no extra network calls), and
+    since every NFL week's games fall in the same date range regardless of
+    which player you look at, merging across all rosters just fills in the
+    weeks any single player happened to have a bye for. Used to figure out
+    which week a trade's "since the trade" window starts in."""
+    week_date = {}
+    for team in getattr(league, "teams", []) or []:
+        for player in getattr(team, "roster", []) or []:
+            schedule = getattr(player, "schedule", None) or {}
+            for week, game in schedule.items():
+                game_date = game.get("date") if isinstance(game, dict) else None
+                if not game_date:
+                    continue
+                try:
+                    week_num = int(week)
+                except (TypeError, ValueError):
+                    continue
+                if week_num not in week_date:
+                    week_date[week_num] = game_date
+    return week_date
+
+
+def team_record_since(team, start_week):
+    """A team's own win-loss-tie record from `start_week` (inclusive)
+    onward, using its per-week outcomes list (team.outcomes[0] = week 1,
+    team.outcomes[1] = week 2, etc). Only counts decided games - weeks not
+    yet played show up as 'U' (undecided) and are skipped rather than
+    counted as losses."""
+    if team is None or start_week is None:
+        return None
+    outcomes = getattr(team, "outcomes", None) or []
+    wins = losses = ties = 0
+    for idx, outcome in enumerate(outcomes):
+        week_num = idx + 1
+        if week_num < start_week:
+            continue
+        if outcome == "W":
+            wins += 1
+        elif outcome == "L":
+            losses += 1
+        elif outcome == "T":
+            ties += 1
+        # 'U' (undecided/not yet played) or anything else: skip.
+    if wins == 0 and losses == 0 and ties == 0:
+        return None
+    return {"wins": wins, "losses": losses, "ties": ties}
+
+
 def fetch_season(year):
     print(f"Fetching season {year}...")
     season = {
@@ -162,6 +213,8 @@ def fetch_season(year):
         return season
 
     num_teams = len(getattr(league, "teams", []) or [])
+    teams_by_id = {t.team_id: t for t in getattr(league, "teams", []) or []}
+    week_date_map = build_week_date_map(league)
 
     # --- Has this season actually finished? ---
     # ESPN reports a "final_standing"/"standing" rank throughout the season,
@@ -273,12 +326,18 @@ def fetch_season(year):
                 trade_date = trade_date_dt.isoformat() + "Z" if trade_date_dt else None
                 by_player = {}
                 order = []
+                team_meta = {}
                 for action in getattr(act, "actions", []) or []:
                     a_team = action[0] if len(action) > 0 else None
                     a_type = action[1] if len(action) > 1 else None
                     a_player = action[2] if len(action) > 2 else None
                     team_name = getattr(a_team, "team_name", None)
                     player_name = getattr(a_player, "name", None) or (str(a_player) if a_player else None)
+                    if team_name and team_name not in team_meta:
+                        team_meta[team_name] = {
+                            "id": getattr(a_team, "team_id", None),
+                            "owner": safe_owner_name(a_team),
+                        }
                     if not player_name:
                         continue
                     if player_name not in by_player:
@@ -330,8 +389,35 @@ def fetch_season(year):
                         "margin": abs(diff),
                     }
 
+                # --- Record since the trade ---
+                # Each involved team's own win-loss-tie record starting the
+                # first week after the trade date, so the card can show
+                # "how has each side done since" at the team level, not just
+                # the traded players' individual stats.
+                team_owners = {name: team_meta.get(name, {}).get("owner", "Unknown") for name in teams_involved}
+                start_week = None
+                if trade_date_dt:
+                    future_weeks = [w for w, d in week_date_map.items() if d and d > trade_date_dt]
+                    if future_weeks:
+                        start_week = min(future_weeks)
+
+                records_since_trade = {}
+                for team_name in teams_involved:
+                    team_id = team_meta.get(team_name, {}).get("id")
+                    team_obj = teams_by_id.get(team_id)
+                    rec = team_record_since(team_obj, start_week)
+                    if rec:
+                        records_since_trade[team_name] = rec
+
                 season["trades"].append(
-                    {"date": trade_date, "teams_involved": teams_involved, "items": items, "verdict": verdict}
+                    {
+                        "date": trade_date,
+                        "teams_involved": teams_involved,
+                        "team_owners": team_owners,
+                        "items": items,
+                        "verdict": verdict,
+                        "records_since_trade": records_since_trade,
+                    }
                 )
             except Exception as e:
                 season["errors"].append(f"Trade parse error for {year}: {e}")
