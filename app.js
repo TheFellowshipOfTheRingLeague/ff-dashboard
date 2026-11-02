@@ -67,6 +67,131 @@ function barChart(rows, { valueKey, maxValue, labelKey = "label", digits = 1 }) 
   return container;
 }
 
+function divergingBarChart(rows, { valueKey, labelKey = "label", digits = 3 }) {
+  const maxAbs = Math.max(0.02, ...rows.map((r) => Math.abs(r[valueKey] || 0)));
+  const container = el("div", { class: "bar-chart diverging" });
+  rows.forEach((row) => {
+    const v = row[valueKey] || 0;
+    const positive = v >= 0;
+    const pct = Math.max(2, Math.round((Math.abs(v) / maxAbs) * 50));
+    const fillStyle = positive ? `left:50%; width:${pct}%;` : `right:50%; width:${pct}%;`;
+    const track = el("div", { class: "diverging-track" }, [
+      el("div", { class: `diverging-fill ${positive ? "positive" : "negative"}`, style: fillStyle }),
+      el("div", { class: "diverging-mid" }),
+    ]);
+    container.appendChild(
+      el("div", { class: "bar-row diverging-row" }, [
+        el("div", { class: "name", title: row[labelKey] }, row[labelKey]),
+        track,
+        el("div", { class: `val ${positive ? "luck-positive" : "luck-negative"}` }, (positive ? "+" : "") + fmtNum(v, digits)),
+      ])
+    );
+  });
+  return container;
+}
+
+function lineChart(series, { height = 220, yMin, yMax, yInvert = false, color = "var(--series-1)", valueFormat = (v) => fmtNum(v) } = {}) {
+  const width = 680;
+  const padding = { top: 16, right: 16, bottom: 26, left: 44 };
+  const innerW = width - padding.left - padding.right;
+  const innerH = height - padding.top - padding.bottom;
+  const values = series.map((p) => p.y).filter((v) => v !== null && v !== undefined);
+
+  if (!values.length) {
+    return el("div", { class: "empty-state" }, "Not enough data yet.");
+  }
+
+  const minY = yMin !== undefined ? yMin : Math.min(...values);
+  const maxY = yMax !== undefined ? yMax : Math.max(...values);
+  const span = maxY - minY || 1;
+
+  function xPos(i) {
+    return series.length <= 1 ? padding.left + innerW / 2 : padding.left + (i / (series.length - 1)) * innerW;
+  }
+  function yPos(v) {
+    const t = (v - minY) / span;
+    const frac = yInvert ? t : 1 - t;
+    return padding.top + frac * innerH;
+  }
+
+  const svgNS = "http://www.w3.org/2000/svg";
+  const svg = document.createElementNS(svgNS, "svg");
+  svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
+  svg.setAttribute("preserveAspectRatio", "none");
+
+  const gridCount = 4;
+  for (let g = 0; g <= gridCount; g++) {
+    const v = minY + (span * g) / gridCount;
+    const y = yPos(v);
+    const line = document.createElementNS(svgNS, "line");
+    line.setAttribute("x1", padding.left);
+    line.setAttribute("x2", width - padding.right);
+    line.setAttribute("y1", y);
+    line.setAttribute("y2", y);
+    line.setAttribute("class", "grid-line");
+    svg.appendChild(line);
+    const label = document.createElementNS(svgNS, "text");
+    label.setAttribute("x", padding.left - 8);
+    label.setAttribute("y", y + 3);
+    label.setAttribute("class", "axis-label");
+    label.setAttribute("text-anchor", "end");
+    label.textContent = valueFormat(v);
+    svg.appendChild(label);
+  }
+
+  let segment = [];
+  const segments = [];
+  series.forEach((p, i) => {
+    if (p.y === null || p.y === undefined) {
+      if (segment.length) segments.push(segment);
+      segment = [];
+    } else {
+      segment.push([xPos(i), yPos(p.y)]);
+    }
+  });
+  if (segment.length) segments.push(segment);
+
+  segments.forEach((seg) => {
+    const poly = document.createElementNS(svgNS, "polyline");
+    poly.setAttribute("points", seg.map(([x, y]) => `${x},${y}`).join(" "));
+    poly.setAttribute("fill", "none");
+    poly.setAttribute("stroke", color);
+    poly.setAttribute("stroke-width", "2");
+    poly.setAttribute("stroke-linecap", "round");
+    poly.setAttribute("stroke-linejoin", "round");
+    svg.appendChild(poly);
+  });
+
+  const labelEvery = Math.max(1, Math.ceil(series.length / 10));
+  series.forEach((p, i) => {
+    if (p.y === null || p.y === undefined) return;
+    const cx = xPos(i);
+    const cy = yPos(p.y);
+    const circle = document.createElementNS(svgNS, "circle");
+    circle.setAttribute("cx", cx);
+    circle.setAttribute("cy", cy);
+    circle.setAttribute("r", 3.2);
+    circle.setAttribute("fill", color);
+    circle.setAttribute("class", "chart-point");
+    const title = document.createElementNS(svgNS, "title");
+    title.textContent = `${p.label ?? ""}: ${valueFormat(p.y)}`;
+    circle.appendChild(title);
+    svg.appendChild(circle);
+
+    if (i % labelEvery === 0 || i === series.length - 1) {
+      const text = document.createElementNS(svgNS, "text");
+      text.setAttribute("x", cx);
+      text.setAttribute("y", height - 6);
+      text.setAttribute("class", "axis-label");
+      text.setAttribute("text-anchor", "middle");
+      text.textContent = p.xLabel ?? "";
+      svg.appendChild(text);
+    }
+  });
+
+  return el("div", { class: "chart-wrap" }, svg);
+}
+
 function sortableTable(columns, rows, initialSortIdx = 0, initialDir = -1) {
   let sortIdx = initialSortIdx;
   let dir = initialDir;
@@ -178,6 +303,25 @@ function renderOverview(data) {
   const pfRows = [...allTime].sort((a, b) => b.points_for - a.points_for);
   pfCard.appendChild(barChart(pfRows, { valueKey: "points_for", labelKey: "owner" }));
   root.appendChild(pfCard);
+
+  const historyWeek = data.this_week_in_history;
+  if (historyWeek && historyWeek.week && historyWeek.games && historyWeek.games.length) {
+    const historyCard = el("div", { class: "card history-card" }, [
+      el("h2", {}, `This week in history · Week ${historyWeek.week}`),
+      el("p", { class: "sub" }, "Past seasons' matchups that landed on this same week number, biggest margins first."),
+    ]);
+    historyWeek.games.slice(0, 6).forEach((g) => {
+      const winnerFirst = g.home_score >= g.away_score;
+      const teams = winnerFirst ? `${g.home_owner} ${fmtNum(g.home_score)} – ${fmtNum(g.away_score)} ${g.away_owner}` : `${g.away_owner} ${fmtNum(g.away_score)} – ${fmtNum(g.home_score)} ${g.home_owner}`;
+      historyCard.appendChild(
+        el("div", { class: "history-game" }, [
+          el("span", { class: "teams" }, `${g.year} · ${teams}`),
+          el("span", { class: "margin" }, `won by ${fmtNum(g.margin)}`),
+        ])
+      );
+    });
+    root.appendChild(historyCard);
+  }
 }
 
 function statTile(value, label) {
@@ -659,6 +803,239 @@ function renderHeadToHead(data) {
   render(owners[0]);
 }
 
+function renderPowerRankings(data) {
+  const root = document.getElementById("panel-power");
+  root.innerHTML = "";
+
+  const power = data.power_rankings || {};
+  const years = Object.keys(power)
+    .filter((y) => !EXCLUDED_HISTORY_YEARS.includes(Number(y)))
+    .sort((a, b) => b - a);
+
+  if (!years.length) {
+    root.appendChild(el("div", { class: "empty-state" }, "No power rankings data available yet. Run the data refresh workflow to generate it."));
+    return;
+  }
+
+  const controls = el("div", { class: "controls" });
+  const select = el("select", { id: "power-year-select" });
+  years.forEach((y) => select.appendChild(el("option", { value: y }, y)));
+  controls.appendChild(el("label", {}, "Season"));
+  controls.appendChild(select);
+  root.appendChild(controls);
+
+  const body = el("div", { id: "power-body" });
+  root.appendChild(body);
+
+  function render(year) {
+    body.innerHTML = "";
+    const rows = power[year] || [];
+
+    const luckCard = el("div", { class: "card" }, [
+      el("h2", {}, `${year} · luck index`),
+      el("p", { class: "sub" }, "Actual win% minus “all-play” win% (how a team would have done if it played every other team's score every week). Positive means winning more than their weekly scoring would predict; negative means the schedule hasn't been kind."),
+    ]);
+    const luckRows = [...rows].sort((a, b) => b.luck - a.luck);
+    if (luckRows.length) {
+      luckCard.appendChild(divergingBarChart(luckRows, { valueKey: "luck", labelKey: "owner", digits: 3 }));
+    } else {
+      luckCard.appendChild(el("div", { class: "empty-state" }, "No data for this season."));
+    }
+    body.appendChild(luckCard);
+
+    const tableCard = el("div", { class: "card" }, [
+      el("h2", {}, `${year} · power rankings table`),
+      el("p", { class: "sub" }, "Click a column to sort."),
+    ]);
+    const columns = [
+      { label: "Manager", value: (r) => r.owner },
+      { label: "Record", value: (r) => r.wins, defaultDir: -1, render: (r) => `${r.wins}-${r.losses}${r.ties ? "-" + r.ties : ""}` },
+      { label: "Points for", value: (r) => r.points_for, defaultDir: -1, render: (r) => fmtNum(r.points_for) },
+      { label: "Avg pts", value: (r) => r.avg_points, defaultDir: -1, render: (r) => fmtNum(r.avg_points) },
+      {
+        label: "All-play record",
+        value: (r) => r.all_play_win_pct,
+        defaultDir: -1,
+        render: (r) => `${r.all_play_wins}-${r.all_play_losses}${r.all_play_ties ? "-" + r.all_play_ties : ""}`,
+      },
+      { label: "All-play win %", value: (r) => r.all_play_win_pct, defaultDir: -1, render: (r) => fmtPct(r.all_play_win_pct) },
+      {
+        label: "Luck",
+        value: (r) => r.luck,
+        defaultDir: -1,
+        render: (r) => el("span", { class: r.luck >= 0 ? "luck-positive" : "luck-negative" }, (r.luck >= 0 ? "+" : "") + fmtNum(r.luck, 3)),
+      },
+    ];
+    tableCard.appendChild(sortableTable(columns, rows, 2, -1));
+    body.appendChild(tableCard);
+  }
+
+  select.addEventListener("change", (e) => render(e.target.value));
+  render(years[0]);
+}
+
+function gameMatchupLabel(g) {
+  return `${g.home_owner} ${fmtNum(g.home_score)} – ${fmtNum(g.away_score)} ${g.away_owner}`;
+}
+
+function renderGameLog(data) {
+  const root = document.getElementById("panel-biggames");
+  root.innerHTML = "";
+
+  const games = data.game_log || [];
+  if (!games.length) {
+    root.appendChild(el("div", { class: "empty-state" }, "No game log data available yet. Run the data refresh workflow to generate it."));
+    return;
+  }
+
+  const columns = [
+    { label: "Year", value: (g) => g.year, defaultDir: -1 },
+    { label: "Week", value: (g) => g.week, defaultDir: -1 },
+    { label: "Matchup", value: (g) => gameMatchupLabel(g), render: (g) => gameMatchupLabel(g) },
+    { label: "Margin", value: (g) => g.margin, defaultDir: -1, render: (g) => fmtNum(g.margin) },
+    { label: "Playoffs", value: (g) => (g.is_playoff ? 1 : 0), render: (g) => (g.is_playoff ? "Yes" : "") },
+  ];
+
+  const closestCard = el("div", { class: "card" }, [
+    el("h2", {}, "Closest games"),
+    el("p", { class: "sub" }, "The narrowest margins of victory across every tracked season."),
+  ]);
+  const closest = [...games].sort((a, b) => a.margin - b.margin).slice(0, 15);
+  closestCard.appendChild(sortableTable(columns, closest, 3, 1));
+  root.appendChild(closestCard);
+
+  const blowoutCard = el("div", { class: "card" }, [
+    el("h2", {}, "Biggest blowouts"),
+    el("p", { class: "sub" }, "The most lopsided margins of victory across every tracked season."),
+  ]);
+  const blowouts = [...games].sort((a, b) => b.margin - a.margin).slice(0, 15);
+  blowoutCard.appendChild(sortableTable(columns, blowouts, 3, -1));
+  root.appendChild(blowoutCard);
+}
+
+function renderRivalryTable(rows) {
+  const columns = [
+    { label: "Matchup", value: (r) => `${r.a} vs ${r.b}`, render: (r) => `${r.a} vs ${r.b}` },
+    { label: "Record", value: (r) => r.a_wins, defaultDir: -1, render: (r) => `${r.a_wins}-${r.b_wins}${r.ties ? "-" + r.ties : ""} (${r.a})` },
+    { label: "Games", value: (r) => r.games, defaultDir: -1 },
+    { label: "Win % (first named)", value: (r) => r.a_win_pct, defaultDir: -1, render: (r) => fmtPct(r.a_win_pct) },
+    { label: "Points (A-B)", value: (r) => r.a_points, defaultDir: -1, render: (r) => `${fmtNum(r.a_points)}-${fmtNum(r.b_points)}` },
+  ];
+  return sortableTable(columns, rows, 2, -1);
+}
+
+function renderRivalries(data) {
+  const root = document.getElementById("panel-rivalries");
+  root.innerHTML = "";
+
+  const rivalries = data.rivalries || {};
+  const lopsided = rivalries.most_lopsided || [];
+  const even = rivalries.most_even || [];
+
+  if (!lopsided.length && !even.length) {
+    root.appendChild(el("div", { class: "empty-state" }, "No rivalry data available yet (managers need to have faced each other a few times). Run the data refresh workflow to generate it."));
+    return;
+  }
+
+  const lopsidedCard = el("div", { class: "card" }, [
+    el("h2", {}, "Most lopsided rivalries"),
+    el("p", { class: "sub" }, `Pairings with at least ${rivalries.min_games || 3} meetings where one manager has dominated the other.`),
+  ]);
+  if (lopsided.length) lopsidedCard.appendChild(renderRivalryTable(lopsided));
+  else lopsidedCard.appendChild(el("div", { class: "empty-state" }, "Not enough head-to-head history yet."));
+  root.appendChild(lopsidedCard);
+
+  const evenCard = el("div", { class: "card" }, [
+    el("h2", {}, "Most even rivalries"),
+    el("p", { class: "sub" }, `Pairings with at least ${rivalries.min_games || 3} meetings that have stayed close to 50/50.`),
+  ]);
+  if (even.length) evenCard.appendChild(renderRivalryTable(even));
+  else evenCard.appendChild(el("div", { class: "empty-state" }, "Not enough head-to-head history yet."));
+  root.appendChild(evenCard);
+}
+
+function renderTrends(data) {
+  const root = document.getElementById("panel-trends");
+  root.innerHTML = "";
+
+  const weeklyScores = data.weekly_scores || {};
+  const owners = Object.keys(weeklyScores).sort((a, b) => a.localeCompare(b));
+
+  if (!owners.length) {
+    root.appendChild(el("div", { class: "empty-state" }, "No trend data available yet. Run the data refresh workflow to generate it."));
+    return;
+  }
+
+  const controls = el("div", { class: "controls" });
+  const select = el("select", { id: "trends-select" });
+  owners.forEach((o) => select.appendChild(el("option", { value: o }, o)));
+  controls.appendChild(el("label", {}, "Manager"));
+  controls.appendChild(select);
+  root.appendChild(controls);
+
+  const body = el("div", { id: "trends-body" });
+  root.appendChild(body);
+
+  // Max teams any season has fielded, used as the bottom of the standings axis.
+  const maxTeams = Math.max(1, ...data.seasons.map((s) => s.teams.length));
+
+  function render(owner) {
+    body.innerHTML = "";
+
+    const ptsCard = el("div", { class: "card" }, [
+      el("h2", {}, `${owner} · points per week`),
+      el("p", { class: "sub" }, "Every regular-season week this manager has played, in order, across all tracked seasons."),
+    ]);
+    const years = Object.keys(weeklyScores[owner] || {}).sort((a, b) => a - b);
+    const ptsSeries = [];
+    years.forEach((year) => {
+      const weeks = Object.keys(weeklyScores[owner][year] || {}).sort((a, b) => Number(a) - Number(b));
+      weeks.forEach((week, i) => {
+        ptsSeries.push({
+          y: weeklyScores[owner][year][week],
+          label: `${year} Wk ${week}`,
+          xLabel: i === 0 ? year : "",
+        });
+      });
+    });
+    if (ptsSeries.length) {
+      ptsCard.appendChild(lineChart(ptsSeries, { color: "var(--series-1)" }));
+    } else {
+      ptsCard.appendChild(el("div", { class: "empty-state" }, "No weekly scoring data yet for this manager."));
+    }
+    body.appendChild(ptsCard);
+
+    const rankCard = el("div", { class: "card" }, [
+      el("h2", {}, `${owner} · final standing by season`),
+      el("p", { class: "sub" }, "Final regular-season rank each year this manager played (lower is better; 1 = first place)."),
+    ]);
+    const rankSeries = [];
+    [...data.seasons]
+      .filter((s) => !EXCLUDED_HISTORY_YEARS.includes(Number(s.year)))
+      .sort((a, b) => a.year - b.year)
+      .forEach((s) => {
+        const team = s.teams.find((t) => t.owner === owner);
+        rankSeries.push({
+          y: team ? team.final_rank ?? null : null,
+          label: String(s.year),
+          xLabel: String(s.year),
+        });
+      });
+    const hasRanks = rankSeries.some((p) => p.y !== null && p.y !== undefined);
+    if (hasRanks) {
+      rankCard.appendChild(
+        lineChart(rankSeries, { color: "var(--series-3)", yMin: 1, yMax: maxTeams, yInvert: true, valueFormat: (v) => String(Math.round(v)) })
+      );
+    } else {
+      rankCard.appendChild(el("div", { class: "empty-state" }, "No final-standing data yet for this manager."));
+    }
+    body.appendChild(rankCard);
+  }
+
+  select.addEventListener("change", (e) => render(e.target.value));
+  render(owners[0]);
+}
+
 function initTheme() {
   const saved = (() => {
     try {
@@ -718,6 +1095,10 @@ async function main() {
   renderWaivers(data);
   renderMatchups(data);
   renderHeadToHead(data);
+  renderPowerRankings(data);
+  renderGameLog(data);
+  renderRivalries(data);
+  renderTrends(data);
 }
 
 main();

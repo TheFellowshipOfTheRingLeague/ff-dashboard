@@ -600,3 +600,109 @@ input[type="text"] {
   color: var(--text-muted);
   padding: 4px 0;
 }
+
+.diverging-row {
+  grid-template-columns: 150px 1fr 90px;
+}
+
+.diverging-track {
+  position: relative;
+  height: 14px;
+  background: var(--gridline);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.diverging-mid {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--baseline);
+}
+
+.diverging-fill {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-radius: 2px;
+}
+
+.diverging-fill.positive {
+  background: var(--series-6);
+}
+
+.diverging-fill.negative {
+  background: var(--series-8);
+}
+
+.luck-positive {
+  color: var(--series-6);
+  font-variant-numeric: tabular-nums;
+}
+
+.luck-negative {
+  color: var(--series-8);
+  font-variant-numeric: tabular-nums;
+}
+
+.history-card {
+  border-left: 4px solid var(--series-4);
+}
+
+.history-game {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-size: 13.5px;
+  padding: 7px 0;
+  border-bottom: 1px dashed var(--gridline);
+}
+
+.history-game:last-child {
+  border-bottom: none;
+}
+
+.history-game .teams {
+  color: var(--text-primary);
+}
+
+.history-game .margin {
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.chart-wrap {
+  width: 100%;
+  margin-bottom: 6px;
+}
+
+.chart-wrap svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.chart-wrap .grid-line {
+  stroke: var(--gridline);
+  stroke-width: 1;
+}
+
+.chart-wrap .axis-label {
+  fill: var(--text-muted);
+  font-size: 10px;
+}
+
+.chart-wrap .chart-point {
+  cursor: pointer;
+}
+
+.chart-title {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0 0 10px;
+  color: var(--text-secondary);
+}
