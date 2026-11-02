@@ -1,3 +1,7 @@
+// Seasons that still have data on record but shouldn't clutter the season
+// pickers (too few games tracked / not worth surfacing as a browsable year).
+const EXCLUDED_HISTORY_YEARS = [2021, 2022];
+
 const SERIES_COLORS = [
   "var(--series-1)",
   "var(--series-2)",
@@ -192,7 +196,9 @@ function renderSeasons(data) {
   const root = document.getElementById("panel-seasons");
   root.innerHTML = "";
 
-  const seasons = [...data.seasons].sort((a, b) => b.year - a.year);
+  const seasons = [...data.seasons]
+    .filter((s) => !EXCLUDED_HISTORY_YEARS.includes(Number(s.year)))
+    .sort((a, b) => b.year - a.year);
   const controls = el("div", { class: "controls" });
   const select = el("select", { id: "season-select" });
   seasons.forEach((s) => select.appendChild(el("option", { value: s.year }, String(s.year))));
@@ -391,7 +397,9 @@ function renderWaivers(data) {
   const root = document.getElementById("panel-waivers");
   root.innerHTML = "";
 
-  const seasons = [...data.seasons].sort((a, b) => b.year - a.year);
+  const seasons = [...data.seasons]
+    .filter((s) => !EXCLUDED_HISTORY_YEARS.includes(Number(s.year)))
+    .sort((a, b) => b.year - a.year);
   const controls = el("div", { class: "controls" });
   const select = el("select", { id: "waiver-season-select" });
   select.appendChild(el("option", { value: "all" }, "All seasons"));
@@ -473,6 +481,10 @@ async function main() {
     const res = await fetch("data/league_history.json", { cache: "no-store" });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     data = await res.json();
+    // 2021 and 2022 are excluded from season-by-season browsing (too little
+    // tracked data to be worth a season page) but still count toward the
+    // all-time career totals above, which come pre-aggregated as data.all_time.
+    data.seasons = (data.seasons || []).filter((s) => !EXCLUDED_HISTORY_YEARS.includes(Number(s.year)));
   } catch (e) {
     document.getElementById("app").innerHTML = "";
     document.querySelector(".banner").textContent =
