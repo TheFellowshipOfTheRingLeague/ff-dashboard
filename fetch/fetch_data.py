@@ -640,6 +640,225 @@ def build_head_to_head():
     return records
 
 
+def build_power_rankings():
+    """Per-season 'luck index': for every team, compare their actual record
+    to their all-play record (how they'd have done if they played every
+    other team every week, based on that week's scores). A team whose actual
+    win% is well above their all-play win% has been winning close games /
+    catching favorable matchups; well below means they've been unlucky.
+    Built entirely from the weekly box score files already on disk - no
+    extra ESPN requests."""
+    power = {}
+    if not os.path.isdir(BOXSCORE_DIR):
+        return power
+
+    for fname in sorted(os.listdir(BOXSCORE_DIR)):
+        if not fname.endswith(".json"):
+            continue
+        try:
+            with open(os.path.join(BOXSCORE_DIR, fname)) as f:
+                season_box = json.load(f)
+        except Exception:
+            continue
+        year = str(season_box.get("year", fname[:-5]))
+        totals = {}
+
+        def acc_for(owner):
+            return totals.setdefault(
+                owner,
+                {"wins": 0, "losses": 0, "ties": 0, "points_for": 0.0, "games": 0, "ap_w": 0, "ap_l": 0, "ap_t": 0},
+            )
+
+        for week_matchups in (season_box.get("weeks") or {}).values():
+            week_scores = []
+            for m in week_matchups or []:
+                for side in (m.get("home"), m.get("away")):
+                    if side and side.get("owner"):
+                        week_scores.append((side["owner"], side.get("score") or 0))
+
+            for owner, score in week_scores:
+                acc = acc_for(owner)
+                acc["points_for"] += score
+                acc["games"] += 1
+                for other_owner, other_score in week_scores:
+                    if other_owner == owner:
+                        continue
+                    if score > other_score:
+                        acc["ap_w"] += 1
+                    elif score < other_score:
+                        acc["ap_l"] += 1
+                    else:
+                        acc["ap_t"] += 1
+
+            for m in week_matchups or []:
+                home, away = m.get("home"), m.get("away")
+                if not home or not away:
+                    continue
+                h_owner, a_owner = home["owner"], away["owner"]
+                hs, as_ = home.get("score") or 0, away.get("score") or 0
+                if hs > as_:
+                    acc_for(h_owner)["wins"] += 1
+                    acc_for(a_owner)["losses"] += 1
+                elif as_ > hs:
+                    acc_for(a_owner)["wins"] += 1
+                    acc_for(h_owner)["losses"] += 1
+                else:
+                    acc_for(h_owner)["ties"] += 1
+                    acc_for(a_owner)["ties"] += 1
+
+        rows = []
+        for owner, acc in totals.items():
+            games = acc["wins"] + acc["losses"] + acc["ties"]
+            ap_games = acc["ap_w"] + acc["ap_l"] + acc["ap_t"]
+            actual_pct = (acc["wins"] + 0.5 * acc["ties"]) / games if games else 0.0
+            ap_pct = (acc["ap_w"] + 0.5 * acc["ap_t"]) / ap_games if ap_games else 0.0
+            rows.append(
+                {
+                    "owner": owner,
+                    "wins": acc["wins"],
+                    "losses": acc["losses"],
+                    "ties": acc["ties"],
+                    "points_for": round(acc["points_for"], 2),
+                    "avg_points": round(acc["points_for"] / acc["games"], 2) if acc["games"] else 0.0,
+                    "all_play_wins": acc["ap_w"],
+                    "all_play_losses": acc["ap_l"],
+                    "all_play_ties": acc["ap_t"],
+                    "all_play_win_pct": round(ap_pct, 3),
+                    "actual_win_pct": round(actual_pct, 3),
+                    "luck": round(actual_pct - ap_pct, 3),
+                }
+            )
+        rows.sort(key=lambda r: -r["points_for"])
+        power[year] = rows
+
+    return power
+
+
+def build_game_log():
+    """Every regular matchup (byes excluded) across every tracked season,
+    with its margin - the raw material for a 'closest games' / 'biggest
+    blowouts' leaderboard. Read back from the weekly box score files, so no
+    extra ESPN requests are needed."""
+    games = []
+    if not os.path.isdir(BOXSCORE_DIR):
+        return games
+
+    for fname in sorted(os.listdir(BOXSCORE_DIR)):
+        if not fname.endswith(".json"):
+            continue
+        try:
+            with open(os.path.join(BOXSCORE_DIR, fname)) as f:
+                season_box = json.load(f)
+        except Exception:
+            continue
+        year = season_box.get("year")
+        for week_str, week_matchups in (season_box.get("weeks") or {}).items():
+            for m in week_matchups or []:
+                home, away = m.get("home"), m.get("away")
+                if not home or not away:
+                    continue
+                hs, as_ = home.get("score") or 0, away.get("score") or 0
+                winner = home["owner"] if hs > as_ else (away["owner"] if as_ > hs else None)
+                loser = away["owner"] if hs > as_ else (home["owner"] if as_ > hs else None)
+                try:
+                    week_num = int(week_str)
+                except (TypeError, ValueError):
+                    continue
+                games.append(
+                    {
+                        "year": year,
+                        "week": week_num,
+                        "is_playoff": bool(m.get("is_playoff")),
+                        "home_owner": home["owner"],
+                        "home_score": hs,
+                        "away_owner": away["owner"],
+                        "away_score": as_,
+                        "margin": round(abs(hs - as_), 2),
+                        "winner": winner,
+                        "loser": loser,
+                    }
+                )
+    return games
+
+
+def build_weekly_scores():
+    """owner -> year -> week -> points scored, for the trend charts. Small
+    (one number per team per week) even though it spans every season, so it
+    is safe to keep in the main data file rather than a lazy-loaded one."""
+    trend = {}
+    if not os.path.isdir(BOXSCORE_DIR):
+        return trend
+
+    for fname in sorted(os.listdir(BOXSCORE_DIR)):
+        if not fname.endswith(".json"):
+            continue
+        try:
+            with open(os.path.join(BOXSCORE_DIR, fname)) as f:
+                season_box = json.load(f)
+        except Exception:
+            continue
+        year = str(season_box.get("year"))
+        for week_str, week_matchups in (season_box.get("weeks") or {}).items():
+            for m in week_matchups or []:
+                for side in (m.get("home"), m.get("away")):
+                    if not side or not side.get("owner"):
+                        continue
+                    trend.setdefault(side["owner"], {}).setdefault(year, {})[week_str] = side.get("score") or 0
+    return trend
+
+
+def build_rivalries(head_to_head, min_games=3):
+    """The most lopsided and most evenly-matched rivalries in the league,
+    derived from the head-to-head records already computed. A pairing needs
+    at least `min_games` meetings to qualify, so a single blowout between two
+    managers who've only played once doesn't dominate the 'lopsided' list."""
+    pairs = {}
+    for a, opponents in head_to_head.items():
+        for b in opponents.keys():
+            key = tuple(sorted([a, b]))
+            if key in pairs:
+                continue
+            rec_a = head_to_head.get(key[0], {}).get(key[1])
+            rec_b = head_to_head.get(key[1], {}).get(key[0])
+            if not rec_a or not rec_b:
+                continue
+            games = rec_a["wins"] + rec_a["losses"] + rec_a["ties"]
+            if games < min_games:
+                continue
+            a_win_pct = (rec_a["wins"] + 0.5 * rec_a["ties"]) / games if games else 0.0
+            pairs[key] = {
+                "a": key[0],
+                "b": key[1],
+                "a_wins": rec_a["wins"],
+                "b_wins": rec_b["wins"],
+                "ties": rec_a["ties"],
+                "games": games,
+                "a_points": rec_a["points_for"],
+                "b_points": rec_b["points_for"],
+                "a_win_pct": round(a_win_pct, 3),
+                "lopsidedness": round(abs(a_win_pct - 0.5) * 2, 3),
+            }
+
+    rivalries = list(pairs.values())
+    most_lopsided = sorted(rivalries, key=lambda r: (-r["lopsidedness"], -r["games"]))[:8]
+    most_even = sorted(rivalries, key=lambda r: (r["lopsidedness"], -r["games"]))[:8]
+    return {"most_lopsided": most_lopsided, "most_even": most_even, "min_games": min_games}
+
+
+def build_this_week_in_history(seasons, game_log, current_year):
+    """Matchups from past seasons that fell on the same week number as the
+    most recent week played this season - a fun 'this week in history' beat
+    for the overview page. Picks the biggest-margin games first."""
+    current_season = next((s for s in seasons if s["year"] == current_year), None)
+    weeks_available = (current_season or {}).get("weeks_available") or []
+    if not weeks_available:
+        return {"week": None, "games": []}
+    current_week = max(weeks_available)
+    past_games = [g for g in game_log if g["week"] == current_week and g["year"] != current_year]
+    past_games.sort(key=lambda g: -g["margin"])
+    return {"week": current_week, "games": past_games[:10]}
+
+
 def build_all_time(seasons):
     by_owner = {}
     for season in seasons:
@@ -704,6 +923,9 @@ def build_all_time(seasons):
 def main():
     seasons = [fetch_season(year) for year in range(START_YEAR, END_YEAR + 1)]
 
+    head_to_head = build_head_to_head()
+    game_log = build_game_log()
+
     output = {
         "generated_at": datetime.datetime.utcnow().isoformat() + "Z",
         "league_id": LEAGUE_ID,
@@ -711,7 +933,12 @@ def main():
         "current_season_year": END_YEAR,
         "seasons": seasons,
         "all_time": build_all_time(seasons),
-        "head_to_head": build_head_to_head(),
+        "head_to_head": head_to_head,
+        "power_rankings": build_power_rankings(),
+        "game_log": game_log,
+        "weekly_scores": build_weekly_scores(),
+        "rivalries": build_rivalries(head_to_head),
+        "this_week_in_history": build_this_week_in_history(seasons, game_log, END_YEAR),
     }
 
     os.makedirs(os.path.dirname(OUT_PATH), exist_ok=True)
