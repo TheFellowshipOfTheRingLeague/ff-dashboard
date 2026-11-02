@@ -370,19 +370,22 @@ function renderTradeCard(t, showYear) {
   return el("div", { class: "trade-card" }, children);
 }
 
+const WAIVER_TRADE_YEAR = 2026;
+
 function renderTrades(data) {
   const root = document.getElementById("panel-trades");
   root.innerHTML = "";
 
   const all = [];
   data.seasons.forEach((s) => {
+    if (Number(s.year) !== WAIVER_TRADE_YEAR) return;
     s.trades.forEach((t) => all.push({ ...t, year: s.year }));
   });
   all.sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
 
   const card = el("div", { class: "card" }, [
-    el("h2", {}, "All trades, every season"),
-    el("p", { class: "sub" }, `${all.length} trade${all.length === 1 ? "" : "s"} across all tracked seasons.`),
+    el("h2", {}, `${WAIVER_TRADE_YEAR} trades`),
+    el("p", { class: "sub" }, `${all.length} trade${all.length === 1 ? "" : "s"} in ${WAIVER_TRADE_YEAR}.`),
   ]);
 
   if (!all.length) {
@@ -397,35 +400,26 @@ function renderWaivers(data) {
   const root = document.getElementById("panel-waivers");
   root.innerHTML = "";
 
-  const seasons = [...data.seasons]
-    .filter((s) => !EXCLUDED_HISTORY_YEARS.includes(Number(s.year)))
-    .sort((a, b) => b.year - a.year);
-  const controls = el("div", { class: "controls" });
-  const select = el("select", { id: "waiver-season-select" });
-  select.appendChild(el("option", { value: "all" }, "All seasons"));
-  seasons.forEach((s) => select.appendChild(el("option", { value: s.year }, String(s.year))));
-  controls.appendChild(el("label", {}, "Season"));
-  controls.appendChild(select);
-  root.appendChild(controls);
-
   const body = el("div", { id: "waiver-body" });
   root.appendChild(body);
 
   function allAdds() {
     const out = [];
-    data.seasons.forEach((s) => (s.waiver_adds || []).forEach((a) => out.push({ ...a, year: s.year })));
+    data.seasons.forEach((s) => {
+      if (Number(s.year) !== WAIVER_TRADE_YEAR) return;
+      (s.waiver_adds || []).forEach((a) => out.push({ ...a, year: s.year }));
+    });
     return out;
   }
 
-  function render(yearFilter) {
+  function render() {
     body.innerHTML = "";
-    let adds = allAdds();
-    if (yearFilter !== "all") adds = adds.filter((a) => String(a.year) === String(yearFilter));
+    const adds = allAdds();
     adds.sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
 
     const card = el("div", { class: "card" }, [
-      el("h2", {}, yearFilter === "all" ? "Waiver wire & free agent moves, every season" : `${yearFilter} waiver wire & free agent moves`),
-      el("p", { class: "sub" }, `${adds.length} move${adds.length === 1 ? "" : "s"}${yearFilter === "all" ? " across all tracked seasons" : ""}.`),
+      el("h2", {}, `${WAIVER_TRADE_YEAR} waiver wire & free agent moves`),
+      el("p", { class: "sub" }, `${adds.length} move${adds.length === 1 ? "" : "s"} in ${WAIVER_TRADE_YEAR}.`),
     ]);
 
     if (!adds.length) {
@@ -445,8 +439,7 @@ function renderWaivers(data) {
     body.appendChild(card);
   }
 
-  select.addEventListener("change", (e) => render(e.target.value));
-  render("all");
+  render();
 }
 
 function initTheme() {
