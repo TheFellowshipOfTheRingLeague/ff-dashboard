@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T22:00:26.160479Z",
+  "generated_at": "2026-11-02T22:23:01.421811Z",
   "league_id": 1485136557,
   "start_year": 2021,
   "current_season_year": 2026,
@@ -9015,5 +9015,1137 @@
       "points_against": 2019.88,
       "seasons_played": 1
     }
-  ]
+  ],
+  "head_to_head": {
+    "Jake Brown": {
+      "Thomas Silas": {
+        "wins": 1,
+        "losses": 6,
+        "ties": 0,
+        "points_for": 615.72,
+        "points_against": 782.12,
+        "games": 7
+      },
+      "Thomas Goodroe": {
+        "wins": 2,
+        "losses": 5,
+        "ties": 0,
+        "points_for": 878.34,
+        "points_against": 964.14,
+        "games": 7
+      },
+      "McGowin Jernigan": {
+        "wins": 2,
+        "losses": 6,
+        "ties": 0,
+        "points_for": 917.62,
+        "points_against": 1047.98,
+        "games": 8
+      },
+      "Austin Solomom": {
+        "wins": 1,
+        "losses": 5,
+        "ties": 0,
+        "points_for": 667.16,
+        "points_against": 747.72,
+        "games": 6
+      },
+      "Rohan Raina": {
+        "wins": 1,
+        "losses": 4,
+        "ties": 0,
+        "points_for": 511.94,
+        "points_against": 603.16,
+        "games": 5
+      },
+      "Jake Turner": {
+        "wins": 1,
+        "losses": 3,
+        "ties": 0,
+        "points_for": 418.04,
+        "points_against": 617.66,
+        "games": 4
+      },
+      "Matthew Hitpas": {
+        "wins": 4,
+        "losses": 3,
+        "ties": 0,
+        "points_for": 963.78,
+        "points_against": 821.36,
+        "games": 7
+      },
+      "Bryan Huegin": {
+        "wins": 2,
+        "losses": 0,
+        "ties": 0,
+        "points_for": 264.66,
+        "points_against": 207.76,
+        "games": 2
+      },
+      "Walker Westlund": {
+        "wins": 1,
+        "losses": 3,
+        "ties": 0,
+        "points_for": 435.78,
+        "points_against": 495.66,
+        "games": 4
+      },
+      "Jasper Bowles": {
+        "wins": 3,
+        "losses": 0,
+        "ties": 0,
+        "points_for": 407.34,
+        "points_against": 340.84,
+        "games": 3
+      },
+      "Carly Schnable": {
+        "wins": 1,
+        "losses": 2,
+        "ties": 0,
+        "points_for": 399.3,
+        "points_against": 410.68,
+        "games": 3
+      },
+      "Ryan Miller": {
+        "wins": 0,
+        "losses": 1,
+        "ties": 0,
+        "points_for": 129.42,
+        "points_against": 130.72,
+        "games": 1
+      }
+    },
+    "Thomas Silas": {
+      "Jake Brown": {
+        "wins": 6,
+        "losses": 1,
+        "ties": 0,
+        "points_for": 782.12,
+        "points_against": 615.72,
+        "games": 7
+      },
+      "Rohan Raina": {
+        "wins": 0,
+        "losses": 2,
+        "ties": 0,
+        "points_for": 245.26,
+        "points_against": 257.54,
+        "games": 2
+      },
+      "Thomas Goodroe": {
+        "wins": 2,
+        "losses": 3,
+        "ties": 0,
+        "points_for": 715.74,
+        "points_against": 687.72,
+        "games": 5
+      },
+      "Jake Turner": {
+        "wins": 2,
+        "losses": 5,
+        "ties": 0,
+        "points_for": 806.98,
+        "points_against": 902.32,
+        "games": 7
+      },
+      "McGowin Jernigan": {
+        "wins": 0,
+        "losses": 7,
+        "ties": 0,
+        "points_for": 901.2,
+        "points_against": 1031.96,
+        "games": 7
+      },
+      "Matthew Hitpas": {
+        "wins": 3,
+        "losses": 6,
+        "ties": 0,
+        "points_for": 1027.1,
+        "points_against": 1306.02,
+        "games": 9
+      },
+      "Austin Solomom": {
+        "wins": 3,
+        "losses": 4,
+        "ties": 0,
+        "points_for": 843.7,
+        "points_against": 831.88,
+        "games": 7
+      },
+      "Walker Westlund": {
+        "wins": 0,
+        "losses": 4,
+        "ties": 0,
+        "points_for": 438.32,
+        "points_against": 550.1,
+        "games": 4
+      },
+      "Jasper Bowles": {
+        "wins": 4,
+        "losses": 2,
+        "ties": 0,
+        "points_for": 787.78,
+        "points_against": 712.58,
+        "games": 6
+      },
+      "Bryan Huegin": {
+        "wins": 1,
+        "losses": 1,
+        "ties": 0,
+        "points_for": 297.84,
+        "points_against": 212.9,
+        "games": 2
+      },
+      "Carly Schnable": {
+        "wins": 0,
+        "losses": 1,
+        "ties": 0,
+        "points_for": 114.92,
+        "points_against": 121.74,
+        "games": 1
+      },
+      "Ryan Miller": {
+        "wins": 1,
+        "losses": 0,
+        "ties": 0,
+        "points_for": 147.06,
+        "points_against": 127.4,
+        "games": 1
+      }
+    },
+    "Austin Solomom": {
+      "Rohan Raina": {
+        "wins": 0,
+        "losses": 2,
+        "ties": 0,
+        "points_for": 226.12,
+        "points_against": 253.04,
+        "games": 2
+      },
+      "Jake Turner": {
+        "wins": 8,
+        "losses": 1,
+        "ties": 0,
+        "points_for": 1375.28,
+        "points_against": 1163.18,
+        "games": 9
+      },
+      "Matthew Hitpas": {
+        "wins": 5,
+        "losses": 3,
+        "ties": 0,
+        "points_for": 1167.58,
+        "points_against": 1015.42,
+        "games": 8
+      },
+      "Jake Brown": {
+        "wins": 5,
+        "losses": 1,
+        "ties": 0,
+        "points_for": 747.72,
+        "points_against": 667.16,
+        "games": 6
+      },
+      "Thomas Goodroe": {
+        "wins": 0,
+        "losses": 6,
+        "ties": 0,
+        "points_for": 776.44,
+        "points_against": 989.2,
+        "games": 6
+      },
+      "McGowin Jernigan": {
+        "wins": 2,
+        "losses": 7,
+        "ties": 0,
+        "points_for": 1103.66,
+        "points_against": 1232.24,
+        "games": 9
+      },
+      "Thomas Silas": {
+        "wins": 4,
+        "losses": 3,
+        "ties": 0,
+        "points_for": 831.88,
+        "points_against": 843.7,
+        "games": 7
+      },
+      "Jasper Bowles": {
+        "wins": 5,
+        "losses": 1,
+        "ties": 0,
+        "points_for": 865.92,
+        "points_against": 711.14,
+        "games": 6
+      },
+      "Bryan Huegin": {
+        "wins": 1,
+        "losses": 0,
+        "ties": 0,
+        "points_for": 131.38,
+        "points_against": 122.26,
+        "games": 1
+      },
+      "Walker Westlund": {
+        "wins": 0,
+        "losses": 3,
+        "ties": 0,
+        "points_for": 373.72,
+        "points_against": 437.96,
+        "games": 3
+      },
+      "Carly Schnable": {
+        "wins": 1,
+        "losses": 1,
+        "ties": 0,
+        "points_for": 231.16,
+        "points_against": 238.8,
+        "games": 2
+      }
+    },
+    "Rohan Raina": {
+      "Austin Solomom": {
+        "wins": 2,
+        "losses": 0,
+        "ties": 0,
+        "points_for": 253.04,
+        "points_against": 226.12,
+        "games": 2
+      },
+      "Thomas Silas": {
+        "wins": 2,
+        "losses": 0,
+        "ties": 0,
+        "points_for": 257.54,
+        "points_against": 245.26,
+        "games": 2
+      },
+      "Jake Turner": {
+        "wins": 1,
+        "losses": 1,
+        "ties": 0,
+        "points_for": 329.0,
+        "points_against": 304.38,
+        "games": 2
+      },
+      "Matthew Hitpas": {
+        "wins": 1,
+        "losses": 1,
+        "ties": 0,
+        "points_for": 273.8,
+        "points_against": 260.64,
+        "games": 2
+      },
+      "Jake Brown": {
+        "wins": 4,
+        "losses": 1,
+        "ties": 0,
+        "points_for": 603.16,
+        "points_against": 511.94,
+        "games": 5
+      },
+      "Thomas Goodroe": {
+        "wins": 0,
+        "losses": 2,
+        "ties": 0,
+        "points_for": 278.64,
+        "points_against": 295.58,
+        "games": 2
+      },
+      "McGowin Jernigan": {
+        "wins": 1,
+        "losses": 1,
+        "ties": 0,
+        "points_for": 303.5,
+        "points_against": 284.86,
+        "games": 2
+      }
+    },
+    "Matthew Hitpas": {
+      "Thomas Goodroe": {
+        "wins": 2,
+        "losses": 4,
+        "ties": 0,
+        "points_for": 786.08,
+        "points_against": 930.82,
+        "games": 6
+      },
+      "McGowin Jernigan": {
+        "wins": 1,
+        "losses": 4,
+        "ties": 0,
+        "points_for": 747.72,
+        "points_against": 748.42,
+        "games": 5
+      },
+      "Austin Solomom": {
+        "wins": 3,
+        "losses": 5,
+        "ties": 0,
+        "points_for": 1015.42,
+        "points_against": 1167.58,
+        "games": 8
+      },
+      "Rohan Raina": {
+        "wins": 1,
+        "losses": 1,
+        "ties": 0,
+        "points_for": 260.64,
+        "points_against": 273.8,
+        "games": 2
+      },
+      "Jake Turner": {
+        "wins": 3,
+        "losses": 4,
+        "ties": 0,
+        "points_for": 947.3,
+        "points_against": 966.78,
+        "games": 7
+      },
+      "Thomas Silas": {
+        "wins": 6,
+        "losses": 3,
+        "ties": 0,
+        "points_for": 1306.02,
+        "points_against": 1027.1,
+        "games": 9
+      },
+      "Jake Brown": {
+        "wins": 3,
+        "losses": 4,
+        "ties": 0,
+        "points_for": 821.36,
+        "points_against": 963.78,
+        "games": 7
+      },
+      "Jasper Bowles": {
+        "wins": 1,
+        "losses": 4,
+        "ties": 0,
+        "points_for": 566.4,
+        "points_against": 648.22,
+        "games": 5
+      },
+      "Bryan Huegin": {
+        "wins": 1,
+        "losses": 1,
+        "ties": 0,
+        "points_for": 280.5,
+        "points_against": 252.72,
+        "games": 2
+      },
+      "Walker Westlund": {
+        "wins": 0,
+        "losses": 2,
+        "ties": 0,
+        "points_for": 282.12,
+        "points_against": 318.24,
+        "games": 2
+      },
+      "Carly Schnable": {
+        "wins": 2,
+        "losses": 1,
+        "ties": 0,
+        "points_for": 351.72,
+        "points_against": 331.72,
+        "games": 3
+      },
+      "Ryan Miller": {
+        "wins": 1,
+        "losses": 0,
+        "ties": 0,
+        "points_for": 120.56,
+        "points_against": 89.16,
+        "games": 1
+      }
+    },
+    "Thomas Goodroe": {
+      "Matthew Hitpas": {
+        "wins": 4,
+        "losses": 2,
+        "ties": 0,
+        "points_for": 930.82,
+        "points_against": 786.08,
+        "games": 6
+      },
+      "Jake Brown": {
+        "wins": 5,
+        "losses": 2,
+        "ties": 0,
+        "points_for": 964.14,
+        "points_against": 878.34,
+        "games": 7
+      },
+      "Thomas Silas": {
+        "wins": 3,
+        "losses": 2,
+        "ties": 0,
+        "points_for": 687.72,
+        "points_against": 715.74,
+        "games": 5
+      },
+      "McGowin Jernigan": {
+        "wins": 6,
+        "losses": 3,
+        "ties": 0,
+        "points_for": 1382.78,
+        "points_against": 1288.96,
+        "games": 9
+      },
+      "Austin Solomom": {
+        "wins": 6,
+        "losses": 0,
+        "ties": 0,
+        "points_for": 989.2,
+        "points_against": 776.44,
+        "games": 6
+      },
+      "Rohan Raina": {
+        "wins": 2,
+        "losses": 0,
+        "ties": 0,
+        "points_for": 295.58,
+        "points_against": 278.64,
+        "games": 2
+      },
+      "Jake Turner": {
+        "wins": 4,
+        "losses": 4,
+        "ties": 0,
+        "points_for": 1079.78,
+        "points_against": 991.0,
+        "games": 8
+      },
+      "Bryan Huegin": {
+        "wins": 2,
+        "losses": 0,
+        "ties": 0,
+        "points_for": 323.96,
+        "points_against": 258.66,
+        "games": 2
+      },
+      "Walker Westlund": {
+        "wins": 3,
+        "losses": 2,
+        "ties": 0,
+        "points_for": 677.62,
+        "points_against": 667.02,
+        "games": 5
+      },
+      "Jasper Bowles": {
+        "wins": 2,
+        "losses": 1,
+        "ties": 0,
+        "points_for": 467.08,
+        "points_against": 337.82,
+        "games": 3
+      },
+      "Carly Schnable": {
+        "wins": 2,
+        "losses": 1,
+        "ties": 0,
+        "points_for": 437.6,
+        "points_against": 378.66,
+        "games": 3
+      },
+      "Ryan Miller": {
+        "wins": 1,
+        "losses": 0,
+        "ties": 0,
+        "points_for": 167.84,
+        "points_against": 114.8,
+        "games": 1
+      }
+    },
+    "McGowin Jernigan": {
+      "Jake Turner": {
+        "wins": 3,
+        "losses": 2,
+        "ties": 0,
+        "points_for": 753.52,
+        "points_against": 688.74,
+        "games": 5
+      },
+      "Matthew Hitpas": {
+        "wins": 4,
+        "losses": 1,
+        "ties": 0,
+        "points_for": 748.42,
+        "points_against": 747.72,
+        "games": 5
+      },
+      "Jake Brown": {
+        "wins": 6,
+        "losses": 2,
+        "ties": 0,
+        "points_for": 1047.98,
+        "points_against": 917.62,
+        "games": 8
+      },
+      "Thomas Goodroe": {
+        "wins": 3,
+        "losses": 6,
+        "ties": 0,
+        "points_for": 1288.96,
+        "points_against": 1382.78,
+        "games": 9
+      },
+      "Thomas Silas": {
+        "wins": 7,
+        "losses": 0,
+        "ties": 0,
+        "points_for": 1031.96,
+        "points_against": 901.2,
+        "games": 7
+      },
+      "Austin Solomom": {
+        "wins": 7,
+        "losses": 2,
+        "ties": 0,
+        "points_for": 1232.24,
+        "points_against": 1103.66,
+        "games": 9
+      },
+      "Rohan Raina": {
+        "wins": 1,
+        "losses": 1,
+        "ties": 0,
+        "points_for": 284.86,
+        "points_against": 303.5,
+        "games": 2
+      },
+      "Bryan Huegin": {
+        "wins": 2,
+        "losses": 0,
+        "ties": 0,
+        "points_for": 263.7,
+        "points_against": 235.06,
+        "games": 2
+      },
+      "Jasper Bowles": {
+        "wins": 2,
+        "losses": 1,
+        "ties": 0,
+        "points_for": 360.84,
+        "points_against": 350.08,
+        "games": 3
+      },
+      "Walker Westlund": {
+        "wins": 3,
+        "losses": 1,
+        "ties": 0,
+        "points_for": 541.14,
+        "points_against": 457.44,
+        "games": 4
+      },
+      "Carly Schnable": {
+        "wins": 1,
+        "losses": 2,
+        "ties": 0,
+        "points_for": 376.4,
+        "points_against": 446.56,
+        "games": 3
+      },
+      "Ryan Miller": {
+        "wins": 0,
+        "losses": 1,
+        "ties": 0,
+        "points_for": 112.5,
+        "points_against": 117.5,
+        "games": 1
+      }
+    },
+    "Jake Turner": {
+      "McGowin Jernigan": {
+        "wins": 2,
+        "losses": 3,
+        "ties": 0,
+        "points_for": 688.74,
+        "points_against": 753.52,
+        "games": 5
+      },
+      "Austin Solomom": {
+        "wins": 1,
+        "losses": 8,
+        "ties": 0,
+        "points_for": 1163.18,
+        "points_against": 1375.28,
+        "games": 9
+      },
+      "Rohan Raina": {
+        "wins": 1,
+        "losses": 1,
+        "ties": 0,
+        "points_for": 304.38,
+        "points_against": 329.0,
+        "games": 2
+      },
+      "Thomas Silas": {
+        "wins": 5,
+        "losses": 2,
+        "ties": 0,
+        "points_for": 902.32,
+        "points_against": 806.98,
+        "games": 7
+      },
+      "Matthew Hitpas": {
+        "wins": 4,
+        "losses": 3,
+        "ties": 0,
+        "points_for": 966.78,
+        "points_against": 947.3,
+        "games": 7
+      },
+      "Jake Brown": {
+        "wins": 3,
+        "losses": 1,
+        "ties": 0,
+        "points_for": 617.66,
+        "points_against": 418.04,
+        "games": 4
+      },
+      "Thomas Goodroe": {
+        "wins": 4,
+        "losses": 4,
+        "ties": 0,
+        "points_for": 991.0,
+        "points_against": 1079.78,
+        "games": 8
+      },
+      "Bryan Huegin": {
+        "wins": 1,
+        "losses": 1,
+        "ties": 0,
+        "points_for": 266.86,
+        "points_against": 257.6,
+        "games": 2
+      },
+      "Walker Westlund": {
+        "wins": 4,
+        "losses": 1,
+        "ties": 0,
+        "points_for": 645.0,
+        "points_against": 573.92,
+        "games": 5
+      },
+      "Jasper Bowles": {
+        "wins": 2,
+        "losses": 1,
+        "ties": 0,
+        "points_for": 460.54,
+        "points_against": 411.76,
+        "games": 3
+      },
+      "Carly Schnable": {
+        "wins": 2,
+        "losses": 2,
+        "ties": 0,
+        "points_for": 493.82,
+        "points_against": 480.88,
+        "games": 4
+      },
+      "Ryan Miller": {
+        "wins": 1,
+        "losses": 0,
+        "ties": 0,
+        "points_for": 136.94,
+        "points_against": 116.06,
+        "games": 1
+      }
+    },
+    "Walker Westlund": {
+      "Thomas Silas": {
+        "wins": 4,
+        "losses": 0,
+        "ties": 0,
+        "points_for": 550.1,
+        "points_against": 438.32,
+        "games": 4
+      },
+      "Jasper Bowles": {
+        "wins": 3,
+        "losses": 1,
+        "ties": 0,
+        "points_for": 539.22,
+        "points_against": 426.4,
+        "games": 4
+      },
+      "Jake Turner": {
+        "wins": 1,
+        "losses": 4,
+        "ties": 0,
+        "points_for": 573.92,
+        "points_against": 645.0,
+        "games": 5
+      },
+      "Jake Brown": {
+        "wins": 3,
+        "losses": 1,
+        "ties": 0,
+        "points_for": 495.66,
+        "points_against": 435.78,
+        "games": 4
+      },
+      "Thomas Goodroe": {
+        "wins": 2,
+        "losses": 3,
+        "ties": 0,
+        "points_for": 667.02,
+        "points_against": 677.62,
+        "games": 5
+      },
+      "Bryan Huegin": {
+        "wins": 1,
+        "losses": 0,
+        "ties": 0,
+        "points_for": 166.7,
+        "points_against": 120.22,
+        "games": 1
+      },
+      "McGowin Jernigan": {
+        "wins": 1,
+        "losses": 3,
+        "ties": 0,
+        "points_for": 457.44,
+        "points_against": 541.14,
+        "games": 4
+      },
+      "Matthew Hitpas": {
+        "wins": 2,
+        "losses": 0,
+        "ties": 0,
+        "points_for": 318.24,
+        "points_against": 282.12,
+        "games": 2
+      },
+      "Austin Solomom": {
+        "wins": 3,
+        "losses": 0,
+        "ties": 0,
+        "points_for": 437.96,
+        "points_against": 373.72,
+        "games": 3
+      },
+      "Carly Schnable": {
+        "wins": 2,
+        "losses": 0,
+        "ties": 0,
+        "points_for": 308.92,
+        "points_against": 257.46,
+        "games": 2
+      }
+    },
+    "Jasper Bowles": {
+      "Bryan Huegin": {
+        "wins": 2,
+        "losses": 0,
+        "ties": 0,
+        "points_for": 264.48,
+        "points_against": 195.56,
+        "games": 2
+      },
+      "Walker Westlund": {
+        "wins": 1,
+        "losses": 3,
+        "ties": 0,
+        "points_for": 426.4,
+        "points_against": 539.22,
+        "games": 4
+      },
+      "Matthew Hitpas": {
+        "wins": 4,
+        "losses": 1,
+        "ties": 0,
+        "points_for": 648.22,
+        "points_against": 566.4,
+        "games": 5
+      },
+      "Austin Solomom": {
+        "wins": 1,
+        "losses": 5,
+        "ties": 0,
+        "points_for": 711.14,
+        "points_against": 865.92,
+        "games": 6
+      },
+      "Thomas Silas": {
+        "wins": 2,
+        "losses": 4,
+        "ties": 0,
+        "points_for": 712.58,
+        "points_against": 787.78,
+        "games": 6
+      },
+      "McGowin Jernigan": {
+        "wins": 1,
+        "losses": 2,
+        "ties": 0,
+        "points_for": 350.08,
+        "points_against": 360.84,
+        "games": 3
+      },
+      "Jake Turner": {
+        "wins": 1,
+        "losses": 2,
+        "ties": 0,
+        "points_for": 411.76,
+        "points_against": 460.54,
+        "games": 3
+      },
+      "Jake Brown": {
+        "wins": 0,
+        "losses": 3,
+        "ties": 0,
+        "points_for": 340.84,
+        "points_against": 407.34,
+        "games": 3
+      },
+      "Thomas Goodroe": {
+        "wins": 1,
+        "losses": 2,
+        "ties": 0,
+        "points_for": 337.82,
+        "points_against": 467.08,
+        "games": 3
+      },
+      "Carly Schnable": {
+        "wins": 2,
+        "losses": 1,
+        "ties": 0,
+        "points_for": 433.66,
+        "points_against": 373.84,
+        "games": 3
+      },
+      "Ryan Miller": {
+        "wins": 1,
+        "losses": 0,
+        "ties": 0,
+        "points_for": 126.52,
+        "points_against": 117.52,
+        "games": 1
+      }
+    },
+    "Bryan Huegin": {
+      "Jasper Bowles": {
+        "wins": 0,
+        "losses": 2,
+        "ties": 0,
+        "points_for": 195.56,
+        "points_against": 264.48,
+        "games": 2
+      },
+      "Jake Turner": {
+        "wins": 1,
+        "losses": 1,
+        "ties": 0,
+        "points_for": 257.6,
+        "points_against": 266.86,
+        "games": 2
+      },
+      "Jake Brown": {
+        "wins": 0,
+        "losses": 2,
+        "ties": 0,
+        "points_for": 207.76,
+        "points_against": 264.66,
+        "games": 2
+      },
+      "Thomas Goodroe": {
+        "wins": 0,
+        "losses": 2,
+        "ties": 0,
+        "points_for": 258.66,
+        "points_against": 323.96,
+        "games": 2
+      },
+      "McGowin Jernigan": {
+        "wins": 0,
+        "losses": 2,
+        "ties": 0,
+        "points_for": 235.06,
+        "points_against": 263.7,
+        "games": 2
+      },
+      "Walker Westlund": {
+        "wins": 0,
+        "losses": 1,
+        "ties": 0,
+        "points_for": 120.22,
+        "points_against": 166.7,
+        "games": 1
+      },
+      "Matthew Hitpas": {
+        "wins": 1,
+        "losses": 1,
+        "ties": 0,
+        "points_for": 252.72,
+        "points_against": 280.5,
+        "games": 2
+      },
+      "Austin Solomom": {
+        "wins": 0,
+        "losses": 1,
+        "ties": 0,
+        "points_for": 122.26,
+        "points_against": 131.38,
+        "games": 1
+      },
+      "Thomas Silas": {
+        "wins": 1,
+        "losses": 1,
+        "ties": 0,
+        "points_for": 212.9,
+        "points_against": 297.84,
+        "games": 2
+      }
+    },
+    "Carly Schnable": {
+      "Jasper Bowles": {
+        "wins": 1,
+        "losses": 2,
+        "ties": 0,
+        "points_for": 373.84,
+        "points_against": 433.66,
+        "games": 3
+      },
+      "Jake Turner": {
+        "wins": 2,
+        "losses": 2,
+        "ties": 0,
+        "points_for": 480.88,
+        "points_against": 493.82,
+        "games": 4
+      },
+      "Jake Brown": {
+        "wins": 2,
+        "losses": 1,
+        "ties": 0,
+        "points_for": 410.68,
+        "points_against": 399.3,
+        "games": 3
+      },
+      "Thomas Goodroe": {
+        "wins": 1,
+        "losses": 2,
+        "ties": 0,
+        "points_for": 378.66,
+        "points_against": 437.6,
+        "games": 3
+      },
+      "McGowin Jernigan": {
+        "wins": 2,
+        "losses": 1,
+        "ties": 0,
+        "points_for": 446.56,
+        "points_against": 376.4,
+        "games": 3
+      },
+      "Walker Westlund": {
+        "wins": 0,
+        "losses": 2,
+        "ties": 0,
+        "points_for": 257.46,
+        "points_against": 308.92,
+        "games": 2
+      },
+      "Matthew Hitpas": {
+        "wins": 1,
+        "losses": 2,
+        "ties": 0,
+        "points_for": 331.72,
+        "points_against": 351.72,
+        "games": 3
+      },
+      "Austin Solomom": {
+        "wins": 1,
+        "losses": 1,
+        "ties": 0,
+        "points_for": 238.8,
+        "points_against": 231.16,
+        "games": 2
+      },
+      "Thomas Silas": {
+        "wins": 1,
+        "losses": 0,
+        "ties": 0,
+        "points_for": 121.74,
+        "points_against": 114.92,
+        "games": 1
+      },
+      "Ryan Miller": {
+        "wins": 1,
+        "losses": 0,
+        "ties": 0,
+        "points_for": 128.24,
+        "points_against": 124.6,
+        "games": 1
+      }
+    },
+    "Ryan Miller": {
+      "Thomas Silas": {
+        "wins": 0,
+        "losses": 1,
+        "ties": 0,
+        "points_for": 127.4,
+        "points_against": 147.06,
+        "games": 1
+      },
+      "Jasper Bowles": {
+        "wins": 0,
+        "losses": 1,
+        "ties": 0,
+        "points_for": 117.52,
+        "points_against": 126.52,
+        "games": 1
+      },
+      "Jake Turner": {
+        "wins": 0,
+        "losses": 1,
+        "ties": 0,
+        "points_for": 116.06,
+        "points_against": 136.94,
+        "games": 1
+      },
+      "Jake Brown": {
+        "wins": 1,
+        "losses": 0,
+        "ties": 0,
+        "points_for": 130.72,
+        "points_against": 129.42,
+        "games": 1
+      },
+      "Thomas Goodroe": {
+        "wins": 0,
+        "losses": 1,
+        "ties": 0,
+        "points_for": 114.8,
+        "points_against": 167.84,
+        "games": 1
+      },
+      "Carly Schnable": {
+        "wins": 0,
+        "losses": 1,
+        "ties": 0,
+        "points_for": 124.6,
+        "points_against": 128.24,
+        "games": 1
+      },
+      "McGowin Jernigan": {
+        "wins": 1,
+        "losses": 0,
+        "ties": 0,
+        "points_for": 117.5,
+        "points_against": 112.5,
+        "games": 1
+      },
+      "Matthew Hitpas": {
+        "wins": 0,
+        "losses": 1,
+        "ties": 0,
+        "points_for": 89.16,
+        "points_against": 120.56,
+        "games": 1
+      }
+    }
+  }
 }
