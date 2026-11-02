@@ -61,8 +61,7 @@
   --series-5: #d55181;
   --series-6: #008300;
   --series-7: #9085e9;
-  --series-8: #e66767;
-}
+  --series-8: #e66767;2}�
 
 * {
   box-sizing: border-box;
@@ -392,29 +391,114 @@ input[type="text"] {
   margin-top: 0;
 }
 
-.trade-item {
-  border-bottom: 1px solid var(--gridline);
-  padding: 10px 0;
-  font-size: 13.5px;
-}
-
-.trade-item:last-child {
-  border-bottom: none;
-}
-
 .trade-date {
   color: var(--text-muted);
   font-size: 12px;
+  margin-bottom: 10px;
 }
 
-.trade-teams {
-  font-weight: 600;
-  margin: 2px 0 4px;
+.trade-card {
+  background: var(--page);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--series-1);
+  border-radius: var(--card-radius);
+  padding: 14px 16px;
+  margin-bottom: 14px;
+  font-size: 13.5px;
 }
 
-.trade-players {
-  color: var(--text-secondary);
+.trade-card:last-child {
+  margin-bottom: 0;
+}
+
+.trade-sides {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 14px;
+  align-items: start;
+}
+
+@media (max-width: 560px) {
+  .trade-sides {
+    grid-template-columns: 1fr;
+  }
+}
+
+.trade-vs {
+  color: var(--text-muted);
+  font-size: 12px;
+  align-self: center;
+  text-align: center;
+  padding-top: 20px;
+}
+
+@media (max-width: 560px) {
+  .trade-vs {
+    display: none;
+  }
+}
+
+.trade-side {
+  min-width: 0;
+}
+
+.trade-side .team-name {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+.trade-side ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.player-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: baseline;
+  border-bottom: 1px dashed var(--gridline);
+  padding-bottom: 6px;
+}
+
+.player-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.player-row .name {
+  font-size: 13.5px;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.player-row .stats {
+  text-align: right;
+  white-space: nowrap;
+  font-size: 12px;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.trade-verdict {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--gridline);
   font-size: 12.5px;
+  color: var(--text-muted);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.trade-verdict b {
+  color: var(--series-3);
 }
 
 .empty-state {
