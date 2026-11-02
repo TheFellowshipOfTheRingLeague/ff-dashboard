@@ -578,6 +578,68 @@ def fetch_season(year):
     return season
 
 
+def build_head_to_head():
+    """Every manager's career record against every other manager they've
+    faced, head-to-head. Built entirely from the weekly box score files this
+    run just wrote to BOXSCORE_DIR (no extra ESPN requests needed) - each
+    week's matchups compare home vs. away score to credit a win/loss/tie to
+    both sides of that pairing. A bye week (no opponent on the other side)
+    is skipped."""
+    records = {}
+
+    def bump(owner, opponent, result, points_for, points_against):
+        rec = records.setdefault(owner, {}).setdefault(
+            opponent,
+            {"wins": 0, "losses": 0, "ties": 0, "points_for": 0.0, "points_against": 0.0, "games": 0},
+        )
+        rec["games"] += 1
+        rec["points_for"] += points_for or 0
+        rec["points_against"] += points_against or 0
+        if result == "W":
+            rec["wins"] += 1
+        elif result == "L":
+            rec["losses"] += 1
+        else:
+            rec["ties"] += 1
+
+    if not os.path.isdir(BOXSCORE_DIR):
+        return records
+
+    for fname in sorted(os.listdir(BOXSCORE_DIR)):
+        if not fname.endswith(".json"):
+            continue
+        try:
+            with open(os.path.join(BOXSCORE_DIR, fname)) as f:
+                season_box = json.load(f)
+        except Exception:
+            continue
+        for week_matchups in (season_box.get("weeks") or {}).values():
+            for m in week_matchups or []:
+                home, away = m.get("home"), m.get("away")
+                if not home or not away:
+                    continue  # bye week - no opponent to credit
+                h_owner, a_owner = home.get("owner"), away.get("owner")
+                h_score, a_score = home.get("score") or 0, away.get("score") or 0
+                if not h_owner or not a_owner:
+                    continue
+                if h_score > a_score:
+                    bump(h_owner, a_owner, "W", h_score, a_score)
+                    bump(a_owner, h_owner, "L", a_score, h_score)
+                elif a_score > h_score:
+                    bump(h_owner, a_owner, "L", h_score, a_score)
+                    bump(a_owner, h_owner, "W", a_score, h_score)
+                else:
+                    bump(h_owner, a_owner, "T", h_score, a_score)
+                    bump(a_owner, h_owner, "T", a_score, h_score)
+
+    for opponents in records.values():
+        for rec in opponents.values():
+            rec["points_for"] = round(rec["points_for"], 2)
+            rec["points_against"] = round(rec["points_against"], 2)
+
+    return records
+
+
 def build_all_time(seasons):
     by_owner = {}
     for season in seasons:
@@ -649,6 +711,7 @@ def main():
         "current_season_year": END_YEAR,
         "seasons": seasons,
         "all_time": build_all_time(seasons),
+        "head_to_head": build_head_to_head(),
     }
 
     os.makedirs(os.path.dirname(OUT_PATH), exist_ok=True)
