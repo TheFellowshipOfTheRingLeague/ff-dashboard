@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T20:16:17.397590Z",
+  "generated_at": "2026-11-02T21:43:40.311077Z",
   "league_id": 1485136557,
   "start_year": 2021,
   "current_season_year": 2026,
@@ -6687,6 +6687,10 @@
             "O'Malleys Alley Cats",
             "Glendale Guinea Pigs"
           ],
+          "team_owners": {
+            "O'Malleys Alley Cats": "Jake Brown",
+            "Glendale Guinea Pigs": "Jake Turner"
+          },
           "items": [
             {
               "player": "Kyren Williams",
@@ -6720,7 +6724,8 @@
             },
             "leader_team": "O'Malleys Alley Cats",
             "margin": 17.8
-          }
+          },
+          "records_since_trade": {}
         },
         {
           "date": "2026-10-30T18:25:18.316000Z",
@@ -6728,6 +6733,10 @@
             "Woodland Powerbottoms",
             "Ocala Bankers"
           ],
+          "team_owners": {
+            "Woodland Powerbottoms": "Thomas Goodroe",
+            "Ocala Bankers": "Ryan Miller"
+          },
           "items": [
             {
               "player": "KC Concepcion",
@@ -6761,7 +6770,8 @@
             },
             "leader_team": "Ocala Bankers",
             "margin": 17.2
-          }
+          },
+          "records_since_trade": {}
         },
         {
           "date": "2026-10-27T18:30:04.260000Z",
@@ -6769,6 +6779,10 @@
             "South-of-America Scallywags",
             "Glendale Guinea Pigs"
           ],
+          "team_owners": {
+            "South-of-America Scallywags": "Matthew Hitpas",
+            "Glendale Guinea Pigs": "Jake Turner"
+          },
           "items": [
             {
               "player": "Chase Brown",
@@ -6826,7 +6840,8 @@
             },
             "leader_team": "Glendale Guinea Pigs",
             "margin": 19.22
-          }
+          },
+          "records_since_trade": {}
         },
         {
           "date": "2026-10-22T19:48:22.033000Z",
@@ -6834,6 +6849,10 @@
             "Ocala Bankers",
             "TRUNDLE NATION"
           ],
+          "team_owners": {
+            "Ocala Bankers": "Ryan Miller",
+            "TRUNDLE NATION": "McGowin Jernigan"
+          },
           "items": [
             {
               "player": "Dameon Pierce",
@@ -6859,6 +6878,18 @@
             },
             "leader_team": "TRUNDLE NATION",
             "margin": 10.5
+          },
+          "records_since_trade": {
+            "Ocala Bankers": {
+              "wins": 1,
+              "losses": 0,
+              "ties": 0
+            },
+            "TRUNDLE NATION": {
+              "wins": 0,
+              "losses": 1,
+              "ties": 0
+            }
           }
         },
         {
@@ -6867,6 +6898,10 @@
             "O'Malleys Alley Cats",
             "TRUNDLE NATION"
           ],
+          "team_owners": {
+            "O'Malleys Alley Cats": "Jake Brown",
+            "TRUNDLE NATION": "McGowin Jernigan"
+          },
           "items": [
             {
               "player": "Deshaun Watson",
@@ -6900,6 +6935,18 @@
             },
             "leader_team": "TRUNDLE NATION",
             "margin": 13.04
+          },
+          "records_since_trade": {
+            "O'Malleys Alley Cats": {
+              "wins": 0,
+              "losses": 2,
+              "ties": 0
+            },
+            "TRUNDLE NATION": {
+              "wins": 0,
+              "losses": 2,
+              "ties": 0
+            }
           }
         },
         {
@@ -6908,6 +6955,10 @@
             "Woodland Powerbottoms",
             "O'Malleys Alley Cats"
           ],
+          "team_owners": {
+            "Woodland Powerbottoms": "Thomas Goodroe",
+            "O'Malleys Alley Cats": "Jake Brown"
+          },
           "items": [
             {
               "player": "Bryce Young",
@@ -6941,6 +6992,18 @@
             },
             "leader_team": "O'Malleys Alley Cats",
             "margin": 78.12
+          },
+          "records_since_trade": {
+            "Woodland Powerbottoms": {
+              "wins": 3,
+              "losses": 0,
+              "ties": 0
+            },
+            "O'Malleys Alley Cats": {
+              "wins": 1,
+              "losses": 2,
+              "ties": 0
+            }
           }
         },
         {
@@ -6949,6 +7012,10 @@
             "O'Malleys Alley Cats",
             "Ocala Bankers"
           ],
+          "team_owners": {
+            "O'Malleys Alley Cats": "Jake Brown",
+            "Ocala Bankers": "Ryan Miller"
+          },
           "items": [
             {
               "player": "Romeo Doubs",
@@ -6982,6 +7049,18 @@
             },
             "leader_team": "O'Malleys Alley Cats",
             "margin": 8.1
+          },
+          "records_since_trade": {
+            "O'Malleys Alley Cats": {
+              "wins": 2,
+              "losses": 3,
+              "ties": 0
+            },
+            "Ocala Bankers": {
+              "wins": 2,
+              "losses": 3,
+              "ties": 0
+            }
           }
         }
       ],
