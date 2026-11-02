@@ -219,13 +219,37 @@ def box_team_payload(team, score, lineup):
     }
 
 
+def team_outcome_decided(team, week):
+    """Whether ESPN has posted a final result for this team's game in this
+    week yet (team.outcomes[week-1] is 'W'/'L'/'T' once decided, something
+    else - usually 'U' - while the game is still in progress or hasn't
+    started). A missing team (a bye slot) has nothing to decide, so it's
+    trivially treated as decided. Used to avoid counting a Sunday/Monday
+    game that's still being played as a final result."""
+    if team is None:
+        return True
+    outcomes = getattr(team, "outcomes", None) or []
+    idx = week - 1
+    if idx < 0 or idx >= len(outcomes):
+        return False
+    return outcomes[idx] in ("W", "L", "T")
+
+
 def fetch_weekly_boxscores(league):
     """Every week's matchups for a season - final score plus each team's full
     lineup with per-player points, so the dashboard can show "who started
     whom" and what they scored for any year/week a visitor picks. Loops
     week-by-week (one ESPN request per week) up to the last week that's
     actually been played; a problem on one week is skipped rather than
-    losing the whole season's worth of weeks already fetched."""
+    losing the whole season's worth of weeks already fetched.
+
+    Each week is tagged "is_final": False if any of that week's actual
+    matchups (bye slots don't count) is still in progress, per ESPN's own
+    outcome tracking - so a Sunday/Monday game that hasn't finished yet
+    doesn't get counted as a decided result anywhere that cares about
+    records (head-to-head, power rankings, game log, trends). The Weekly
+    Matchups page ignores this flag on purpose and always shows whatever
+    score is currently posted, live or final."""
     weeks = {}
     errors = []
     last_week = getattr(league, "current_week", None) or getattr(league, "finalScoringPeriod", 0) or 0
@@ -236,11 +260,17 @@ def fetch_weekly_boxscores(league):
             errors.append(f"Could not fetch box scores for week {week}: {e}")
             continue
         week_matchups = []
+        week_final = True
         for m in matchups or []:
-            home = box_team_payload(getattr(m, "home_team", None), getattr(m, "home_score", 0), getattr(m, "home_lineup", []))
-            away = box_team_payload(getattr(m, "away_team", None), getattr(m, "away_score", 0), getattr(m, "away_lineup", []))
+            home_team = getattr(m, "home_team", None)
+            away_team = getattr(m, "away_team", None)
+            home = box_team_payload(home_team, getattr(m, "home_score", 0), getattr(m, "home_lineup", []))
+            away = box_team_payload(away_team, getattr(m, "away_score", 0), getattr(m, "away_lineup", []))
             if home is None and away is None:
                 continue
+            if home is not None and away is not None:
+                if not (team_outcome_decided(home_team, week) and team_outcome_decided(away_team, week)):
+                    week_final = False
             week_matchups.append(
                 {
                     "is_playoff": bool(getattr(m, "is_playoff", False)),
@@ -249,8 +279,17 @@ def fetch_weekly_boxscores(league):
                 }
             )
         if week_matchups:
+            for wm in week_matchups:
+                wm["is_final"] = week_final
             weeks[str(week)] = week_matchups
     return weeks, errors
+
+
+def week_is_final(week_matchups):
+    """True unless any matchup in this week is explicitly flagged not-final
+    (old data files written before this flag existed default to final, so
+    they keep behaving exactly as they did before)."""
+    return all(m.get("is_final", True) for m in (week_matchups or []))
 
 
 def fetch_season(year):
@@ -614,6 +653,8 @@ def build_head_to_head():
         except Exception:
             continue
         for week_matchups in (season_box.get("weeks") or {}).values():
+            if not week_is_final(week_matchups):
+                continue  # games still in progress this week - don't count it yet
             for m in week_matchups or []:
                 home, away = m.get("home"), m.get("away")
                 if not home or not away:
@@ -670,6 +711,8 @@ def build_power_rankings():
             )
 
         for week_matchups in (season_box.get("weeks") or {}).values():
+            if not week_is_final(week_matchups):
+                continue  # games still in progress this week - don't count it yet
             week_scores = []
             for m in week_matchups or []:
                 for side in (m.get("home"), m.get("away")):
@@ -753,6 +796,8 @@ def build_game_log():
             continue
         year = season_box.get("year")
         for week_str, week_matchups in (season_box.get("weeks") or {}).items():
+            if not week_is_final(week_matchups):
+                continue  # games still in progress this week - don't count it yet
             for m in week_matchups or []:
                 home, away = m.get("home"), m.get("away")
                 if not home or not away:
@@ -799,6 +844,8 @@ def build_weekly_scores():
             continue
         year = str(season_box.get("year"))
         for week_str, week_matchups in (season_box.get("weeks") or {}).items():
+            if not week_is_final(week_matchups):
+                continue  # games still in progress this week - don't count it yet
             for m in week_matchups or []:
                 for side in (m.get("home"), m.get("away")):
                     if not side or not side.get("owner"):
