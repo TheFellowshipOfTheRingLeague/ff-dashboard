@@ -185,11 +185,7 @@ function statTile(value, label) {
 }
 
 function managerCell(r) {
-  const span = el("span", {}, r.owner);
-  if (r.team_names && r.team_names.length) {
-    span.title = r.team_names.join(", ");
-  }
-  return span;
+  return el("span", {}, r.owner);
 }
 
 function renderSeasons(data) {
@@ -221,14 +217,14 @@ function renderSeasons(data) {
     summary.appendChild(
       el("div", { class: "champ-card" }, [
         el("div", { class: "title" }, "🏆 Champion"),
-        el("div", { class: "name" }, season.champion ? `${season.champion.owner} (${season.champion.team_name})` : "Season in progress"),
+        el("div", { class: "name" }, season.champion ? season.champion.owner : "Season in progress"),
       ])
     );
     if (season.runner_up) {
       summary.appendChild(
         el("div", { class: "champ-card" }, [
           el("div", { class: "title" }, "Runner-up"),
-          el("div", { class: "name" }, `${season.runner_up.owner} (${season.runner_up.team_name})`),
+          el("div", { class: "name" }, season.runner_up.owner),
         ])
       );
     }
@@ -241,7 +237,6 @@ function renderSeasons(data) {
     const standingsCard = el("div", { class: "card" }, [el("h2", {}, `${season.year} standings`)]);
     const standingsCols = [
       { label: "Rank", value: (t) => t.final_rank ?? 99, render: (t) => (t.final_rank ? String(t.final_rank) : "-") },
-      { label: "Team", value: (t) => t.team_name },
       { label: "Manager", value: (t) => t.owner },
       { label: "Record", value: (t) => t.wins, render: (t) => `${t.wins}-${t.losses}${t.ties ? "-" + t.ties : ""}` },
       { label: "Points for", value: (t) => t.points_for, render: (t) => fmtNum(t.points_for) },
@@ -272,7 +267,7 @@ function renderSeasons(data) {
                 el("div", { class: "pick-card" }, [
                   el("div", { class: "pick-no" }, `Pick ${p.overall_pick ?? "?"}${p.keeper ? " · keeper" : ""}`),
                   el("div", { class: "player" }, p.player_name || "Unknown player"),
-                  el("div", { class: "team" }, `${p.owner} · ${p.team_name}`),
+                  el("div", { class: "team" }, p.owner),
                 ])
               );
             });
@@ -307,6 +302,17 @@ function perfLabel(item) {
   return `${fmtNum(item.ppg_since_trade)} ppg · ${fmtNum(item.points_since_trade)} pts (${item.games_since_trade} gm)`;
 }
 
+function ownerFor(t, teamName) {
+  // Managers only, never team names - a trade's "team_owners" map translates
+  // the internal team_name grouping key to the owner it belongs to.
+  return (t.team_owners && t.team_owners[teamName]) || teamName;
+}
+
+function fmtRecord(rec) {
+  if (!rec) return null;
+  return `${rec.wins}-${rec.losses}${rec.ties ? "-" + rec.ties : ""}`;
+}
+
 function renderTradeCard(t, showYear) {
   // Group this trade's players by the team that RECEIVED them, so each
   // "side" of the trade lists what that team walked away with - mirroring
@@ -327,9 +333,12 @@ function renderTradeCard(t, showYear) {
   const sideEls = [];
   order.forEach((team, i) => {
     if (i > 0) sideEls.push(el("div", { class: "trade-vs" }, "↔"));
+    const rec = t.records_since_trade ? t.records_since_trade[team] : null;
+    const recordStr = fmtRecord(rec);
     sideEls.push(
       el("div", { class: "trade-side" }, [
-        el("p", { class: "team-name" }, team),
+        el("p", { class: "team-name" }, ownerFor(t, team)),
+        recordStr ? el("p", { class: "team-record" }, `${recordStr} since the trade`) : null,
         el(
           "ul",
           {},
@@ -351,7 +360,7 @@ function renderTradeCard(t, showYear) {
 
   if (t.verdict) {
     const totalsStr = Object.entries(t.verdict.side_totals || {})
-      .map(([team, pts]) => `${team}: ${fmtNum(pts)} pts`)
+      .map(([team, pts]) => `${ownerFor(t, team)}: ${fmtNum(pts)} pts`)
       .join(" · ");
     children.push(
       el("div", { class: "trade-verdict" }, [
@@ -359,7 +368,7 @@ function renderTradeCard(t, showYear) {
           "span",
           {},
           t.verdict.leader_team
-            ? [el("b", {}, t.verdict.leader_team), ` leads by ${fmtNum(t.verdict.margin)} pts since the trade`]
+            ? [el("b", {}, ownerFor(t, t.verdict.leader_team)), ` leads by ${fmtNum(t.verdict.margin)} pts since the trade`]
             : "Even so far since the trade"
         ),
         el("span", {}, totalsStr),
@@ -430,7 +439,7 @@ function renderWaivers(data) {
         { label: "Season", value: (a) => a.year, defaultDir: -1 },
         { label: "Added", value: (a) => a.player_added || "", render: (a) => a.player_added || "—" },
         { label: "Dropped", value: (a) => a.player_dropped || "", render: (a) => a.player_dropped || "—" },
-        { label: "Team", value: (a) => a.owner || a.team },
+        { label: "Manager", value: (a) => a.owner || a.team },
         { label: "Type", value: (a) => a.type },
       ];
       card.appendChild(sortableTable(columns, adds, 0, -1));
@@ -486,12 +495,12 @@ async function main() {
   }
 
   if (!data.seasons || !data.seasons.length) {
-        document.querySelector(".banner").textContent = "The data file loaded, but no seasons were found. Check the Action's run log for warnings.";
+    document.querySelector(".banner").textContent = "The data file loaded, but no seasons were found. Check the Action's run log for warnings.";
   } else {
-        const trackedYears = data.seasons.map((s) => Number(s.year));
-        const trackedStart = Math.min(...trackedYears);
-        const trackedEnd = Math.max(...trackedYears, Number(data.current_season_year) || 0);
-        document.querySelector(".banner").innerHTML = `Tracking <strong>${data.seasons.length}</strong> season${data.seasons.length > 1 ? "s" : ""} (${trackedStart}–${trackedEnd}) · League ID <strong>${data.league_id}</strong> · Last refreshed ${fmtDate(data.generated_at)}`;
+    const trackedYears = data.seasons.map((s) => Number(s.year));
+    const trackedStart = Math.min(...trackedYears);
+    const trackedEnd = Math.max(...trackedYears, Number(data.current_season_year) || 0);
+    document.querySelector(".banner").innerHTML = `Tracking <strong>${data.seasons.length}</strong> season${data.seasons.length > 1 ? "s" : ""} (${trackedStart}–${trackedEnd}) · League ID <strong>${data.league_id}</strong> · Last refreshed ${fmtDate(data.generated_at)}`;
   }
 
   renderOverview(data);

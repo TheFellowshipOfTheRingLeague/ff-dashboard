@@ -61,7 +61,8 @@
   --series-5: #d55181;
   --series-6: #008300;
   --series-7: #9085e9;
-  --series-8: #e66767;2}�
+  --series-8: #e66767;
+}
 
 * {
   box-sizing: border-box;
@@ -445,6 +446,13 @@ input[type="text"] {
 .trade-side .team-name {
   font-size: 14px;
   font-weight: 700;
+  margin: 0 0 2px;
+}
+
+.trade-side .team-record {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
   margin: 0 0 8px;
 }
 
