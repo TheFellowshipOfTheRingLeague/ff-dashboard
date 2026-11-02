@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T18:16:19.215947Z",
+  "generated_at": "2026-11-02T18:49:52.509899Z",
   "league_id": 1485136557,
   "start_year": 2021,
   "current_season_year": 2026,
@@ -12,6 +12,7 @@
       "season_complete": false,
       "draft": [],
       "trades": [],
+      "waiver_adds": [],
       "errors": [
         "Could not load league for 2021: League 1485136557 does not exist"
       ]
@@ -24,6 +25,7 @@
       "season_complete": false,
       "draft": [],
       "trades": [],
+      "waiver_adds": [],
       "errors": [
         "Could not load league for 2022: League 1485136557 does not exist"
       ]
@@ -1494,6 +1496,7 @@
         }
       ],
       "trades": [],
+      "waiver_adds": [],
       "errors": []
     },
     {
@@ -3224,6 +3227,7 @@
         }
       ],
       "trades": [],
+      "waiver_adds": [],
       "errors": []
     },
     {
@@ -4954,6 +4958,7 @@
         }
       ],
       "trades": [],
+      "waiver_adds": [],
       "errors": []
     },
     {
@@ -6684,30 +6689,31 @@
           ],
           "items": [
             {
-              "team": "O'Malleys Alley Cats",
-              "player": "Kyren Williams"
+              "player": "Kyren Williams",
+              "from_team": "O'Malleys Alley Cats",
+              "to_team": "Glendale Guinea Pigs",
+              "points_since_trade": 0.0,
+              "games_since_trade": 0,
+              "ppg_since_trade": null
             },
             {
-              "team": "Glendale Guinea Pigs",
-              "player": "Kyren Williams"
+              "player": "Tony Pollard",
+              "from_team": "Glendale Guinea Pigs",
+              "to_team": "O'Malleys Alley Cats",
+              "points_since_trade": 0.0,
+              "games_since_trade": 0,
+              "ppg_since_trade": null
             },
             {
-              "team": "Glendale Guinea Pigs",
-              "player": "Tony Pollard"
-            },
-            {
-              "team": "O'Malleys Alley Cats",
-              "player": "Tony Pollard"
-            },
-            {
-              "team": "Glendale Guinea Pigs",
-              "player": "Devaughn Vele"
-            },
-            {
-              "team": "O'Malleys Alley Cats",
-              "player": "Devaughn Vele"
+              "player": "Devaughn Vele",
+              "from_team": "Glendale Guinea Pigs",
+              "to_team": "O'Malleys Alley Cats",
+              "points_since_trade": 0.0,
+              "games_since_trade": 0,
+              "ppg_since_trade": null
             }
-          ]
+          ],
+          "verdict": null
         },
         {
           "date": "2026-10-30T18:25:18.316000Z",
@@ -6717,30 +6723,31 @@
           ],
           "items": [
             {
-              "team": "Woodland Powerbottoms",
-              "player": "KC Concepcion"
+              "player": "KC Concepcion",
+              "from_team": "Woodland Powerbottoms",
+              "to_team": "Ocala Bankers",
+              "points_since_trade": 0.0,
+              "games_since_trade": 0,
+              "ppg_since_trade": null
             },
             {
-              "team": "Ocala Bankers",
-              "player": "KC Concepcion"
+              "player": "James Cook III",
+              "from_team": "Woodland Powerbottoms",
+              "to_team": "Ocala Bankers",
+              "points_since_trade": 0.0,
+              "games_since_trade": 0,
+              "ppg_since_trade": null
             },
             {
-              "team": "Woodland Powerbottoms",
-              "player": "James Cook III"
-            },
-            {
-              "team": "Ocala Bankers",
-              "player": "James Cook III"
-            },
-            {
-              "team": "Ocala Bankers",
-              "player": "Bijan Robinson"
-            },
-            {
-              "team": "Woodland Powerbottoms",
-              "player": "Bijan Robinson"
+              "player": "Bijan Robinson",
+              "from_team": "Ocala Bankers",
+              "to_team": "Woodland Powerbottoms",
+              "points_since_trade": 0.0,
+              "games_since_trade": 0,
+              "ppg_since_trade": null
             }
-          ]
+          ],
+          "verdict": null
         },
         {
           "date": "2026-10-27T18:30:04.260000Z",
@@ -6750,54 +6757,55 @@
           ],
           "items": [
             {
-              "team": "South-of-America Scallywags",
-              "player": "Chase Brown"
+              "player": "Chase Brown",
+              "from_team": "South-of-America Scallywags",
+              "to_team": "Glendale Guinea Pigs",
+              "points_since_trade": 0.0,
+              "games_since_trade": 0,
+              "ppg_since_trade": null
             },
             {
-              "team": "Glendale Guinea Pigs",
-              "player": "Chase Brown"
+              "player": "Breece Hall",
+              "from_team": "Glendale Guinea Pigs",
+              "to_team": "South-of-America Scallywags",
+              "points_since_trade": 0.0,
+              "games_since_trade": 0,
+              "ppg_since_trade": null
             },
             {
-              "team": "Glendale Guinea Pigs",
-              "player": "Breece Hall"
+              "player": "C.J. Stroud",
+              "from_team": "South-of-America Scallywags",
+              "to_team": "Glendale Guinea Pigs",
+              "points_since_trade": 0.0,
+              "games_since_trade": 0,
+              "ppg_since_trade": null
             },
             {
-              "team": "South-of-America Scallywags",
-              "player": "Breece Hall"
+              "player": "Aaron Rodgers",
+              "from_team": "Glendale Guinea Pigs",
+              "to_team": "South-of-America Scallywags",
+              "points_since_trade": 0.0,
+              "games_since_trade": 0,
+              "ppg_since_trade": null
             },
             {
-              "team": "South-of-America Scallywags",
-              "player": "C.J. Stroud"
+              "player": "Omar Cooper Jr.",
+              "from_team": "Glendale Guinea Pigs",
+              "to_team": "South-of-America Scallywags",
+              "points_since_trade": 0.0,
+              "games_since_trade": 0,
+              "ppg_since_trade": null
             },
             {
-              "team": "Glendale Guinea Pigs",
-              "player": "C.J. Stroud"
-            },
-            {
-              "team": "Glendale Guinea Pigs",
-              "player": "Aaron Rodgers"
-            },
-            {
-              "team": "South-of-America Scallywags",
-              "player": "Aaron Rodgers"
-            },
-            {
-              "team": "Glendale Guinea Pigs",
-              "player": "Omar Cooper Jr."
-            },
-            {
-              "team": "South-of-America Scallywags",
-              "player": "Omar Cooper Jr."
-            },
-            {
-              "team": "South-of-America Scallywags",
-              "player": "Germie Bernard"
-            },
-            {
-              "team": "Glendale Guinea Pigs",
-              "player": "Germie Bernard"
+              "player": "Germie Bernard",
+              "from_team": "South-of-America Scallywags",
+              "to_team": "Glendale Guinea Pigs",
+              "points_since_trade": 0.0,
+              "games_since_trade": 0,
+              "ppg_since_trade": null
             }
-          ]
+          ],
+          "verdict": null
         },
         {
           "date": "2026-10-22T19:48:22.033000Z",
@@ -6807,22 +6815,23 @@
           ],
           "items": [
             {
-              "team": "Ocala Bankers",
-              "player": "Dameon Pierce"
+              "player": "Dameon Pierce",
+              "from_team": "Ocala Bankers",
+              "to_team": "TRUNDLE NATION",
+              "points_since_trade": 0.0,
+              "games_since_trade": 0,
+              "ppg_since_trade": null
             },
             {
-              "team": "TRUNDLE NATION",
-              "player": "Dameon Pierce"
-            },
-            {
-              "team": "TRUNDLE NATION",
-              "player": "Roschon Johnson"
-            },
-            {
-              "team": "Ocala Bankers",
-              "player": "Roschon Johnson"
+              "player": "Roschon Johnson",
+              "from_team": "TRUNDLE NATION",
+              "to_team": "Ocala Bankers",
+              "points_since_trade": 0.0,
+              "games_since_trade": 0,
+              "ppg_since_trade": null
             }
-          ]
+          ],
+          "verdict": null
         },
         {
           "date": "2026-10-14T12:09:00.457000Z",
@@ -6832,30 +6841,31 @@
           ],
           "items": [
             {
-              "team": "O'Malleys Alley Cats",
-              "player": "Deshaun Watson"
+              "player": "Deshaun Watson",
+              "from_team": "O'Malleys Alley Cats",
+              "to_team": "TRUNDLE NATION",
+              "points_since_trade": 0.0,
+              "games_since_trade": 0,
+              "ppg_since_trade": null
             },
             {
-              "team": "TRUNDLE NATION",
-              "player": "Deshaun Watson"
+              "player": "Braelon Allen",
+              "from_team": "TRUNDLE NATION",
+              "to_team": "O'Malleys Alley Cats",
+              "points_since_trade": 0.0,
+              "games_since_trade": 0,
+              "ppg_since_trade": null
             },
             {
-              "team": "TRUNDLE NATION",
-              "player": "Braelon Allen"
-            },
-            {
-              "team": "O'Malleys Alley Cats",
-              "player": "Braelon Allen"
-            },
-            {
-              "team": "O'Malleys Alley Cats",
-              "player": "DK Metcalf"
-            },
-            {
-              "team": "TRUNDLE NATION",
-              "player": "DK Metcalf"
+              "player": "DK Metcalf",
+              "from_team": "O'Malleys Alley Cats",
+              "to_team": "TRUNDLE NATION",
+              "points_since_trade": 0.0,
+              "games_since_trade": 0,
+              "ppg_since_trade": null
             }
-          ]
+          ],
+          "verdict": null
         },
         {
           "date": "2026-10-09T00:10:29.184000Z",
@@ -6865,30 +6875,31 @@
           ],
           "items": [
             {
-              "team": "Woodland Powerbottoms",
-              "player": "Bryce Young"
+              "player": "Bryce Young",
+              "from_team": "Woodland Powerbottoms",
+              "to_team": "O'Malleys Alley Cats",
+              "points_since_trade": 0.0,
+              "games_since_trade": 0,
+              "ppg_since_trade": null
             },
             {
-              "team": "O'Malleys Alley Cats",
-              "player": "Bryce Young"
+              "player": "Lamar Jackson",
+              "from_team": "O'Malleys Alley Cats",
+              "to_team": "Woodland Powerbottoms",
+              "points_since_trade": 0.0,
+              "games_since_trade": 0,
+              "ppg_since_trade": null
             },
             {
-              "team": "O'Malleys Alley Cats",
-              "player": "Lamar Jackson"
-            },
-            {
-              "team": "Woodland Powerbottoms",
-              "player": "Lamar Jackson"
-            },
-            {
-              "team": "Woodland Powerbottoms",
-              "player": "Josh Downs"
-            },
-            {
-              "team": "O'Malleys Alley Cats",
-              "player": "Josh Downs"
+              "player": "Josh Downs",
+              "from_team": "Woodland Powerbottoms",
+              "to_team": "O'Malleys Alley Cats",
+              "points_since_trade": 0.0,
+              "games_since_trade": 0,
+              "ppg_since_trade": null
             }
-          ]
+          ],
+          "verdict": null
         },
         {
           "date": "2026-09-24T12:33:01.711000Z",
@@ -6898,30 +6909,1353 @@
           ],
           "items": [
             {
-              "team": "O'Malleys Alley Cats",
-              "player": "Romeo Doubs"
+              "player": "Romeo Doubs",
+              "from_team": "O'Malleys Alley Cats",
+              "to_team": "Ocala Bankers",
+              "points_since_trade": 0.0,
+              "games_since_trade": 0,
+              "ppg_since_trade": null
             },
             {
-              "team": "Ocala Bankers",
-              "player": "Romeo Doubs"
+              "player": "KC Concepcion",
+              "from_team": "O'Malleys Alley Cats",
+              "to_team": "Ocala Bankers",
+              "points_since_trade": 0.0,
+              "games_since_trade": 0,
+              "ppg_since_trade": null
             },
             {
-              "team": "O'Malleys Alley Cats",
-              "player": "KC Concepcion"
-            },
-            {
-              "team": "Ocala Bankers",
-              "player": "KC Concepcion"
-            },
-            {
-              "team": "Ocala Bankers",
-              "player": "Matthew Golden"
-            },
-            {
-              "team": "O'Malleys Alley Cats",
-              "player": "Matthew Golden"
+              "player": "Matthew Golden",
+              "from_team": "Ocala Bankers",
+              "to_team": "O'Malleys Alley Cats",
+              "points_since_trade": 0.0,
+              "games_since_trade": 0,
+              "ppg_since_trade": null
             }
-          ]
+          ],
+          "verdict": null
+        }
+      ],
+      "waiver_adds": [
+        {
+          "date": "2026-11-01T17:59:42.058000Z",
+          "team": "O'Malleys Alley Cats",
+          "owner": "Jake Brown",
+          "player": "Tez Johnson",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-01T15:35:41.115000Z",
+          "team": "South-of-America Scallywags",
+          "owner": "Matthew Hitpas",
+          "player": "Kimani Vidal",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-31T14:15:25.760000Z",
+          "team": "Woodland Powerbottoms",
+          "owner": "Thomas Goodroe",
+          "player": "Seth McGowan",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-30T19:53:15.942000Z",
+          "team": "Woodland Powerbottoms",
+          "owner": "Thomas Goodroe",
+          "player": "Mike Washington Jr.",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-30T16:06:24.928000Z",
+          "team": "Marietta Money Launderers",
+          "owner": "Austin Solomom",
+          "player": "Roman Wilson",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-30T16:04:29.639000Z",
+          "team": "Marietta Money Launderers",
+          "owner": "Austin Solomom",
+          "player": "Terrance Ferguson",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-30T07:48:59.685000Z",
+          "team": "TRUNDLE NATION",
+          "owner": "McGowin Jernigan",
+          "player": "Ja'Kobi Lane",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-29T20:49:58.521000Z",
+          "team": "Pepperdine Pangolins",
+          "owner": "Jasper Bowles",
+          "player": "Eli Raridon",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-29T20:39:12.684000Z",
+          "team": "TRUNDLE NATION",
+          "owner": "McGowin Jernigan",
+          "player": "Jaydon Blue",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-29T19:47:53.017000Z",
+          "team": "O'Malleys Alley Cats",
+          "owner": "Jake Brown",
+          "player": "Jacoby Brissett",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-29T12:58:42.738000Z",
+          "team": "O'Malleys Alley Cats",
+          "owner": "Jake Brown",
+          "player": "Lions D/ST",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-29T12:18:37.436000Z",
+          "team": "O'Malleys Alley Cats",
+          "owner": "Jake Brown",
+          "player": "Kendrick Bourne",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-29T07:50:05.842000Z",
+          "team": "The Laestrygonian Giants",
+          "owner": "Carly Schnable",
+          "player": "Aaron Jones Sr.",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-28T19:20:07.700000Z",
+          "team": "O'Malleys Alley Cats",
+          "owner": "Jake Brown",
+          "player": "Treylon Burks",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-28T15:18:13.370000Z",
+          "team": "Woodland Powerbottoms",
+          "owner": "Thomas Goodroe",
+          "player": "Antonio Williams",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-28T15:02:09.808000Z",
+          "team": "Glendale Guinea Pigs",
+          "owner": "Jake Turner",
+          "player": "Caleb Douglas",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-28T12:46:02.898000Z",
+          "team": "Marietta Money Launderers",
+          "owner": "Austin Solomom",
+          "player": "Commanders D/ST",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-28T12:41:02.423000Z",
+          "team": "South-of-America Scallywags",
+          "owner": "Matthew Hitpas",
+          "player": "Browns D/ST",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-28T07:27:08.071000Z",
+          "team": "TRUNDLE NATION",
+          "owner": "McGowin Jernigan",
+          "player": "Jaguars D/ST",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-28T07:27:08.071000Z",
+          "team": "Ocala Bankers",
+          "owner": "Ryan Miller",
+          "player": "Patriots D/ST",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-28T07:27:08.071000Z",
+          "team": "O'Malleys Alley Cats",
+          "owner": "Jake Brown",
+          "player": "Geno Smith",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-28T07:27:08.071000Z",
+          "team": "Woodland Powerbottoms",
+          "owner": "Thomas Goodroe",
+          "player": "Bengals D/ST",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-28T07:27:08.071000Z",
+          "team": "TRUNDLE NATION",
+          "owner": "McGowin Jernigan",
+          "player": "Harold Fannin Jr.",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-28T07:27:08.071000Z",
+          "team": "South-of-America Scallywags",
+          "owner": "Matthew Hitpas",
+          "player": "Chig Okonkwo",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-28T07:27:08.071000Z",
+          "team": "Ocala Bankers",
+          "owner": "Ryan Miller",
+          "player": "Rico Dowdle",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-28T07:27:08.071000Z",
+          "team": "O'Malleys Alley Cats",
+          "owner": "Jake Brown",
+          "player": "Corey Kiner",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-28T07:27:08.071000Z",
+          "team": "Pepperdine Pangolins",
+          "owner": "Jasper Bowles",
+          "player": "Baker Mayfield",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-28T07:27:08.071000Z",
+          "team": "The Laestrygonian Giants",
+          "owner": "Carly Schnable",
+          "player": "Rams D/ST",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-25T15:18:51.885000Z",
+          "team": "Glendale Guinea Pigs",
+          "owner": "Jake Turner",
+          "player": "Makai Lemon",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-24T20:25:24.961000Z",
+          "team": "Woodland Powerbottoms",
+          "owner": "Thomas Goodroe",
+          "player": "Bo Nix",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-24T07:02:52.459000Z",
+          "team": "Glendale Guinea Pigs",
+          "owner": "Jake Turner",
+          "player": "Adonai Mitchell",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-22T21:42:50.658000Z",
+          "team": "Pepperdine Pangolins",
+          "owner": "Jasper Bowles",
+          "player": "Chris Godwin Jr.",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-22T19:35:10.806000Z",
+          "team": "Ocala Bankers",
+          "owner": "Ryan Miller",
+          "player": "Michael Mayer",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-22T16:30:02.307000Z",
+          "team": "Marietta Money Launderers",
+          "owner": "Austin Solomom",
+          "player": "Chiefs D/ST",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-22T14:06:13.999000Z",
+          "team": "O'Malleys Alley Cats",
+          "owner": "Jake Brown",
+          "player": "Tyrone Tracy Jr.",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-22T14:05:41.669000Z",
+          "team": "O'Malleys Alley Cats",
+          "owner": "Jake Brown",
+          "player": "Panthers D/ST",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-22T12:54:55.189000Z",
+          "team": "The Laestrygonian Giants",
+          "owner": "Carly Schnable",
+          "player": "Titans D/ST",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-22T11:45:33.731000Z",
+          "team": "TRUNDLE NATION",
+          "owner": "McGowin Jernigan",
+          "player": "Roschon Johnson",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-22T11:42:28.016000Z",
+          "team": "TRUNDLE NATION",
+          "owner": "McGowin Jernigan",
+          "player": "Kyler Murray",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-21T13:37:50.288000Z",
+          "team": "South-of-America Scallywags",
+          "owner": "Matthew Hitpas",
+          "player": "Jets D/ST",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-21T11:26:15.735000Z",
+          "team": "Ocala Bankers",
+          "owner": "Ryan Miller",
+          "player": "Ryan Flournoy",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-21T07:42:33.868000Z",
+          "team": "Woodland Powerbottoms",
+          "owner": "Thomas Goodroe",
+          "player": "Browns D/ST",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-21T07:42:33.868000Z",
+          "team": "Woodland Powerbottoms",
+          "owner": "Thomas Goodroe",
+          "player": "Ja'Kobi Lane",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-21T07:42:33.868000Z",
+          "team": "TRUNDLE NATION",
+          "owner": "McGowin Jernigan",
+          "player": "Jaylin Noel",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-21T07:42:33.868000Z",
+          "team": "Woodland Powerbottoms",
+          "owner": "Thomas Goodroe",
+          "player": "Alvin Kamara",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-21T07:42:33.868000Z",
+          "team": "TRUNDLE NATION",
+          "owner": "McGowin Jernigan",
+          "player": "J.J. McCarthy",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-21T07:42:33.868000Z",
+          "team": "South-of-America Scallywags",
+          "owner": "Matthew Hitpas",
+          "player": "C.J. Stroud",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-21T07:42:33.868000Z",
+          "team": "Glendale Guinea Pigs",
+          "owner": "Jake Turner",
+          "player": "Omar Cooper Jr.",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-21T07:42:33.868000Z",
+          "team": "Ocala Bankers",
+          "owner": "Ryan Miller",
+          "player": "Kyle Pitts Sr.",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-18T16:59:53.795000Z",
+          "team": "South-of-America Scallywags",
+          "owner": "Matthew Hitpas",
+          "player": "Hunter Henry",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-18T15:40:15.680000Z",
+          "team": "Pepperdine Pangolins",
+          "owner": "Jasper Bowles",
+          "player": "Pierre Strong Jr.",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-18T12:04:00.449000Z",
+          "team": "Marietta Money Launderers",
+          "owner": "Austin Solomom",
+          "player": "Keaton Mitchell",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-18T12:01:13.350000Z",
+          "team": "Pepperdine Pangolins",
+          "owner": "Jasper Bowles",
+          "player": "Kendre Miller",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-18T07:39:38.875000Z",
+          "team": "O'Malleys Alley Cats",
+          "owner": "Jake Brown",
+          "player": "Colts D/ST",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-17T07:08:58.588000Z",
+          "team": "Pepperdine Pangolins",
+          "owner": "Jasper Bowles",
+          "player": "Tyler Allgeier",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-16T13:46:42.985000Z",
+          "team": "O'Malleys Alley Cats",
+          "owner": "Jake Brown",
+          "player": "Panthers D/ST",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-16T07:42:25.480000Z",
+          "team": "Woodland Powerbottoms",
+          "owner": "Thomas Goodroe",
+          "player": "Marvin Harrison Jr.",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-16T00:45:32.934000Z",
+          "team": "Marietta Money Launderers",
+          "owner": "Austin Solomom",
+          "player": "Mark Andrews",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-16T00:09:10.384000Z",
+          "team": "Ocala Bankers",
+          "owner": "Ryan Miller",
+          "player": "Dameon Pierce",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-15T23:24:33.036000Z",
+          "team": "O'Malleys Alley Cats",
+          "owner": "Jake Brown",
+          "player": "DeMario Douglas",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-15T19:51:59.192000Z",
+          "team": "O'Malleys Alley Cats",
+          "owner": "Jake Brown",
+          "player": "Tanner McKee",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-15T18:46:58.803000Z",
+          "team": "TRUNDLE NATION",
+          "owner": "McGowin Jernigan",
+          "player": "Jameis Winston",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-15T08:01:03.049000Z",
+          "team": "TRUNDLE NATION",
+          "owner": "McGowin Jernigan",
+          "player": "Jakobi Meyers",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-14T16:33:52.780000Z",
+          "team": "Marietta Money Launderers",
+          "owner": "Austin Solomom",
+          "player": "Rico Dowdle",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-14T15:24:46.953000Z",
+          "team": "The Laestrygonian Giants",
+          "owner": "Carly Schnable",
+          "player": "Rams D/ST",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-14T13:16:52.892000Z",
+          "team": "Glendale Guinea Pigs",
+          "owner": "Jake Turner",
+          "player": "49ers D/ST",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-14T07:46:34.438000Z",
+          "team": "Marietta Money Launderers",
+          "owner": "Austin Solomom",
+          "player": "Pat Freiermuth",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-14T07:43:02.357000Z",
+          "team": "South-of-America Scallywags",
+          "owner": "Matthew Hitpas",
+          "player": "Patriots D/ST",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-14T07:43:02.357000Z",
+          "team": "South-of-America Scallywags",
+          "owner": "Matthew Hitpas",
+          "player": "Germie Bernard",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-14T07:43:02.357000Z",
+          "team": "Glendale Guinea Pigs",
+          "owner": "Jake Turner",
+          "player": "Aaron Rodgers",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-14T07:43:02.357000Z",
+          "team": "South-of-America Scallywags",
+          "owner": "Matthew Hitpas",
+          "player": "Kimani Vidal",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-14T07:43:02.357000Z",
+          "team": "Woodland Powerbottoms",
+          "owner": "Thomas Goodroe",
+          "player": "Chiefs D/ST",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-14T07:43:02.357000Z",
+          "team": "Ocala Bankers",
+          "owner": "Ryan Miller",
+          "player": "Tre Tucker",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-14T07:43:02.357000Z",
+          "team": "Pepperdine Pangolins",
+          "owner": "Jasper Bowles",
+          "player": "Efton Chism III",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-14T07:43:02.357000Z",
+          "team": "Glendale Guinea Pigs",
+          "owner": "Jake Turner",
+          "player": "Jonah Coleman",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-10T16:37:00.531000Z",
+          "team": "Glendale Guinea Pigs",
+          "owner": "Jake Turner",
+          "player": "Mike Gesicki",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-10T07:31:44.733000Z",
+          "team": "South-of-America Scallywags",
+          "owner": "Matthew Hitpas",
+          "player": "Keenan Allen",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-09T17:16:23.188000Z",
+          "team": "South-of-America Scallywags",
+          "owner": "Matthew Hitpas",
+          "player": "Roman Wilson",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-09T12:07:26.919000Z",
+          "team": "Marietta Money Launderers",
+          "owner": "Austin Solomom",
+          "player": "Courtland Sutton",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-09T00:12:38.433000Z",
+          "team": "Woodland Powerbottoms",
+          "owner": "Thomas Goodroe",
+          "player": "Mike Washington Jr.",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-08T23:59:39.539000Z",
+          "team": "The Laestrygonian Giants",
+          "owner": "Carly Schnable",
+          "player": "MarShawn Lloyd",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-08T22:33:24.694000Z",
+          "team": "O'Malleys Alley Cats",
+          "owner": "Jake Brown",
+          "player": "Colts D/ST",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-08T19:56:38.105000Z",
+          "team": "O'Malleys Alley Cats",
+          "owner": "Jake Brown",
+          "player": "Darius Cooper",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-08T13:49:27.190000Z",
+          "team": "Marietta Money Launderers",
+          "owner": "Austin Solomom",
+          "player": "Rico Dowdle",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-08T11:29:50.076000Z",
+          "team": "Marietta Money Launderers",
+          "owner": "Austin Solomom",
+          "player": "Ravens D/ST",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-08T10:46:09.130000Z",
+          "team": "O'Malleys Alley Cats",
+          "owner": "Jake Brown",
+          "player": "Deshaun Watson",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-07T18:43:25.466000Z",
+          "team": "TRUNDLE NATION",
+          "owner": "McGowin Jernigan",
+          "player": "Jacoby Brissett",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-07T13:22:18.977000Z",
+          "team": "Woodland Powerbottoms",
+          "owner": "Thomas Goodroe",
+          "player": "Keaton Mitchell",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-07T11:14:01.327000Z",
+          "team": "Marietta Money Launderers",
+          "owner": "Austin Solomom",
+          "player": "Marvin Harrison Jr.",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-07T11:06:37.695000Z",
+          "team": "Marietta Money Launderers",
+          "owner": "Austin Solomom",
+          "player": "Cowboys D/ST",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-07T07:17:44.177000Z",
+          "team": "Woodland Powerbottoms",
+          "owner": "Thomas Goodroe",
+          "player": "Bengals D/ST",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-07T07:17:44.177000Z",
+          "team": "Woodland Powerbottoms",
+          "owner": "Thomas Goodroe",
+          "player": "KC Concepcion",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-07T07:17:44.177000Z",
+          "team": "Ocala Bankers",
+          "owner": "Ryan Miller",
+          "player": "Tyler Allgeier",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-07T07:17:44.177000Z",
+          "team": "South-of-America Scallywags",
+          "owner": "Matthew Hitpas",
+          "player": "T.J. Hockenson",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-07T07:17:44.177000Z",
+          "team": "Woodland Powerbottoms",
+          "owner": "Thomas Goodroe",
+          "player": "Tyreek Hill",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-07T07:17:44.177000Z",
+          "team": "Ocala Bankers",
+          "owner": "Ryan Miller",
+          "player": "Khalil Shakir",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-07T07:17:44.177000Z",
+          "team": "South-of-America Scallywags",
+          "owner": "Matthew Hitpas",
+          "player": "Keon Coleman",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-07T07:17:44.177000Z",
+          "team": "Pepperdine Pangolins",
+          "owner": "Jasper Bowles",
+          "player": "C.J. Stroud",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-07T07:17:44.177000Z",
+          "team": "TRUNDLE NATION",
+          "owner": "McGowin Jernigan",
+          "player": "Will Shipley",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-04T13:29:36.094000Z",
+          "team": "Ocala Bankers",
+          "owner": "Ryan Miller",
+          "player": "Antonio Williams",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-04T07:00:46.097000Z",
+          "team": "TRUNDLE NATION",
+          "owner": "McGowin Jernigan",
+          "player": "Emanuel Wilson",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-02T07:39:33.190000Z",
+          "team": "Woodland Powerbottoms",
+          "owner": "Thomas Goodroe",
+          "player": "Kaelon Black",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-01T20:16:25.993000Z",
+          "team": "O'Malleys Alley Cats",
+          "owner": "Jake Brown",
+          "player": "Saints D/ST",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-01T20:15:06.209000Z",
+          "team": "O'Malleys Alley Cats",
+          "owner": "Jake Brown",
+          "player": "Mack Hollins",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-01T20:09:04.465000Z",
+          "team": "O'Malleys Alley Cats",
+          "owner": "Jake Brown",
+          "player": "Darren Waller",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-01T18:20:03.887000Z",
+          "team": "Woodland Powerbottoms",
+          "owner": "Thomas Goodroe",
+          "player": "Courtland Sutton",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-10-01T15:08:17.003000Z",
+          "team": "Glendale Guinea Pigs",
+          "owner": "Jake Turner",
+          "player": "Woody Marks",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-30T23:51:30.826000Z",
+          "team": "TRUNDLE NATION",
+          "owner": "McGowin Jernigan",
+          "player": "Browns D/ST",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-30T21:36:58.983000Z",
+          "team": "Ocala Bankers",
+          "owner": "Ryan Miller",
+          "player": "Kendre Miller",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-30T21:34:52.500000Z",
+          "team": "Ocala Bankers",
+          "owner": "Ryan Miller",
+          "player": "Kalif Raymond",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-30T19:23:28.936000Z",
+          "team": "The Laestrygonian Giants",
+          "owner": "Carly Schnable",
+          "player": "Jets D/ST",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-30T14:05:01.659000Z",
+          "team": "Louisiana Nole Jackets",
+          "owner": "Thomas Silas",
+          "player": "Brian Robinson Jr.",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-30T13:51:45.393000Z",
+          "team": "South-of-America Scallywags",
+          "owner": "Matthew Hitpas",
+          "player": "Jaguars D/ST",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-30T12:49:38.683000Z",
+          "team": "Marietta Money Launderers",
+          "owner": "Austin Solomom",
+          "player": "Packers D/ST",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-30T07:49:25.447000Z",
+          "team": "O'Malleys Alley Cats",
+          "owner": "Jake Brown",
+          "player": "Case Keenum",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-30T07:49:25.447000Z",
+          "team": "Woodland Powerbottoms",
+          "owner": "Thomas Goodroe",
+          "player": "Ravens D/ST",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-30T07:49:25.447000Z",
+          "team": "Ocala Bankers",
+          "owner": "Ryan Miller",
+          "player": "Harold Fannin Jr.",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-30T07:49:25.447000Z",
+          "team": "South-of-America Scallywags",
+          "owner": "Matthew Hitpas",
+          "player": "Kirk Cousins",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-30T07:49:25.447000Z",
+          "team": "Pepperdine Pangolins",
+          "owner": "Jasper Bowles",
+          "player": "Ollie Gordon II",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-30T07:49:25.447000Z",
+          "team": "TRUNDLE NATION",
+          "owner": "McGowin Jernigan",
+          "player": "Braelon Allen",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-30T07:49:25.447000Z",
+          "team": "O'Malleys Alley Cats",
+          "owner": "Jake Brown",
+          "player": "Bills D/ST",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-27T15:26:07.891000Z",
+          "team": "The Laestrygonian Giants",
+          "owner": "Carly Schnable",
+          "player": "Malik Washington",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-27T13:01:34.639000Z",
+          "team": "Marietta Money Launderers",
+          "owner": "Austin Solomom",
+          "player": "Giants D/ST",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-25T07:17:05.265000Z",
+          "team": "The Laestrygonian Giants",
+          "owner": "Carly Schnable",
+          "player": "Eagles D/ST",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-24T07:17:49.460000Z",
+          "team": "Woodland Powerbottoms",
+          "owner": "Thomas Goodroe",
+          "player": "Quentin Johnston",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-23T18:21:05.069000Z",
+          "team": "South-of-America Scallywags",
+          "owner": "Matthew Hitpas",
+          "player": "Kyler Murray",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-23T18:06:01.942000Z",
+          "team": "Woodland Powerbottoms",
+          "owner": "Thomas Goodroe",
+          "player": "Titans D/ST",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-23T15:49:22.513000Z",
+          "team": "South-of-America Scallywags",
+          "owner": "Matthew Hitpas",
+          "player": "Dalton Schultz",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-23T14:07:02.703000Z",
+          "team": "Marietta Money Launderers",
+          "owner": "Austin Solomom",
+          "player": "Jaguars D/ST",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-23T07:24:03.559000Z",
+          "team": "Ocala Bankers",
+          "owner": "Ryan Miller",
+          "player": "Hunter Henry",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-23T07:24:03.559000Z",
+          "team": "South-of-America Scallywags",
+          "owner": "Matthew Hitpas",
+          "player": "Rashod Bateman",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-23T07:24:03.559000Z",
+          "team": "Woodland Powerbottoms",
+          "owner": "Thomas Goodroe",
+          "player": "Jonah Coleman",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-23T07:24:03.559000Z",
+          "team": "The Laestrygonian Giants",
+          "owner": "Carly Schnable",
+          "player": "Giants D/ST",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-23T07:24:03.559000Z",
+          "team": "Pepperdine Pangolins",
+          "owner": "Jasper Bowles",
+          "player": "Alvin Kamara",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-23T07:24:03.559000Z",
+          "team": "Glendale Guinea Pigs",
+          "owner": "Jake Turner",
+          "player": "Vikings D/ST",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-23T07:24:03.559000Z",
+          "team": "TRUNDLE NATION",
+          "owner": "McGowin Jernigan",
+          "player": "Emmett Johnson",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-23T07:24:03.559000Z",
+          "team": "Ocala Bankers",
+          "owner": "Ryan Miller",
+          "player": "Adonai Mitchell",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-23T07:24:03.559000Z",
+          "team": "South-of-America Scallywags",
+          "owner": "Matthew Hitpas",
+          "player": "Tre Tucker",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-23T07:24:03.559000Z",
+          "team": "Woodland Powerbottoms",
+          "owner": "Thomas Goodroe",
+          "player": "Bryce Young",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-20T14:27:44.577000Z",
+          "team": "O'Malleys Alley Cats",
+          "owner": "Jake Brown",
+          "player": "Panthers D/ST",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-18T07:28:36.117000Z",
+          "team": "The Laestrygonian Giants",
+          "owner": "Carly Schnable",
+          "player": "Chargers D/ST",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-17T19:25:43.182000Z",
+          "team": "The Laestrygonian Giants",
+          "owner": "Carly Schnable",
+          "player": "Bears D/ST",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-17T19:24:03.166000Z",
+          "team": "The Laestrygonian Giants",
+          "owner": "Carly Schnable",
+          "player": "Jordan Love",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-17T19:23:30.920000Z",
+          "team": "O'Malleys Alley Cats",
+          "owner": "Jake Brown",
+          "player": "Mike Gesicki",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-17T19:22:23.192000Z",
+          "team": "O'Malleys Alley Cats",
+          "owner": "Jake Brown",
+          "player": "Dontayvion Wicks",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-17T19:18:59.920000Z",
+          "team": "O'Malleys Alley Cats",
+          "owner": "Jake Brown",
+          "player": "Romeo Doubs",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-17T19:16:57.237000Z",
+          "team": "O'Malleys Alley Cats",
+          "owner": "Jake Brown",
+          "player": "Cardinals D/ST",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-17T08:15:46.811000Z",
+          "team": "Woodland Powerbottoms",
+          "owner": "Thomas Goodroe",
+          "player": "Ravens D/ST",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-16T13:42:54.523000Z",
+          "team": "South-of-America Scallywags",
+          "owner": "Matthew Hitpas",
+          "player": "Chiefs D/ST",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-16T13:33:00.919000Z",
+          "team": "Marietta Money Launderers",
+          "owner": "Austin Solomom",
+          "player": "Buccaneers D/ST",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-16T13:30:51.843000Z",
+          "team": "South-of-America Scallywags",
+          "owner": "Matthew Hitpas",
+          "player": "Kendrick Bourne",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-16T07:02:24.194000Z",
+          "team": "O'Malleys Alley Cats",
+          "owner": "Jake Brown",
+          "player": "Brenton Strange",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-16T07:02:24.194000Z",
+          "team": "Pepperdine Pangolins",
+          "owner": "Jasper Bowles",
+          "player": "49ers D/ST",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-16T07:02:24.194000Z",
+          "team": "Glendale Guinea Pigs",
+          "owner": "Jake Turner",
+          "player": "Devaughn Vele",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-16T07:02:24.194000Z",
+          "team": "TRUNDLE NATION",
+          "owner": "McGowin Jernigan",
+          "player": "Kaelon Black",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-13T16:47:28.306000Z",
+          "team": "The Laestrygonian Giants",
+          "owner": "Carly Schnable",
+          "player": "Kyler Murray",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-13T13:12:25.167000Z",
+          "team": "The Laestrygonian Giants",
+          "owner": "Carly Schnable",
+          "player": "Titans D/ST",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-13T11:53:55.729000Z",
+          "team": "O'Malleys Alley Cats",
+          "owner": "Jake Brown",
+          "player": "Cooper Rush",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-08T13:41:20.738000Z",
+          "team": "Woodland Powerbottoms",
+          "owner": "Thomas Goodroe",
+          "player": "Baker Mayfield",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-04T19:33:01.340000Z",
+          "team": "TRUNDLE NATION",
+          "owner": "McGowin Jernigan",
+          "player": "Juwan Johnson",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-04T05:53:54.714000Z",
+          "team": "Marietta Money Launderers",
+          "owner": "Austin Solomom",
+          "player": "Jared Goff",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-04T05:53:29.684000Z",
+          "team": "Marietta Money Launderers",
+          "owner": "Austin Solomom",
+          "player": "Tank Dell",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-03T07:08:31.554000Z",
+          "team": "O'Malleys Alley Cats",
+          "owner": "Jake Brown",
+          "player": "Michael Mayer",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-03T07:08:31.554000Z",
+          "team": "O'Malleys Alley Cats",
+          "owner": "Jake Brown",
+          "player": "Kirk Cousins",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-09-03T07:08:31.554000Z",
+          "team": "Pepperdine Pangolins",
+          "owner": "Jasper Bowles",
+          "player": "Brian Robinson Jr.",
+          "type": "Waiver",
+          "bid_amount": 0
         }
       ],
       "errors": []
