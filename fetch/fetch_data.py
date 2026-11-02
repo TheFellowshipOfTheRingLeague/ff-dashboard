@@ -87,6 +87,49 @@ def safe_owner_name(team):
     return getattr(team, "team_name", None) or f"Team {getattr(team, 'team_id', '?')}"
 
 
+def player_points_since(league, player_cache, player_name, since_dt):
+    """How a traded player has performed since the trade: total fantasy
+    points, games played, and points-per-game, counting only weeks whose
+    actual game date falls after `since_dt`. Mirrors the "who's winning this
+    trade" view from the standalone trade tracker: each player's post-trade
+    production is what decides which side came out ahead.
+
+    Returns None if the player can't be looked up or has no post-trade game
+    data yet (e.g. traded this week, byes, no more games this season).
+    """
+    if not player_name or since_dt is None:
+        return None
+    if player_name in player_cache:
+        player = player_cache[player_name]
+    else:
+        try:
+            player = league.player_info(name=player_name)
+        except Exception:
+            player = None
+        if isinstance(player, list):
+            player = player[0] if player else None
+        player_cache[player_name] = player
+    if not player:
+        return None
+
+    schedule = getattr(player, "schedule", None) or {}
+    stats = getattr(player, "stats", None) or {}
+    total = 0.0
+    games = 0
+    for week, game in schedule.items():
+        game_date = game.get("date") if isinstance(game, dict) else None
+        if not game_date or game_date <= since_dt:
+            continue
+        week_stats = stats.get(week)
+        if not week_stats or "points" not in week_stats:
+            continue  # bye week, or game not played/scored yet
+        total += week_stats["points"] or 0
+        games += 1
+    if games == 0:
+        return {"total": 0.0, "games": 0, "ppg": None}
+    return {"total": round(total, 2), "games": games, "ppg": round(total / games, 2)}
+
+
 def fetch_season(year):
     print(f"Fetching season {year}...")
     season = {
@@ -97,6 +140,7 @@ def fetch_season(year):
         "season_complete": False,
         "draft": [],
         "trades": [],
+        "waiver_adds": [],
         "errors": [],
     }
 
@@ -202,33 +246,121 @@ def fetch_season(year):
         season["errors"].append(f"Could not fetch draft for {year}: {e}")
 
     # --- Trades ---
+    # espn_api emits TWO action rows per traded player - one "TRADE_SENT" (from
+    # the team giving the player up) and one "TRADE_RECEIVED" (for the team
+    # getting the player) - so every player in a trade shows up twice in
+    # act.actions. Group by player and pair up the SENT/RECEIVED rows so each
+    # player appears exactly once, with a real from -> to direction, instead
+    # of the raw duplicate list.
+    player_perf_cache = {}
     try:
         activity = league.recent_activity(size=2000, msg_type="TRADED")
         for act in activity:
             try:
                 raw_date = getattr(act, "date", None)
-                trade_date = (
-                    datetime.datetime.utcfromtimestamp(raw_date / 1000).isoformat() + "Z" if raw_date else None
-                )
-                teams_involved = []
-                items = []
+                trade_date_dt = datetime.datetime.utcfromtimestamp(raw_date / 1000) if raw_date else None
+                trade_date = trade_date_dt.isoformat() + "Z" if trade_date_dt else None
+                by_player = {}
+                order = []
                 for action in getattr(act, "actions", []) or []:
                     a_team = action[0] if len(action) > 0 else None
+                    a_type = action[1] if len(action) > 1 else None
                     a_player = action[2] if len(action) > 2 else None
                     team_name = getattr(a_team, "team_name", None)
-                    if team_name and team_name not in teams_involved:
-                        teams_involved.append(team_name)
-                    items.append(
-                        {
-                            "team": team_name,
-                            "player": getattr(a_player, "name", None) or (str(a_player) if a_player else None),
-                        }
-                    )
-                season["trades"].append({"date": trade_date, "teams_involved": teams_involved, "items": items})
+                    player_name = getattr(a_player, "name", None) or (str(a_player) if a_player else None)
+                    if not player_name:
+                        continue
+                    if player_name not in by_player:
+                        by_player[player_name] = {"player": player_name, "from_team": None, "to_team": None}
+                        order.append(player_name)
+                    if a_type == "TRADE_SENT":
+                        by_player[player_name]["from_team"] = team_name
+                    elif a_type == "TRADE_RECEIVED":
+                        by_player[player_name]["to_team"] = team_name
+                    elif team_name and not by_player[player_name]["to_team"]:
+                        # Fallback for any unexpected action shape - at least
+                        # keep one team attached to the player.
+                        by_player[player_name]["to_team"] = team_name
+
+                items = [by_player[name] for name in order]
+                teams_involved = []
+                for item in items:
+                    for t in (item["from_team"], item["to_team"]):
+                        if t and t not in teams_involved:
+                            teams_involved.append(t)
+
+                # --- Post-trade performance: who's winning this trade so far? ---
+                # For each player, total up fantasy points scored since the
+                # trade date, then sum that by the team that RECEIVED each
+                # player, to get each side's "value gained" and declare a
+                # leader - the same thing the standalone trade tracker did
+                # by hand, computed live from this season's data.
+                side_totals = {}
+                any_perf = False
+                for item in items:
+                    perf = player_points_since(league, player_perf_cache, item["player"], trade_date_dt)
+                    item["points_since_trade"] = perf["total"] if perf else None
+                    item["games_since_trade"] = perf["games"] if perf else None
+                    item["ppg_since_trade"] = perf["ppg"] if perf else None
+                    side = item["to_team"]
+                    if side and perf and perf["games"]:
+                        side_totals[side] = side_totals.get(side, 0.0) + perf["total"]
+                        any_perf = True
+
+                verdict = None
+                if any_perf and len(side_totals) >= 2:
+                    ranked = sorted(side_totals.items(), key=lambda kv: kv[1], reverse=True)
+                    leader_team, leader_pts = ranked[0]
+                    other_team, other_pts = ranked[1]
+                    diff = round(leader_pts - other_pts, 2)
+                    verdict = {
+                        "side_totals": {k: round(v, 2) for k, v in side_totals.items()},
+                        "leader_team": leader_team if diff > 0 else None,
+                        "margin": abs(diff),
+                    }
+
+                season["trades"].append(
+                    {"date": trade_date, "teams_involved": teams_involved, "items": items, "verdict": verdict}
+                )
             except Exception as e:
                 season["errors"].append(f"Trade parse error for {year}: {e}")
     except Exception as e:
         season["errors"].append(f"Could not fetch trades for {year}: {e}")
+
+    # --- Waiver wire / free agent adds ---
+    try:
+        add_activity = league.recent_activity(size=2000, msg_type=None)
+        for act in add_activity:
+            try:
+                raw_date = getattr(act, "date", None)
+                act_date = (
+                    datetime.datetime.utcfromtimestamp(raw_date / 1000).isoformat() + "Z" if raw_date else None
+                )
+                for action in getattr(act, "actions", []) or []:
+                    a_team = action[0] if len(action) > 0 else None
+                    a_type = action[1] if len(action) > 1 else None
+                    a_player = action[2] if len(action) > 2 else None
+                    a_bid = action[3] if len(action) > 3 else 0
+                    if a_type not in ("FA ADDED", "WAIVER ADDED"):
+                        continue
+                    team_name = getattr(a_team, "team_name", None)
+                    player_name = getattr(a_player, "name", None) or (str(a_player) if a_player else None)
+                    if not player_name:
+                        continue
+                    season["waiver_adds"].append(
+                        {
+                            "date": act_date,
+                            "team": team_name,
+                            "owner": safe_owner_name(a_team) if a_team else "Unknown",
+                            "player": player_name,
+                            "type": "Waiver" if a_type == "WAIVER ADDED" else "Free Agent",
+                            "bid_amount": a_bid or 0,
+                        }
+                    )
+            except Exception as e:
+                season["errors"].append(f"Waiver add parse error for {year}: {e}")
+    except Exception as e:
+        season["errors"].append(f"Could not fetch waiver adds for {year}: {e}")
 
     return season
 
