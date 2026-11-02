@@ -520,3 +520,83 @@ input[type="text"] {
   color: var(--text-muted);
   margin-top: 8px;
 }
+
+.matchup-card {
+  background: var(--page);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--series-3);
+  border-radius: var(--card-radius);
+  padding: 14px 16px;
+  margin-bottom: 14px;
+}
+
+.matchup-card:last-child {
+  margin-bottom: 0;
+}
+
+.matchup-header {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.matchup-team {
+  text-align: center;
+}
+
+.matchup-team .team-name {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.matchup-team .team-score {
+  font-size: 22px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  margin-top: 2px;
+}
+
+.matchup-vs {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.matchup-lineups {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  align-items: start;
+}
+
+@media (max-width: 560px) {
+  .matchup-lineups {
+    grid-template-columns: 1fr;
+  }
+}
+
+.lineup-col table {
+  font-size: 12.5px;
+}
+
+.lineup-col td,
+.lineup-col th {
+  padding: 6px 8px;
+}
+
+.lineup-col .pts {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.bench-details {
+  margin-top: 8px;
+}
+
+.bench-details summary {
+  cursor: pointer;
+  font-size: 12px;
+  color: var(--text-muted);
+  padding: 4px 0;
+}

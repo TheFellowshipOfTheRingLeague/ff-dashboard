@@ -450,6 +450,149 @@ function renderWaivers(data) {
   render();
 }
 
+const SLOT_ORDER = ["QB", "RB", "RB/WR", "WR", "WR/TE", "TE", "OP", "RB/WR/TE", "D/ST", "K", "BE", "IR"];
+
+function slotRank(slot) {
+  const idx = SLOT_ORDER.indexOf(slot);
+  // Unknown/rare slots (DT, DE, LB, etc. in IDP leagues) sort with the
+  // starters, just before bench/IR, rather than falling off the end.
+  return idx === -1 ? SLOT_ORDER.length - 2 : idx;
+}
+
+function lineupTable(players) {
+  const wrap = el("div", { class: "table-scroll" });
+  const table = el("table", { class: "lineup-table" });
+  table.appendChild(
+    el("thead", {}, el("tr", {}, [el("th", {}, "Slot"), el("th", {}, "Player"), el("th", {}, "Pos"), el("th", {}, "Pts")]))
+  );
+  const tbody = el("tbody");
+  players.forEach((p) => {
+    tbody.appendChild(
+      el("tr", {}, [
+        el("td", {}, p.slot || "-"),
+        el("td", {}, p.name || "Unknown player"),
+        el("td", {}, p.position || "-"),
+        el("td", { class: "pts" }, fmtNum(p.points)),
+      ])
+    );
+  });
+  table.appendChild(tbody);
+  wrap.appendChild(table);
+  return wrap;
+}
+
+function lineupSection(team) {
+  if (!team) return el("div", { class: "lineup-col" }, el("div", { class: "empty-state" }, "Bye week"));
+
+  const lineup = [...(team.lineup || [])];
+  const starters = lineup.filter((p) => p.slot !== "BE" && p.slot !== "IR").sort((a, b) => slotRank(a.slot) - slotRank(b.slot));
+  const bench = lineup.filter((p) => p.slot === "BE" || p.slot === "IR").sort((a, b) => slotRank(a.slot) - slotRank(b.slot));
+
+  const col = el("div", { class: "lineup-col" }, lineupTable(starters));
+  if (bench.length) {
+    const details = el("details", { class: "bench-details" }, [el("summary", {}, `Bench (${bench.length})`), lineupTable(bench)]);
+    col.appendChild(details);
+  }
+  return col;
+}
+
+function matchupCard(m) {
+  const header = el("div", { class: "matchup-header" }, [
+    el("div", { class: "matchup-team" }, [
+      el("div", { class: "team-name" }, m.home ? m.home.owner : "BYE"),
+      el("div", { class: "team-score" }, m.home ? fmtNum(m.home.score) : "-"),
+    ]),
+    el("div", { class: "matchup-vs" }, "vs"),
+    el("div", { class: "matchup-team" }, [
+      el("div", { class: "team-name" }, m.away ? m.away.owner : "BYE"),
+      el("div", { class: "team-score" }, m.away ? fmtNum(m.away.score) : "-"),
+    ]),
+  ]);
+  const children = [header, el("div", { class: "matchup-lineups" }, [lineupSection(m.home), lineupSection(m.away)])];
+  if (m.is_playoff) children.unshift(el("div", { class: "trade-date" }, "Playoffs"));
+  return el("div", { class: "matchup-card" }, children);
+}
+
+const matchupDataCache = {};
+
+function renderMatchups(data) {
+  const root = document.getElementById("panel-matchups");
+  root.innerHTML = "";
+
+  const seasons = [...data.seasons].filter((s) => (s.weeks_available || []).length).sort((a, b) => b.year - a.year);
+
+  if (!seasons.length) {
+    root.appendChild(el("div", { class: "empty-state" }, "No weekly matchup data available yet. Run the data refresh workflow to generate it."));
+    return;
+  }
+
+  const controls = el("div", { class: "controls" });
+  const yearSelect = el("select", { id: "matchup-year-select" });
+  seasons.forEach((s) => yearSelect.appendChild(el("option", { value: s.year }, String(s.year))));
+  const weekSelect = el("select", { id: "matchup-week-select" });
+  controls.appendChild(el("label", {}, "Season"));
+  controls.appendChild(yearSelect);
+  controls.appendChild(el("label", {}, "Week"));
+  controls.appendChild(weekSelect);
+  root.appendChild(controls);
+
+  const body = el("div", { id: "matchup-body" });
+  root.appendChild(body);
+
+  function populateWeeks(year) {
+    const season = seasons.find((s) => String(s.year) === String(year));
+    weekSelect.innerHTML = "";
+    (season ? season.weeks_available : []).forEach((w) => weekSelect.appendChild(el("option", { value: w }, `Week ${w}`)));
+  }
+
+  async function loadYear(year) {
+    if (year in matchupDataCache) return matchupDataCache[year];
+    try {
+      const res = await fetch(`data/boxscores/${year}.json`, { cache: "no-store" });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      matchupDataCache[year] = await res.json();
+    } catch (e) {
+      matchupDataCache[year] = null;
+    }
+    return matchupDataCache[year];
+  }
+
+  async function renderWeek(year, week) {
+    body.innerHTML = "";
+    body.appendChild(el("div", { class: "empty-state" }, "Loading matchups…"));
+    const boxData = await loadYear(year);
+    body.innerHTML = "";
+
+    const matchups = boxData && boxData.weeks ? boxData.weeks[String(week)] : null;
+    const card = el("div", { class: "card" }, [el("h2", {}, `${year} · Week ${week}`)]);
+    if (!matchups || !matchups.length) {
+      card.appendChild(
+        el(
+          "div",
+          { class: "empty-state" },
+          boxData === null ? "Could not load matchup data for this season." : "No matchup data for this week."
+        )
+      );
+    } else {
+      matchups.forEach((m) => card.appendChild(matchupCard(m)));
+    }
+    body.appendChild(card);
+  }
+
+  yearSelect.addEventListener("change", (e) => {
+    populateWeeks(e.target.value);
+    if (weekSelect.options.length) renderWeek(e.target.value, weekSelect.value);
+  });
+  weekSelect.addEventListener("change", (e) => renderWeek(yearSelect.value, e.target.value));
+
+  populateWeeks(seasons[0].year);
+  if (weekSelect.options.length) {
+    // Default to the most recent week with data for that season.
+    weekSelect.value = weekSelect.options[weekSelect.options.length - 1].value;
+    renderWeek(seasons[0].year, weekSelect.value);
+  }
+}
+
 function initTheme() {
   const saved = (() => {
     try {
@@ -507,6 +650,7 @@ async function main() {
   renderSeasons(data);
   renderTrades(data);
   renderWaivers(data);
+  renderMatchups(data);
 }
 
 main();
