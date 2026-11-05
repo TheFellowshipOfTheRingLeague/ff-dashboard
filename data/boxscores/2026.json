@@ -10520,7 +10520,7 @@
             {
               "name": "Ladd McConkey",
               "position": "WR",
-              "slot": "RB/WR/TE",
+              "slot": "WR",
               "pro_team": "LAC",
               "points": 0
             },
@@ -10576,7 +10576,7 @@
             {
               "name": "Ryan Flournoy",
               "position": "WR",
-              "slot": "BE",
+              "slot": "RB/WR/TE",
               "pro_team": "DAL",
               "points": 0
             },
@@ -10604,7 +10604,7 @@
             {
               "name": "KC Concepcion",
               "position": "WR",
-              "slot": "WR",
+              "slot": "BE",
               "pro_team": "CLE",
               "points": 0
             },
@@ -10631,7 +10631,7 @@
             {
               "name": "Kenneth Walker III",
               "position": "RB",
-              "slot": "RB/WR/TE",
+              "slot": "RB",
               "pro_team": "KC",
               "points": 0
             },
@@ -10673,21 +10673,21 @@
             {
               "name": "Jaylen Warren",
               "position": "RB",
-              "slot": "RB",
+              "slot": "BE",
               "pro_team": "PIT",
               "points": 0
             },
             {
               "name": "Dak Prescott",
               "position": "QB",
-              "slot": "QB",
+              "slot": "BE",
               "pro_team": "DAL",
               "points": 0
             },
             {
               "name": "Jordan Mason",
               "position": "RB",
-              "slot": "BE",
+              "slot": "RB/WR/TE",
               "pro_team": "MIN",
               "points": 0
             },
@@ -10701,7 +10701,7 @@
             {
               "name": "Jared Goff",
               "position": "QB",
-              "slot": "BE",
+              "slot": "QB",
               "pro_team": "DET",
               "points": 0
             },
@@ -10720,13 +10720,6 @@
               "points": 0
             },
             {
-              "name": "Kaelon Black",
-              "position": "RB",
-              "slot": "BE",
-              "pro_team": "SF",
-              "points": 0
-            },
-            {
               "name": "Chiefs D/ST",
               "position": "D/ST",
               "slot": "D/ST",
@@ -10738,6 +10731,13 @@
               "position": "WR",
               "slot": "BE",
               "pro_team": "PIT",
+              "points": 0
+            },
+            {
+              "name": "Kimani Vidal",
+              "position": "RB",
+              "slot": "BE",
+              "pro_team": "LAC",
               "points": 0
             }
           ]
@@ -10861,6 +10861,13 @@
               "slot": "BE",
               "pro_team": "NE",
               "points": 0
+            },
+            {
+              "name": "Brandon Aiyuk",
+              "position": "WR",
+              "slot": "BE",
+              "pro_team": "SF",
+              "points": 0
             }
           ]
         },
@@ -10946,13 +10953,6 @@
               "points": 0
             },
             {
-              "name": "Marvin Harrison Jr.",
-              "position": "WR",
-              "slot": "BE",
-              "pro_team": "HOU",
-              "points": 0
-            },
-            {
               "name": "Alvin Kamara",
               "position": "RB",
               "slot": "BE",
@@ -10985,6 +10985,13 @@
               "position": "D/ST",
               "slot": "D/ST",
               "pro_team": "HOU",
+              "points": 0
+            },
+            {
+              "name": "Chris Rodriguez Jr.",
+              "position": "RB",
+              "slot": "BE",
+              "pro_team": "JAX",
               "points": 0
             }
           ]
@@ -11200,13 +11207,6 @@
               "points": 0
             },
             {
-              "name": "Rashid Shaheed",
-              "position": "WR",
-              "slot": "BE",
-              "pro_team": "SEA",
-              "points": 0
-            },
-            {
               "name": "Isaiah Likely",
               "position": "TE",
               "slot": "BE",
@@ -11232,6 +11232,13 @@
               "position": "RB",
               "slot": "BE",
               "pro_team": "ATL",
+              "points": 0
+            },
+            {
+              "name": "Bengals D/ST",
+              "position": "D/ST",
+              "slot": "BE",
+              "pro_team": "CIN",
               "points": 0
             }
           ]

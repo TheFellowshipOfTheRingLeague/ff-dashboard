@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-04T13:58:01.391563Z",
+  "generated_at": "2026-11-05T14:06:04.735250Z",
   "league_id": 1485136557,
   "start_year": 2021,
   "current_season_year": 2026,
@@ -7155,6 +7155,42 @@
         }
       ],
       "waiver_adds": [
+        {
+          "date": "2026-11-05T12:28:28.808000Z",
+          "team": "Marietta Money Launderers",
+          "owner": "Austin Solomom",
+          "player_added": "Kimani Vidal",
+          "player_dropped": "Kaelon Black",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-05T11:50:52.816000Z",
+          "team": "Pepperdine Pangolins",
+          "owner": "Jasper Bowles",
+          "player_added": "Brandon Aiyuk",
+          "player_dropped": null,
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-05T09:05:25.660000Z",
+          "team": "Louisiana Nole Jackets",
+          "owner": "Thomas Silas",
+          "player_added": "Bengals D/ST",
+          "player_dropped": "Rashid Shaheed",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-04T17:00:48.940000Z",
+          "team": "Woodland Powerbottoms",
+          "owner": "Thomas Goodroe",
+          "player_added": "Chris Rodriguez Jr.",
+          "player_dropped": "Marvin Harrison Jr.",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
         {
           "date": "2026-11-04T13:36:35.378000Z",
           "team": "Marietta Money Launderers",
