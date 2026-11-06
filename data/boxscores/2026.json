@@ -10082,7 +10082,7 @@
             {
               "name": "Keenan Allen",
               "position": "WR",
-              "slot": "BE",
+              "slot": "WR",
               "pro_team": "IND",
               "points": 0
             },
@@ -10096,14 +10096,14 @@
             {
               "name": "Omar Cooper Jr.",
               "position": "WR",
-              "slot": "WR",
+              "slot": "BE",
               "pro_team": "NYJ",
               "points": 0
             },
             {
               "name": "Breece Hall",
               "position": "RB",
-              "slot": "BE",
+              "slot": "RB",
               "pro_team": "NYJ",
               "points": 0
             },
@@ -10117,7 +10117,7 @@
             {
               "name": "Bam Knight",
               "position": "RB",
-              "slot": "RB",
+              "slot": "BE",
               "pro_team": "ARI",
               "points": 0
             }
@@ -10125,7 +10125,7 @@
         },
         "away": {
           "owner": "McGowin Jernigan",
-          "score": 0,
+          "score": 12.0,
           "lineup": [
             {
               "name": "Amon-Ra St. Brown",
@@ -10202,12 +10202,12 @@
               "position": "WR",
               "slot": "BE",
               "pro_team": "JAX",
-              "points": 0
+              "points": 10.5
             },
             {
               "name": "Kyler Murray",
               "position": "QB",
-              "slot": "QB",
+              "slot": "BE",
               "pro_team": "MIN",
               "points": 0
             },
@@ -10223,14 +10223,7 @@
               "position": "D/ST",
               "slot": "D/ST",
               "pro_team": "JAX",
-              "points": 0
-            },
-            {
-              "name": "Ja'Kobi Lane",
-              "position": "WR",
-              "slot": "BE",
-              "pro_team": "BAL",
-              "points": 0
+              "points": 12.0
             },
             {
               "name": "Adonai Mitchell",
@@ -10244,6 +10237,13 @@
               "position": "RB",
               "slot": "BE",
               "pro_team": "NYG",
+              "points": 0
+            },
+            {
+              "name": "Malik Willis",
+              "position": "QB",
+              "slot": "QB",
+              "pro_team": "MIA",
               "points": 0
             }
           ]
@@ -10287,7 +10287,7 @@
             {
               "name": "Mike Evans",
               "position": "WR",
-              "slot": "WR",
+              "slot": "BE",
               "pro_team": "SF",
               "points": 0
             },
@@ -10329,7 +10329,7 @@
             {
               "name": "Makai Lemon",
               "position": "WR",
-              "slot": "BE",
+              "slot": "WR",
               "pro_team": "PHI",
               "points": 0
             },
@@ -10372,7 +10372,7 @@
         },
         "away": {
           "owner": "Jake Brown",
-          "score": 0,
+          "score": 4.2,
           "lineup": [
             {
               "name": "Jahmyr Gibbs",
@@ -10414,7 +10414,7 @@
               "position": "TE",
               "slot": "TE",
               "pro_team": "JAX",
-              "points": 0
+              "points": 4.2
             },
             {
               "name": "Matthew Golden",
@@ -10541,14 +10541,14 @@
             {
               "name": "Seahawks D/ST",
               "position": "D/ST",
-              "slot": "BE",
+              "slot": "D/ST",
               "pro_team": "SEA",
               "points": 0
             },
             {
               "name": "Jalen Coker",
               "position": "WR",
-              "slot": "WR",
+              "slot": "BE",
               "pro_team": "CAR",
               "points": 0
             },
@@ -10567,13 +10567,6 @@
               "points": 0
             },
             {
-              "name": "Kyle Pitts Sr.",
-              "position": "TE",
-              "slot": "TE",
-              "pro_team": "ATL",
-              "points": 0
-            },
-            {
               "name": "Ryan Flournoy",
               "position": "WR",
               "slot": "RB/WR/TE",
@@ -10583,7 +10576,7 @@
             {
               "name": "Michael Mayer",
               "position": "TE",
-              "slot": "BE",
+              "slot": "TE",
               "pro_team": "LV",
               "points": 0
             },
@@ -10597,14 +10590,14 @@
             {
               "name": "Patriots D/ST",
               "position": "D/ST",
-              "slot": "D/ST",
+              "slot": "BE",
               "pro_team": "NE",
               "points": 0
             },
             {
               "name": "KC Concepcion",
               "position": "WR",
-              "slot": "BE",
+              "slot": "WR",
               "pro_team": "CLE",
               "points": 0
             },
@@ -10614,12 +10607,19 @@
               "slot": "RB",
               "pro_team": "BUF",
               "points": 0
+            },
+            {
+              "name": "Mike Gesicki",
+              "position": "TE",
+              "slot": "BE",
+              "pro_team": "CIN",
+              "points": 0
             }
           ]
         },
         "away": {
           "owner": "Austin Solomom",
-          "score": 0,
+          "score": 10.88,
           "lineup": [
             {
               "name": "Puka Nacua",
@@ -10640,14 +10640,14 @@
               "position": "RB",
               "slot": "RB",
               "pro_team": "BAL",
-              "points": 0
+              "points": 5.58
             },
             {
               "name": "Zay Flowers",
               "position": "WR",
               "slot": "WR",
               "pro_team": "BAL",
-              "points": 0
+              "points": 5.3
             },
             {
               "name": "Colston Loveland",
@@ -10873,7 +10873,7 @@
         },
         "away": {
           "owner": "Thomas Goodroe",
-          "score": 0,
+          "score": 42.58,
           "lineup": [
             {
               "name": "Ashton Jeanty",
@@ -10901,7 +10901,7 @@
               "position": "RB",
               "slot": "RB",
               "pro_team": "JAX",
-              "points": 0
+              "points": 8.9
             },
             {
               "name": "Luther Burden III",
@@ -10915,7 +10915,7 @@
               "position": "WR",
               "slot": "WR",
               "pro_team": "JAX",
-              "points": 0
+              "points": 16.1
             },
             {
               "name": "Tucker Kraft",
@@ -10929,7 +10929,7 @@
               "position": "QB",
               "slot": "QB",
               "pro_team": "JAX",
-              "points": 0
+              "points": 17.58
             },
             {
               "name": "Dalton Kincaid",
@@ -10992,7 +10992,7 @@
               "position": "RB",
               "slot": "BE",
               "pro_team": "JAX",
-              "points": 0
+              "points": 11.2
             }
           ]
         },
@@ -11028,7 +11028,7 @@
             {
               "name": "Cam Skattebo",
               "position": "RB",
-              "slot": "RB/WR/TE",
+              "slot": "BE",
               "pro_team": "NYG",
               "points": 0
             },
@@ -11042,7 +11042,7 @@
             {
               "name": "DJ Moore",
               "position": "WR",
-              "slot": "BE",
+              "slot": "RB/WR/TE",
               "pro_team": "BUF",
               "points": 0
             },
@@ -11223,7 +11223,7 @@
             {
               "name": "Steelers D/ST",
               "position": "D/ST",
-              "slot": "D/ST",
+              "slot": "BE",
               "pro_team": "PIT",
               "points": 0
             },
@@ -11237,7 +11237,7 @@
             {
               "name": "Bengals D/ST",
               "position": "D/ST",
-              "slot": "BE",
+              "slot": "D/ST",
               "pro_team": "CIN",
               "points": 0
             }

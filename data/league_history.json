@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T14:06:04.735250Z",
+  "generated_at": "2026-11-06T13:59:39.726367Z",
   "league_id": 1485136557,
   "start_year": 2021,
   "current_season_year": 2026,
@@ -7063,7 +7063,7 @@
               "from_team": "O'Malleys Alley Cats",
               "to_team": "Woodland Powerbottoms",
               "points_since_trade": 0.0,
-              "games_since_trade": 4,
+              "games_since_trade": 5,
               "ppg_since_trade": 0.0
             },
             {
@@ -7155,6 +7155,24 @@
         }
       ],
       "waiver_adds": [
+        {
+          "date": "2026-11-05T22:47:30.102000Z",
+          "team": "Ocala Bankers",
+          "owner": "Ryan Miller",
+          "player_added": "Mike Gesicki",
+          "player_dropped": "Kyle Pitts Sr.",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-05T16:32:39.865000Z",
+          "team": "TRUNDLE NATION",
+          "owner": "McGowin Jernigan",
+          "player_added": "Malik Willis",
+          "player_dropped": "Ja'Kobi Lane",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
         {
           "date": "2026-11-05T12:28:28.808000Z",
           "team": "Marietta Money Launderers",
