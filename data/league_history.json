@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06T13:59:39.726367Z",
+  "generated_at": "2026-11-07T13:42:01.827078Z",
   "league_id": 1485136557,
   "start_year": 2021,
   "current_season_year": 2026,
@@ -7155,6 +7155,15 @@
         }
       ],
       "waiver_adds": [
+        {
+          "date": "2026-11-07T08:17:00.550000Z",
+          "team": "Woodland Powerbottoms",
+          "owner": "Thomas Goodroe",
+          "player_added": "Kaelon Black",
+          "player_dropped": "Alvin Kamara",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
         {
           "date": "2026-11-05T22:47:30.102000Z",
           "team": "Ocala Bankers",

@@ -10137,7 +10137,7 @@
             {
               "name": "Saquon Barkley",
               "position": "RB",
-              "slot": "RB",
+              "slot": "RB/WR/TE",
               "pro_team": "PHI",
               "points": 0
             },
@@ -10172,7 +10172,7 @@
             {
               "name": "George Kittle",
               "position": "TE",
-              "slot": "RB/WR/TE",
+              "slot": "TE",
               "pro_team": "SF",
               "points": 0
             },
@@ -10214,7 +10214,7 @@
             {
               "name": "Harold Fannin Jr.",
               "position": "TE",
-              "slot": "TE",
+              "slot": "BE",
               "pro_team": "CLE",
               "points": 0
             },
@@ -10235,7 +10235,7 @@
             {
               "name": "Devin Singletary",
               "position": "RB",
-              "slot": "BE",
+              "slot": "RB",
               "pro_team": "NYG",
               "points": 0
             },
@@ -10953,13 +10953,6 @@
               "points": 0
             },
             {
-              "name": "Alvin Kamara",
-              "position": "RB",
-              "slot": "BE",
-              "pro_team": "NO",
-              "points": 0
-            },
-            {
               "name": "Antonio Williams",
               "position": "WR",
               "slot": "BE",
@@ -10993,6 +10986,13 @@
               "slot": "BE",
               "pro_team": "JAX",
               "points": 11.2
+            },
+            {
+              "name": "Kaelon Black",
+              "position": "RB",
+              "slot": "BE",
+              "pro_team": "SF",
+              "points": 0
             }
           ]
         },
@@ -11139,7 +11139,7 @@
             {
               "name": "Garrett Wilson",
               "position": "WR",
-              "slot": "WR",
+              "slot": "BE",
               "pro_team": "NYJ",
               "points": 0
             },
@@ -11167,7 +11167,7 @@
             {
               "name": "Rome Odunze",
               "position": "WR",
-              "slot": "BE",
+              "slot": "WR",
               "pro_team": "CHI",
               "points": 0
             },
