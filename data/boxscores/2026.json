@@ -10459,13 +10459,6 @@
               "points": 0
             },
             {
-              "name": "Lions D/ST",
-              "position": "D/ST",
-              "slot": "D/ST",
-              "pro_team": "DET",
-              "points": 0
-            },
-            {
               "name": "Devaughn Vele",
               "position": "WR",
               "slot": "RB/WR/TE",
@@ -10480,10 +10473,17 @@
               "points": 0
             },
             {
-              "name": "Tez Johnson",
+              "name": "Saints D/ST",
+              "position": "D/ST",
+              "slot": "D/ST",
+              "pro_team": "NO",
+              "points": 0
+            },
+            {
+              "name": "Jahan Dotson",
               "position": "WR",
               "slot": "BE",
-              "pro_team": "TB",
+              "pro_team": "ATL",
               "points": 0
             }
           ]
@@ -10548,7 +10548,7 @@
             {
               "name": "Jalen Coker",
               "position": "WR",
-              "slot": "BE",
+              "slot": "RB/WR/TE",
               "pro_team": "CAR",
               "points": 0
             },
@@ -10569,14 +10569,14 @@
             {
               "name": "Ryan Flournoy",
               "position": "WR",
-              "slot": "RB/WR/TE",
+              "slot": "BE",
               "pro_team": "DAL",
               "points": 0
             },
             {
               "name": "Michael Mayer",
               "position": "TE",
-              "slot": "TE",
+              "slot": "BE",
               "pro_team": "LV",
               "points": 0
             },
@@ -10611,7 +10611,7 @@
             {
               "name": "Mike Gesicki",
               "position": "TE",
-              "slot": "BE",
+              "slot": "TE",
               "pro_team": "CIN",
               "points": 0
             }
@@ -10727,17 +10727,17 @@
               "points": 0
             },
             {
-              "name": "Michael Pittman Jr.",
-              "position": "WR",
-              "slot": "BE",
-              "pro_team": "PIT",
-              "points": 0
-            },
-            {
               "name": "Kimani Vidal",
               "position": "RB",
               "slot": "BE",
               "pro_team": "LAC",
+              "points": 0
+            },
+            {
+              "name": "Marvin Harrison Jr.",
+              "position": "WR",
+              "slot": "BE",
+              "pro_team": "HOU",
               "points": 0
             }
           ]
@@ -10892,7 +10892,7 @@
             {
               "name": "DeVonta Smith",
               "position": "WR",
-              "slot": "BE",
+              "slot": "IR",
               "pro_team": "PHI",
               "points": 0
             },
@@ -10941,7 +10941,7 @@
             {
               "name": "Jordyn Tyson",
               "position": "WR",
-              "slot": "IR",
+              "slot": "BE",
               "pro_team": "NO",
               "points": 0
             },
