@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-08T13:40:09.059845Z",
+  "generated_at": "2026-11-09T14:06:29.962673Z",
   "league_id": 1485136557,
   "start_year": 2021,
   "current_season_year": 2026,
@@ -6753,9 +6753,9 @@
               "player": "Kyren Williams",
               "from_team": "O'Malleys Alley Cats",
               "to_team": "Glendale Guinea Pigs",
-              "points_since_trade": 12.9,
-              "games_since_trade": 1,
-              "ppg_since_trade": 12.9
+              "points_since_trade": 22.0,
+              "games_since_trade": 2,
+              "ppg_since_trade": 11.0
             },
             {
               "player": "Tony Pollard",
@@ -6769,18 +6769,18 @@
               "player": "Devaughn Vele",
               "from_team": "Glendale Guinea Pigs",
               "to_team": "O'Malleys Alley Cats",
-              "points_since_trade": 0.0,
-              "games_since_trade": 0,
-              "ppg_since_trade": null
+              "points_since_trade": 3.7,
+              "games_since_trade": 1,
+              "ppg_since_trade": 3.7
             }
           ],
           "verdict": {
             "side_totals": {
-              "Glendale Guinea Pigs": 12.9,
-              "O'Malleys Alley Cats": 30.7
+              "Glendale Guinea Pigs": 22.0,
+              "O'Malleys Alley Cats": 34.4
             },
             "leader_team": "O'Malleys Alley Cats",
-            "margin": 17.8
+            "margin": 12.4
           },
           "records_since_trade": {
             "O'Malleys Alley Cats": {
@@ -6810,9 +6810,9 @@
               "player": "KC Concepcion",
               "from_team": "Woodland Powerbottoms",
               "to_team": "Ocala Bankers",
-              "points_since_trade": 6.7,
-              "games_since_trade": 1,
-              "ppg_since_trade": 6.7
+              "points_since_trade": 27.5,
+              "games_since_trade": 2,
+              "ppg_since_trade": 13.75
             },
             {
               "player": "James Cook III",
@@ -6826,18 +6826,18 @@
               "player": "Bijan Robinson",
               "from_team": "Ocala Bankers",
               "to_team": "Woodland Powerbottoms",
-              "points_since_trade": 7.6,
-              "games_since_trade": 1,
-              "ppg_since_trade": 7.6
+              "points_since_trade": 35.3,
+              "games_since_trade": 2,
+              "ppg_since_trade": 17.65
             }
           ],
           "verdict": {
             "side_totals": {
-              "Ocala Bankers": 24.8,
-              "Woodland Powerbottoms": 7.6
+              "Ocala Bankers": 45.6,
+              "Woodland Powerbottoms": 35.3
             },
             "leader_team": "Ocala Bankers",
-            "margin": 17.2
+            "margin": 10.3
           },
           "records_since_trade": {
             "Woodland Powerbottoms": {
@@ -6867,25 +6867,25 @@
               "player": "Chase Brown",
               "from_team": "South-of-America Scallywags",
               "to_team": "Glendale Guinea Pigs",
-              "points_since_trade": 16.1,
-              "games_since_trade": 1,
-              "ppg_since_trade": 16.1
+              "points_since_trade": 26.6,
+              "games_since_trade": 2,
+              "ppg_since_trade": 13.3
             },
             {
               "player": "Breece Hall",
               "from_team": "Glendale Guinea Pigs",
               "to_team": "South-of-America Scallywags",
-              "points_since_trade": 0.0,
-              "games_since_trade": 1,
-              "ppg_since_trade": 0.0
+              "points_since_trade": 11.7,
+              "games_since_trade": 2,
+              "ppg_since_trade": 5.85
             },
             {
               "player": "C.J. Stroud",
               "from_team": "South-of-America Scallywags",
               "to_team": "Glendale Guinea Pigs",
-              "points_since_trade": 0.0,
-              "games_since_trade": 0,
-              "ppg_since_trade": null
+              "points_since_trade": 50.36,
+              "games_since_trade": 1,
+              "ppg_since_trade": 50.36
             },
             {
               "player": "Aaron Rodgers",
@@ -6899,9 +6899,9 @@
               "player": "Omar Cooper Jr.",
               "from_team": "Glendale Guinea Pigs",
               "to_team": "South-of-America Scallywags",
-              "points_since_trade": 0.0,
-              "games_since_trade": 1,
-              "ppg_since_trade": 0.0
+              "points_since_trade": 13.8,
+              "games_since_trade": 2,
+              "ppg_since_trade": 6.9
             },
             {
               "player": "Germie Bernard",
@@ -6914,11 +6914,11 @@
           ],
           "verdict": {
             "side_totals": {
-              "Glendale Guinea Pigs": 24.1,
-              "South-of-America Scallywags": 4.88
+              "Glendale Guinea Pigs": 84.96,
+              "South-of-America Scallywags": 30.38
             },
             "leader_team": "Glendale Guinea Pigs",
-            "margin": 19.22
+            "margin": 54.58
           },
           "records_since_trade": {
             "South-of-America Scallywags": {
@@ -6949,16 +6949,16 @@
               "from_team": "Ocala Bankers",
               "to_team": "TRUNDLE NATION",
               "points_since_trade": 11.8,
-              "games_since_trade": 2,
-              "ppg_since_trade": 5.9
+              "games_since_trade": 3,
+              "ppg_since_trade": 3.93
             },
             {
               "player": "Roschon Johnson",
               "from_team": "TRUNDLE NATION",
               "to_team": "Ocala Bankers",
               "points_since_trade": 5.1,
-              "games_since_trade": 2,
-              "ppg_since_trade": 2.55
+              "games_since_trade": 3,
+              "ppg_since_trade": 1.7
             }
           ],
           "verdict": {
@@ -6998,16 +6998,16 @@
               "from_team": "O'Malleys Alley Cats",
               "to_team": "TRUNDLE NATION",
               "points_since_trade": 40.84,
-              "games_since_trade": 3,
-              "ppg_since_trade": 13.61
+              "games_since_trade": 4,
+              "ppg_since_trade": 10.21
             },
             {
               "player": "Braelon Allen",
               "from_team": "TRUNDLE NATION",
               "to_team": "O'Malleys Alley Cats",
-              "points_since_trade": 57.1,
-              "games_since_trade": 3,
-              "ppg_since_trade": 19.03
+              "points_since_trade": 62.5,
+              "games_since_trade": 4,
+              "ppg_since_trade": 15.62
             },
             {
               "player": "DK Metcalf",
@@ -7021,10 +7021,10 @@
           "verdict": {
             "side_totals": {
               "TRUNDLE NATION": 70.14,
-              "O'Malleys Alley Cats": 57.1
+              "O'Malleys Alley Cats": 62.5
             },
             "leader_team": "TRUNDLE NATION",
-            "margin": 13.04
+            "margin": 7.64
           },
           "records_since_trade": {
             "O'Malleys Alley Cats": {
@@ -7054,9 +7054,9 @@
               "player": "Bryce Young",
               "from_team": "Woodland Powerbottoms",
               "to_team": "O'Malleys Alley Cats",
-              "points_since_trade": 45.62,
-              "games_since_trade": 3,
-              "ppg_since_trade": 15.21
+              "points_since_trade": 71.96,
+              "games_since_trade": 4,
+              "ppg_since_trade": 17.99
             },
             {
               "player": "Lamar Jackson",
@@ -7070,18 +7070,18 @@
               "player": "Josh Downs",
               "from_team": "Woodland Powerbottoms",
               "to_team": "O'Malleys Alley Cats",
-              "points_since_trade": 32.5,
-              "games_since_trade": 4,
-              "ppg_since_trade": 8.12
+              "points_since_trade": 37.9,
+              "games_since_trade": 5,
+              "ppg_since_trade": 7.58
             }
           ],
           "verdict": {
             "side_totals": {
-              "O'Malleys Alley Cats": 78.12,
+              "O'Malleys Alley Cats": 109.86,
               "Woodland Powerbottoms": 0.0
             },
             "leader_team": "O'Malleys Alley Cats",
-            "margin": 78.12
+            "margin": 109.86
           },
           "records_since_trade": {
             "Woodland Powerbottoms": {
@@ -7112,33 +7112,33 @@
               "from_team": "O'Malleys Alley Cats",
               "to_team": "Ocala Bankers",
               "points_since_trade": 46.5,
-              "games_since_trade": 6,
-              "ppg_since_trade": 7.75
+              "games_since_trade": 7,
+              "ppg_since_trade": 6.64
             },
             {
               "player": "KC Concepcion",
               "from_team": "O'Malleys Alley Cats",
               "to_team": "Ocala Bankers",
-              "points_since_trade": 54.6,
-              "games_since_trade": 6,
-              "ppg_since_trade": 9.1
+              "points_since_trade": 75.4,
+              "games_since_trade": 7,
+              "ppg_since_trade": 10.77
             },
             {
               "player": "Matthew Golden",
               "from_team": "Ocala Bankers",
               "to_team": "O'Malleys Alley Cats",
-              "points_since_trade": 109.2,
-              "games_since_trade": 6,
-              "ppg_since_trade": 18.2
+              "points_since_trade": 142.6,
+              "games_since_trade": 7,
+              "ppg_since_trade": 20.37
             }
           ],
           "verdict": {
             "side_totals": {
-              "Ocala Bankers": 101.1,
-              "O'Malleys Alley Cats": 109.2
+              "Ocala Bankers": 121.9,
+              "O'Malleys Alley Cats": 142.6
             },
             "leader_team": "O'Malleys Alley Cats",
-            "margin": 8.1
+            "margin": 20.7
           },
           "records_since_trade": {
             "O'Malleys Alley Cats": {
