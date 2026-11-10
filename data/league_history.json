@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T14:06:29.962673Z",
+  "generated_at": "2026-11-10T13:59:35.999327Z",
   "league_id": 1485136557,
   "start_year": 2021,
   "current_season_year": 2026,
@@ -5025,22 +5025,22 @@
           "team_id": 1,
           "team_name": "Woodland Powerbottoms",
           "owner": "Thomas Goodroe",
-          "wins": 5,
+          "wins": 6,
           "losses": 3,
           "ties": 0,
-          "points_for": 1103.8,
-          "points_against": 1072.68,
+          "points_for": 1226.98,
+          "points_against": 1155.84,
           "final_rank": 3
         },
         {
           "team_id": 2,
           "team_name": "Louisiana Nole Jackets",
           "owner": "Thomas Silas",
-          "wins": 6,
+          "wins": 7,
           "losses": 2,
           "ties": 0,
-          "points_for": 1069.58,
-          "points_against": 910.7,
+          "points_for": 1215.24,
+          "points_against": 1042.84,
           "final_rank": 2
         },
         {
@@ -5048,10 +5048,10 @@
           "team_name": "O'Malleys Alley Cats",
           "owner": "Jake Brown",
           "wins": 5,
-          "losses": 3,
+          "losses": 4,
           "ties": 0,
-          "points_for": 1087.12,
-          "points_against": 978.96,
+          "points_for": 1213.5,
+          "points_against": 1113.64,
           "final_rank": 4
         },
         {
@@ -5059,10 +5059,10 @@
           "team_name": "Ocala Bankers",
           "owner": "Ryan Miller",
           "wins": 2,
-          "losses": 6,
+          "losses": 7,
           "ties": 0,
-          "points_for": 965.66,
-          "points_against": 1069.08,
+          "points_for": 1051.62,
+          "points_against": 1217.26,
           "final_rank": 10
         },
         {
@@ -5070,32 +5070,32 @@
           "team_name": "TRUNDLE NATION",
           "owner": "McGowin Jernigan",
           "wins": 2,
-          "losses": 6,
+          "losses": 7,
           "ties": 0,
-          "points_for": 967.18,
-          "points_against": 1074.78,
+          "points_for": 1065.6,
+          "points_against": 1180.54,
           "final_rank": 9
         },
         {
           "team_id": 6,
           "team_name": "South-of-America Scallywags",
           "owner": "Matthew Hitpas",
-          "wins": 3,
+          "wins": 4,
           "losses": 5,
           "ties": 0,
-          "points_for": 909.9,
-          "points_against": 1134.18,
-          "final_rank": 8
+          "points_for": 1015.66,
+          "points_against": 1232.6,
+          "final_rank": 7
         },
         {
           "team_id": 7,
           "team_name": "Marietta Money Launderers",
           "owner": "Austin Solomom",
-          "wins": 6,
+          "wins": 7,
           "losses": 2,
           "ties": 0,
-          "points_for": 1213.06,
-          "points_against": 983.98,
+          "points_for": 1361.24,
+          "points_against": 1069.94,
           "final_rank": 1
         },
         {
@@ -5103,33 +5103,33 @@
           "team_name": "The Laestrygonian Giants",
           "owner": "Carly Schnable",
           "wins": 3,
-          "losses": 5,
+          "losses": 6,
           "ties": 0,
-          "points_for": 1068.34,
-          "points_against": 1061.38,
-          "final_rank": 6
+          "points_for": 1200.48,
+          "points_against": 1207.04,
+          "final_rank": 8
         },
         {
           "team_id": 9,
           "team_name": "Pepperdine Pangolins",
           "owner": "Jasper Bowles",
           "wins": 5,
-          "losses": 3,
+          "losses": 4,
           "ties": 0,
-          "points_for": 992.8,
-          "points_against": 990.38,
+          "points_for": 1075.96,
+          "points_against": 1113.56,
           "final_rank": 5
         },
         {
           "team_id": 10,
           "team_name": "Glendale Guinea Pigs",
           "owner": "Jake Turner",
-          "wins": 3,
+          "wins": 4,
           "losses": 5,
           "ties": 0,
-          "points_for": 992.08,
-          "points_against": 1093.4,
-          "final_rank": 7
+          "points_for": 1126.76,
+          "points_against": 1219.78,
+          "final_rank": 6
         }
       ],
       "champion": null,
@@ -6785,11 +6785,11 @@
           "records_since_trade": {
             "O'Malleys Alley Cats": {
               "wins": 1,
-              "losses": 0,
+              "losses": 1,
               "ties": 0
             },
             "Glendale Guinea Pigs": {
-              "wins": 1,
+              "wins": 2,
               "losses": 0,
               "ties": 0
             }
@@ -6818,9 +6818,9 @@
               "player": "James Cook III",
               "from_team": "Woodland Powerbottoms",
               "to_team": "Ocala Bankers",
-              "points_since_trade": 18.1,
-              "games_since_trade": 1,
-              "ppg_since_trade": 18.1
+              "points_since_trade": 35.8,
+              "games_since_trade": 2,
+              "ppg_since_trade": 17.9
             },
             {
               "player": "Bijan Robinson",
@@ -6833,21 +6833,21 @@
           ],
           "verdict": {
             "side_totals": {
-              "Ocala Bankers": 45.6,
+              "Ocala Bankers": 63.3,
               "Woodland Powerbottoms": 35.3
             },
             "leader_team": "Ocala Bankers",
-            "margin": 10.3
+            "margin": 28.0
           },
           "records_since_trade": {
             "Woodland Powerbottoms": {
-              "wins": 0,
+              "wins": 1,
               "losses": 1,
               "ties": 0
             },
             "Ocala Bankers": {
               "wins": 0,
-              "losses": 1,
+              "losses": 2,
               "ties": 0
             }
           }
@@ -6922,12 +6922,12 @@
           },
           "records_since_trade": {
             "South-of-America Scallywags": {
-              "wins": 1,
+              "wins": 2,
               "losses": 0,
               "ties": 0
             },
             "Glendale Guinea Pigs": {
-              "wins": 1,
+              "wins": 2,
               "losses": 0,
               "ties": 0
             }
@@ -6972,12 +6972,12 @@
           "records_since_trade": {
             "Ocala Bankers": {
               "wins": 1,
-              "losses": 1,
+              "losses": 2,
               "ties": 0
             },
             "TRUNDLE NATION": {
               "wins": 0,
-              "losses": 2,
+              "losses": 3,
               "ties": 0
             }
           }
@@ -7029,12 +7029,12 @@
           "records_since_trade": {
             "O'Malleys Alley Cats": {
               "wins": 1,
-              "losses": 2,
+              "losses": 3,
               "ties": 0
             },
             "TRUNDLE NATION": {
               "wins": 0,
-              "losses": 3,
+              "losses": 4,
               "ties": 0
             }
           }
@@ -7085,13 +7085,13 @@
           },
           "records_since_trade": {
             "Woodland Powerbottoms": {
-              "wins": 3,
+              "wins": 4,
               "losses": 1,
               "ties": 0
             },
             "O'Malleys Alley Cats": {
               "wins": 2,
-              "losses": 2,
+              "losses": 3,
               "ties": 0
             }
           }
@@ -7143,18 +7143,27 @@
           "records_since_trade": {
             "O'Malleys Alley Cats": {
               "wins": 3,
-              "losses": 3,
+              "losses": 4,
               "ties": 0
             },
             "Ocala Bankers": {
               "wins": 2,
-              "losses": 4,
+              "losses": 5,
               "ties": 0
             }
           }
         }
       ],
       "waiver_adds": [
+        {
+          "date": "2026-11-09T21:06:31.676000Z",
+          "team": "South-of-America Scallywags",
+          "owner": "Matthew Hitpas",
+          "player_added": null,
+          "player_dropped": "Hunter Henry",
+          "type": "Drop",
+          "bid_amount": 0
+        },
         {
           "date": "2026-11-08T12:44:51.938000Z",
           "team": "Marietta Money Launderers",
@@ -9047,7 +9056,8 @@
         6,
         7,
         8,
-        9
+        9,
+        10
       ]
     }
   ],
@@ -9062,12 +9072,12 @@
       ],
       "championships": 2,
       "runner_up_finishes": 1,
-      "wins": 34,
+      "wins": 35,
       "losses": 16,
       "ties": 0,
-      "win_pct": 0.68,
-      "points_for": 7313.44,
-      "points_against": 6612.1,
+      "win_pct": 0.686,
+      "points_for": 7436.62,
+      "points_against": 6695.26,
       "seasons_played": 4
     },
     {
@@ -9081,11 +9091,11 @@
       "championships": 1,
       "runner_up_finishes": 1,
       "wins": 34,
-      "losses": 16,
+      "losses": 17,
       "ties": 0,
-      "win_pct": 0.68,
-      "points_for": 6937.92,
-      "points_against": 6544.98,
+      "win_pct": 0.667,
+      "points_for": 7036.34,
+      "points_against": 6650.74,
       "seasons_played": 4
     },
     {
@@ -9128,12 +9138,12 @@
       ],
       "championships": 0,
       "runner_up_finishes": 0,
-      "wins": 27,
+      "wins": 28,
       "losses": 23,
       "ties": 0,
-      "win_pct": 0.54,
-      "points_for": 6702.46,
-      "points_against": 6670.18,
+      "win_pct": 0.549,
+      "points_for": 6837.14,
+      "points_against": 6796.56,
       "seasons_played": 4
     },
     {
@@ -9145,12 +9155,12 @@
       ],
       "championships": 0,
       "runner_up_finishes": 0,
-      "wins": 26,
+      "wins": 27,
       "losses": 24,
       "ties": 0,
-      "win_pct": 0.52,
-      "points_for": 6586.94,
-      "points_against": 6452.9,
+      "win_pct": 0.529,
+      "points_for": 6735.12,
+      "points_against": 6538.86,
       "seasons_played": 4
     },
     {
@@ -9162,11 +9172,11 @@
       "championships": 0,
       "runner_up_finishes": 0,
       "wins": 10,
-      "losses": 12,
+      "losses": 13,
       "ties": 0,
-      "win_pct": 0.455,
-      "points_for": 2826.42,
-      "points_against": 2888.84,
+      "win_pct": 0.435,
+      "points_for": 2958.56,
+      "points_against": 3034.5,
       "seasons_played": 2
     },
     {
@@ -9178,11 +9188,11 @@
       "championships": 0,
       "runner_up_finishes": 0,
       "wins": 16,
-      "losses": 20,
+      "losses": 21,
       "ties": 0,
-      "win_pct": 0.444,
-      "points_for": 4451.68,
-      "points_against": 4640.7,
+      "win_pct": 0.432,
+      "points_for": 4534.84,
+      "points_against": 4763.88,
       "seasons_played": 3
     },
     {
@@ -9195,12 +9205,12 @@
       ],
       "championships": 0,
       "runner_up_finishes": 0,
-      "wins": 21,
+      "wins": 22,
       "losses": 29,
       "ties": 0,
-      "win_pct": 0.42,
-      "points_for": 6472.44,
-      "points_against": 6802.16,
+      "win_pct": 0.431,
+      "points_for": 6578.2,
+      "points_against": 6900.58,
       "seasons_played": 4
     },
     {
@@ -9211,12 +9221,12 @@
       ],
       "championships": 0,
       "runner_up_finishes": 0,
-      "wins": 19,
+      "wins": 20,
       "losses": 31,
       "ties": 0,
-      "win_pct": 0.38,
-      "points_for": 6157.5,
-      "points_against": 6407.46,
+      "win_pct": 0.392,
+      "points_for": 6303.16,
+      "points_against": 6539.6,
       "seasons_played": 4
     },
     {
@@ -9228,11 +9238,11 @@
       "championships": 0,
       "runner_up_finishes": 0,
       "wins": 18,
-      "losses": 32,
+      "losses": 33,
       "ties": 0,
-      "win_pct": 0.36,
-      "points_for": 5926.26,
-      "points_against": 6336.9,
+      "win_pct": 0.353,
+      "points_for": 6052.64,
+      "points_against": 6471.58,
       "seasons_played": 4
     },
     {
@@ -9243,11 +9253,11 @@
       "championships": 0,
       "runner_up_finishes": 0,
       "wins": 2,
-      "losses": 6,
+      "losses": 7,
       "ties": 0,
-      "win_pct": 0.25,
-      "points_for": 965.66,
-      "points_against": 1069.08,
+      "win_pct": 0.222,
+      "points_for": 1051.62,
+      "points_against": 1217.26,
       "seasons_played": 1
     },
     {
@@ -9310,11 +9320,11 @@
       },
       "Jake Turner": {
         "wins": 1,
-        "losses": 3,
+        "losses": 4,
         "ties": 0,
-        "points_for": 418.04,
-        "points_against": 617.66,
-        "games": 4
+        "points_for": 544.42,
+        "points_against": 752.34,
+        "games": 5
       },
       "Matthew Hitpas": {
         "wins": 4,
@@ -9447,12 +9457,12 @@
         "games": 2
       },
       "Carly Schnable": {
-        "wins": 0,
+        "wins": 1,
         "losses": 1,
         "ties": 0,
-        "points_for": 114.92,
-        "points_against": 121.74,
-        "games": 1
+        "points_for": 260.58,
+        "points_against": 253.88,
+        "games": 2
       },
       "Ryan Miller": {
         "wins": 1,
@@ -9551,6 +9561,14 @@
         "points_for": 242.66,
         "points_against": 238.8,
         "games": 2
+      },
+      "Ryan Miller": {
+        "wins": 1,
+        "losses": 0,
+        "ties": 0,
+        "points_for": 148.18,
+        "points_against": 85.96,
+        "games": 1
       }
     },
     "Rohan Raina": {
@@ -9621,12 +9639,12 @@
         "games": 6
       },
       "McGowin Jernigan": {
-        "wins": 1,
+        "wins": 2,
         "losses": 4,
         "ties": 0,
-        "points_for": 747.72,
-        "points_against": 748.42,
-        "games": 5
+        "points_for": 853.48,
+        "points_against": 846.84,
+        "games": 6
       },
       "Austin Solomom": {
         "wins": 3,
@@ -9783,12 +9801,12 @@
         "games": 5
       },
       "Jasper Bowles": {
-        "wins": 2,
+        "wins": 3,
         "losses": 1,
         "ties": 0,
-        "points_for": 467.08,
-        "points_against": 337.82,
-        "games": 3
+        "points_for": 590.26,
+        "points_against": 420.98,
+        "games": 4
       },
       "Carly Schnable": {
         "wins": 2,
@@ -9818,11 +9836,11 @@
       },
       "Matthew Hitpas": {
         "wins": 4,
-        "losses": 1,
+        "losses": 2,
         "ties": 0,
-        "points_for": 748.42,
-        "points_against": 747.72,
-        "games": 5
+        "points_for": 846.84,
+        "points_against": 853.48,
+        "games": 6
       },
       "Jake Brown": {
         "wins": 6,
@@ -9947,12 +9965,12 @@
         "games": 7
       },
       "Jake Brown": {
-        "wins": 3,
+        "wins": 4,
         "losses": 1,
         "ties": 0,
-        "points_for": 617.66,
-        "points_against": 418.04,
-        "games": 4
+        "points_for": 752.34,
+        "points_against": 544.42,
+        "games": 5
       },
       "Thomas Goodroe": {
         "wins": 4,
@@ -10152,11 +10170,11 @@
       },
       "Thomas Goodroe": {
         "wins": 1,
-        "losses": 2,
+        "losses": 3,
         "ties": 0,
-        "points_for": 337.82,
-        "points_against": 467.08,
-        "games": 3
+        "points_for": 420.98,
+        "points_against": 590.26,
+        "games": 4
       },
       "Carly Schnable": {
         "wins": 2,
@@ -10316,11 +10334,11 @@
       },
       "Thomas Silas": {
         "wins": 1,
-        "losses": 0,
+        "losses": 1,
         "ties": 0,
-        "points_for": 121.74,
-        "points_against": 114.92,
-        "games": 1
+        "points_for": 253.88,
+        "points_against": 260.58,
+        "games": 2
       },
       "Ryan Miller": {
         "wins": 1,
@@ -10394,6 +10412,14 @@
         "ties": 0,
         "points_for": 117.06,
         "points_against": 120.56,
+        "games": 1
+      },
+      "Austin Solomom": {
+        "wins": 0,
+        "losses": 1,
+        "ties": 0,
+        "points_for": 85.96,
+        "points_against": 148.18,
         "games": 1
       }
     }
@@ -10800,143 +10826,143 @@
     "2026": [
       {
         "owner": "Austin Solomom",
-        "wins": 6,
+        "wins": 7,
         "losses": 2,
         "ties": 0,
-        "points_for": 1213.06,
-        "avg_points": 151.63,
-        "all_play_wins": 54,
+        "points_for": 1361.24,
+        "avg_points": 151.25,
+        "all_play_wins": 63,
         "all_play_losses": 18,
         "all_play_ties": 0,
-        "all_play_win_pct": 0.75,
-        "actual_win_pct": 0.75,
+        "all_play_win_pct": 0.778,
+        "actual_win_pct": 0.778,
         "luck": 0.0
       },
       {
         "owner": "Thomas Goodroe",
-        "wins": 5,
+        "wins": 6,
         "losses": 3,
         "ties": 0,
-        "points_for": 1103.8,
-        "avg_points": 137.97,
-        "all_play_wins": 41,
-        "all_play_losses": 31,
+        "points_for": 1226.98,
+        "avg_points": 136.33,
+        "all_play_wins": 45,
+        "all_play_losses": 36,
         "all_play_ties": 0,
-        "all_play_win_pct": 0.569,
-        "actual_win_pct": 0.625,
-        "luck": 0.056
+        "all_play_win_pct": 0.556,
+        "actual_win_pct": 0.667,
+        "luck": 0.111
+      },
+      {
+        "owner": "Thomas Silas",
+        "wins": 7,
+        "losses": 2,
+        "ties": 0,
+        "points_for": 1215.24,
+        "avg_points": 135.03,
+        "all_play_wins": 53,
+        "all_play_losses": 28,
+        "all_play_ties": 0,
+        "all_play_win_pct": 0.654,
+        "actual_win_pct": 0.778,
+        "luck": 0.123
       },
       {
         "owner": "Jake Brown",
         "wins": 5,
-        "losses": 3,
+        "losses": 4,
         "ties": 0,
-        "points_for": 1087.12,
-        "avg_points": 135.89,
-        "all_play_wins": 43,
-        "all_play_losses": 29,
+        "points_for": 1213.5,
+        "avg_points": 134.83,
+        "all_play_wins": 48,
+        "all_play_losses": 33,
         "all_play_ties": 0,
-        "all_play_win_pct": 0.597,
-        "actual_win_pct": 0.625,
-        "luck": 0.028
-      },
-      {
-        "owner": "Thomas Silas",
-        "wins": 6,
-        "losses": 2,
-        "ties": 0,
-        "points_for": 1069.58,
-        "avg_points": 133.7,
-        "all_play_wins": 45,
-        "all_play_losses": 27,
-        "all_play_ties": 0,
-        "all_play_win_pct": 0.625,
-        "actual_win_pct": 0.75,
-        "luck": 0.125
+        "all_play_win_pct": 0.593,
+        "actual_win_pct": 0.556,
+        "luck": -0.037
       },
       {
         "owner": "Carly Schnable",
         "wins": 3,
+        "losses": 6,
+        "ties": 0,
+        "points_for": 1200.48,
+        "avg_points": 133.39,
+        "all_play_wins": 45,
+        "all_play_losses": 36,
+        "all_play_ties": 0,
+        "all_play_win_pct": 0.556,
+        "actual_win_pct": 0.333,
+        "luck": -0.222
+      },
+      {
+        "owner": "Jake Turner",
+        "wins": 4,
         "losses": 5,
         "ties": 0,
-        "points_for": 1068.34,
-        "avg_points": 133.54,
-        "all_play_wins": 39,
-        "all_play_losses": 33,
+        "points_for": 1126.76,
+        "avg_points": 125.2,
+        "all_play_wins": 44,
+        "all_play_losses": 37,
         "all_play_ties": 0,
-        "all_play_win_pct": 0.542,
-        "actual_win_pct": 0.375,
-        "luck": -0.167
+        "all_play_win_pct": 0.543,
+        "actual_win_pct": 0.444,
+        "luck": -0.099
       },
       {
         "owner": "Jasper Bowles",
         "wins": 5,
-        "losses": 3,
+        "losses": 4,
         "ties": 0,
-        "points_for": 992.8,
-        "avg_points": 124.1,
+        "points_for": 1075.96,
+        "avg_points": 119.55,
         "all_play_wins": 29,
-        "all_play_losses": 43,
+        "all_play_losses": 52,
         "all_play_ties": 0,
-        "all_play_win_pct": 0.403,
-        "actual_win_pct": 0.625,
-        "luck": 0.222
-      },
-      {
-        "owner": "Jake Turner",
-        "wins": 3,
-        "losses": 5,
-        "ties": 0,
-        "points_for": 992.08,
-        "avg_points": 124.01,
-        "all_play_wins": 37,
-        "all_play_losses": 35,
-        "all_play_ties": 0,
-        "all_play_win_pct": 0.514,
-        "actual_win_pct": 0.375,
-        "luck": -0.139
+        "all_play_win_pct": 0.358,
+        "actual_win_pct": 0.556,
+        "luck": 0.198
       },
       {
         "owner": "McGowin Jernigan",
         "wins": 2,
-        "losses": 6,
+        "losses": 7,
         "ties": 0,
-        "points_for": 967.18,
-        "avg_points": 120.9,
-        "all_play_wins": 27,
-        "all_play_losses": 45,
+        "points_for": 1065.6,
+        "avg_points": 118.4,
+        "all_play_wins": 29,
+        "all_play_losses": 52,
         "all_play_ties": 0,
-        "all_play_win_pct": 0.375,
-        "actual_win_pct": 0.25,
-        "luck": -0.125
+        "all_play_win_pct": 0.358,
+        "actual_win_pct": 0.222,
+        "luck": -0.136
       },
       {
         "owner": "Ryan Miller",
         "wins": 2,
-        "losses": 6,
+        "losses": 7,
         "ties": 0,
-        "points_for": 965.66,
-        "avg_points": 120.71,
-        "all_play_wins": 22,
-        "all_play_losses": 50,
+        "points_for": 1051.62,
+        "avg_points": 116.85,
+        "all_play_wins": 23,
+        "all_play_losses": 58,
         "all_play_ties": 0,
-        "all_play_win_pct": 0.306,
-        "actual_win_pct": 0.25,
-        "luck": -0.056
+        "all_play_win_pct": 0.284,
+        "actual_win_pct": 0.222,
+        "luck": -0.062
       },
       {
         "owner": "Matthew Hitpas",
-        "wins": 3,
+        "wins": 4,
         "losses": 5,
         "ties": 0,
-        "points_for": 909.9,
-        "avg_points": 113.74,
-        "all_play_wins": 23,
-        "all_play_losses": 49,
+        "points_for": 1015.66,
+        "avg_points": 112.85,
+        "all_play_wins": 26,
+        "all_play_losses": 55,
         "all_play_ties": 0,
-        "all_play_win_pct": 0.319,
-        "actual_win_pct": 0.375,
-        "luck": 0.056
+        "all_play_win_pct": 0.321,
+        "actual_win_pct": 0.444,
+        "luck": 0.123
       }
     ]
   },
@@ -14192,6 +14218,66 @@
       "margin": 55.38,
       "winner": "Thomas Silas",
       "loser": "Thomas Goodroe"
+    },
+    {
+      "year": 2026,
+      "week": 9,
+      "is_playoff": false,
+      "home_owner": "Matthew Hitpas",
+      "home_score": 105.76,
+      "away_owner": "McGowin Jernigan",
+      "away_score": 98.42,
+      "margin": 7.34,
+      "winner": "Matthew Hitpas",
+      "loser": "McGowin Jernigan"
+    },
+    {
+      "year": 2026,
+      "week": 9,
+      "is_playoff": false,
+      "home_owner": "Jake Turner",
+      "home_score": 134.68,
+      "away_owner": "Jake Brown",
+      "away_score": 126.38,
+      "margin": 8.3,
+      "winner": "Jake Turner",
+      "loser": "Jake Brown"
+    },
+    {
+      "year": 2026,
+      "week": 9,
+      "is_playoff": false,
+      "home_owner": "Ryan Miller",
+      "home_score": 85.96,
+      "away_owner": "Austin Solomom",
+      "away_score": 148.18,
+      "margin": 62.22,
+      "winner": "Austin Solomom",
+      "loser": "Ryan Miller"
+    },
+    {
+      "year": 2026,
+      "week": 9,
+      "is_playoff": false,
+      "home_owner": "Jasper Bowles",
+      "home_score": 83.16,
+      "away_owner": "Thomas Goodroe",
+      "away_score": 123.18,
+      "margin": 40.02,
+      "winner": "Thomas Goodroe",
+      "loser": "Jasper Bowles"
+    },
+    {
+      "year": 2026,
+      "week": 9,
+      "is_playoff": false,
+      "home_owner": "Carly Schnable",
+      "home_score": 132.14,
+      "away_owner": "Thomas Silas",
+      "away_score": 145.66,
+      "margin": 13.52,
+      "winner": "Thomas Silas",
+      "loser": "Carly Schnable"
     }
   ],
   "weekly_scores": {
@@ -14261,7 +14347,8 @@
         "5": 150.96,
         "6": 114.46,
         "7": 87.42,
-        "8": 136.46
+        "8": 136.46,
+        "9": 126.38
       }
     },
     "Thomas Silas": {
@@ -14330,7 +14417,8 @@
         "5": 129.54,
         "6": 98.3,
         "7": 144.22,
-        "8": 156.08
+        "8": 156.08,
+        "9": 145.66
       }
     },
     "Austin Solomom": {
@@ -14399,7 +14487,8 @@
         "5": 191.34,
         "6": 121.32,
         "7": 137.42,
-        "8": 139.3
+        "8": 139.3,
+        "9": 148.18
       }
     },
     "Rohan Raina": {
@@ -14489,7 +14578,8 @@
         "5": 79.42,
         "6": 149.7,
         "7": 125.44,
-        "8": 120.56
+        "8": 120.56,
+        "9": 105.76
       }
     },
     "Thomas Goodroe": {
@@ -14558,7 +14648,8 @@
         "5": 167.84,
         "6": 184.24,
         "7": 155.28,
-        "8": 100.7
+        "8": 100.7,
+        "9": 123.18
       }
     },
     "McGowin Jernigan": {
@@ -14627,7 +14718,8 @@
         "5": 128.98,
         "6": 80.18,
         "7": 112.5,
-        "8": 121.7
+        "8": 121.7,
+        "9": 98.42
       }
     },
     "Jake Turner": {
@@ -14696,7 +14788,8 @@
         "5": 117.32,
         "6": 85.28,
         "7": 162.78,
-        "8": 168.84
+        "8": 168.84,
+        "9": 134.68
       }
     },
     "Walker Westlund": {
@@ -14786,7 +14879,8 @@
         "5": 128.04,
         "6": 109.1,
         "7": 167.12,
-        "8": 109.5
+        "8": 109.5,
+        "9": 83.16
       }
     },
     "Bryan Huegin": {
@@ -14838,7 +14932,8 @@
         "5": 172.1,
         "6": 128.24,
         "7": 123.28,
-        "8": 135.88
+        "8": 135.88,
+        "9": 132.14
       }
     },
     "Ryan Miller": {
@@ -14850,7 +14945,8 @@
         "5": 114.8,
         "6": 124.6,
         "7": 117.5,
-        "8": 117.06
+        "8": 117.06,
+        "9": 85.96
       }
     }
   },
@@ -15054,126 +15150,126 @@
     "min_games": 3
   },
   "this_week_in_history": {
-    "week": 9,
+    "week": 10,
     "games": [
       {
+        "year": 2025,
+        "week": 10,
+        "is_playoff": false,
+        "home_owner": "McGowin Jernigan",
+        "home_score": 183.52,
+        "away_owner": "Jake Brown",
+        "away_score": 116.8,
+        "margin": 66.72,
+        "winner": "McGowin Jernigan",
+        "loser": "Jake Brown"
+      },
+      {
         "year": 2024,
-        "week": 9,
+        "week": 10,
         "is_playoff": false,
         "home_owner": "Bryan Huegin",
-        "home_score": 91.2,
-        "away_owner": "Thomas Silas",
-        "away_score": 191.24,
-        "margin": 100.04,
-        "winner": "Thomas Silas",
+        "home_score": 73.06,
+        "away_owner": "Jasper Bowles",
+        "away_score": 117.72,
+        "margin": 44.66,
+        "winner": "Jasper Bowles",
         "loser": "Bryan Huegin"
       },
       {
-        "year": 2025,
-        "week": 9,
-        "is_playoff": false,
-        "home_owner": "Jake Turner",
-        "home_score": 173.5,
-        "away_owner": "Jake Brown",
-        "away_score": 97.08,
-        "margin": 76.42,
-        "winner": "Jake Turner",
-        "loser": "Jake Brown"
-      },
-      {
-        "year": 2025,
-        "week": 9,
-        "is_playoff": false,
-        "home_owner": "Jasper Bowles",
-        "home_score": 121.26,
-        "away_owner": "Thomas Goodroe",
-        "away_score": 171.76,
-        "margin": 50.5,
-        "winner": "Thomas Goodroe",
-        "loser": "Jasper Bowles"
-      },
-      {
-        "year": 2024,
-        "week": 9,
-        "is_playoff": false,
-        "home_owner": "Jake Turner",
-        "home_score": 139.8,
-        "away_owner": "Jake Brown",
-        "away_score": 95.64,
-        "margin": 44.16,
-        "winner": "Jake Turner",
-        "loser": "Jake Brown"
-      },
-      {
         "year": 2023,
-        "week": 9,
+        "week": 10,
         "is_playoff": false,
-        "home_owner": "Austin Solomom",
-        "home_score": 147.08,
-        "away_owner": "Jake Turner",
-        "away_score": 104.0,
-        "margin": 43.08,
-        "winner": "Austin Solomom",
-        "loser": "Jake Turner"
-      },
-      {
-        "year": 2023,
-        "week": 9,
-        "is_playoff": false,
-        "home_owner": "Matthew Hitpas",
-        "home_score": 191.7,
-        "away_owner": "McGowin Jernigan",
-        "away_score": 154.76,
-        "margin": 36.94,
-        "winner": "Matthew Hitpas",
+        "home_owner": "McGowin Jernigan",
+        "home_score": 107.56,
+        "away_owner": "Jake Brown",
+        "away_score": 142.94,
+        "margin": 35.38,
+        "winner": "Jake Brown",
         "loser": "McGowin Jernigan"
       },
       {
-        "year": 2025,
-        "week": 9,
+        "year": 2024,
+        "week": 10,
         "is_playoff": false,
-        "home_owner": "Walker Westlund",
-        "home_score": 134.54,
-        "away_owner": "Austin Solomom",
-        "away_score": 114.08,
-        "margin": 20.46,
-        "winner": "Walker Westlund",
-        "loser": "Austin Solomom"
-      },
-      {
-        "year": 2025,
-        "week": 9,
-        "is_playoff": false,
-        "home_owner": "Matthew Hitpas",
-        "home_score": 111.42,
-        "away_owner": "McGowin Jernigan",
-        "away_score": 129.7,
-        "margin": 18.28,
-        "winner": "McGowin Jernigan",
+        "home_owner": "Austin Solomom",
+        "home_score": 177.26,
+        "away_owner": "Matthew Hitpas",
+        "away_score": 143.16,
+        "margin": 34.1,
+        "winner": "Austin Solomom",
         "loser": "Matthew Hitpas"
       },
       {
-        "year": 2024,
-        "week": 9,
+        "year": 2023,
+        "week": 10,
         "is_playoff": false,
-        "home_owner": "Walker Westlund",
-        "home_score": 158.7,
-        "away_owner": "Austin Solomom",
-        "away_score": 141.26,
-        "margin": 17.44,
-        "winner": "Walker Westlund",
+        "home_owner": "Jake Turner",
+        "home_score": 161.54,
+        "away_owner": "Rohan Raina",
+        "away_score": 139.6,
+        "margin": 21.94,
+        "winner": "Jake Turner",
+        "loser": "Rohan Raina"
+      },
+      {
+        "year": 2025,
+        "week": 10,
+        "is_playoff": false,
+        "home_owner": "Thomas Goodroe",
+        "home_score": 140.7,
+        "away_owner": "Jake Turner",
+        "away_score": 118.8,
+        "margin": 21.9,
+        "winner": "Thomas Goodroe",
+        "loser": "Jake Turner"
+      },
+      {
+        "year": 2025,
+        "week": 10,
+        "is_playoff": false,
+        "home_owner": "Austin Solomom",
+        "home_score": 70.78,
+        "away_owner": "Matthew Hitpas",
+        "away_score": 91.8,
+        "margin": 21.02,
+        "winner": "Matthew Hitpas",
         "loser": "Austin Solomom"
       },
       {
-        "year": 2024,
-        "week": 9,
+        "year": 2023,
+        "week": 10,
         "is_playoff": false,
-        "home_owner": "Jasper Bowles",
-        "home_score": 132.06,
+        "home_owner": "Matthew Hitpas",
+        "home_score": 130.22,
+        "away_owner": "Austin Solomom",
+        "away_score": 149.54,
+        "margin": 19.32,
+        "winner": "Austin Solomom",
+        "loser": "Matthew Hitpas"
+      },
+      {
+        "year": 2025,
+        "week": 10,
+        "is_playoff": false,
+        "home_owner": "Thomas Silas",
+        "home_score": 121.64,
+        "away_owner": "Walker Westlund",
+        "away_score": 140.08,
+        "margin": 18.44,
+        "winner": "Walker Westlund",
+        "loser": "Thomas Silas"
+      },
+      {
+        "year": 2023,
+        "week": 10,
+        "is_playoff": false,
+        "home_owner": "Thomas Silas",
+        "home_score": 163.92,
         "away_owner": "Thomas Goodroe",
-        "away_score": 118.08,
-        "margin": 13.98,
-        "winner": "Jasper Bowles",
+        "away_score": 148.6,
+        "margin": 15.32,
+        "winner": "Thomas Silas",
         "loser": "Thomas Goodroe"
       }
     ]
