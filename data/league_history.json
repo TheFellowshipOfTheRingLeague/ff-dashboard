@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T13:59:35.999327Z",
+  "generated_at": "2026-11-11T14:03:11.030289Z",
   "league_id": 1485136557,
   "start_year": 2021,
   "current_season_year": 2026,
@@ -6739,6 +6739,76 @@
       ],
       "trades": [
         {
+          "date": "2026-11-10T16:41:14.940000Z",
+          "teams_involved": [
+            "TRUNDLE NATION",
+            "O'Malleys Alley Cats"
+          ],
+          "team_owners": {
+            "TRUNDLE NATION": "McGowin Jernigan",
+            "O'Malleys Alley Cats": "Jake Brown"
+          },
+          "items": [
+            {
+              "player": "Amon-Ra St. Brown",
+              "from_team": "TRUNDLE NATION",
+              "to_team": "O'Malleys Alley Cats",
+              "points_since_trade": 0.0,
+              "games_since_trade": 0,
+              "ppg_since_trade": null
+            },
+            {
+              "player": "Jahmyr Gibbs",
+              "from_team": "O'Malleys Alley Cats",
+              "to_team": "TRUNDLE NATION",
+              "points_since_trade": 0.0,
+              "games_since_trade": 0,
+              "ppg_since_trade": null
+            }
+          ],
+          "verdict": null,
+          "records_since_trade": {}
+        },
+        {
+          "date": "2026-11-10T16:40:48.510000Z",
+          "teams_involved": [
+            "South-of-America Scallywags",
+            "Woodland Powerbottoms"
+          ],
+          "team_owners": {
+            "South-of-America Scallywags": "Matthew Hitpas",
+            "Woodland Powerbottoms": "Thomas Goodroe"
+          },
+          "items": [
+            {
+              "player": "Carnell Tate",
+              "from_team": "South-of-America Scallywags",
+              "to_team": "Woodland Powerbottoms",
+              "points_since_trade": 0.0,
+              "games_since_trade": 0,
+              "ppg_since_trade": null
+            },
+            {
+              "player": "Antonio Williams",
+              "from_team": "Woodland Powerbottoms",
+              "to_team": "South-of-America Scallywags",
+              "points_since_trade": 0.0,
+              "games_since_trade": 0,
+              "ppg_since_trade": null
+            },
+            {
+              "player": "Seth McGowan",
+              "from_team": "Woodland Powerbottoms",
+              "to_team": "South-of-America Scallywags",
+              "points_since_trade": 0.0,
+              "games_since_trade": 0,
+              "ppg_since_trade": null
+            }
+          ],
+          "verdict": null,
+          "records_since_trade": {}
+        },
+        {
           "date": "2026-10-30T19:13:06.272000Z",
           "teams_involved": [
             "O'Malleys Alley Cats",
@@ -7070,18 +7140,18 @@
               "player": "Josh Downs",
               "from_team": "Woodland Powerbottoms",
               "to_team": "O'Malleys Alley Cats",
-              "points_since_trade": 37.9,
-              "games_since_trade": 5,
-              "ppg_since_trade": 7.58
+              "points_since_trade": 30.2,
+              "games_since_trade": 4,
+              "ppg_since_trade": 7.55
             }
           ],
           "verdict": {
             "side_totals": {
-              "O'Malleys Alley Cats": 109.86,
+              "O'Malleys Alley Cats": 102.16,
               "Woodland Powerbottoms": 0.0
             },
             "leader_team": "O'Malleys Alley Cats",
-            "margin": 109.86
+            "margin": 102.16
           },
           "records_since_trade": {
             "Woodland Powerbottoms": {
@@ -7155,6 +7225,123 @@
         }
       ],
       "waiver_adds": [
+        {
+          "date": "2026-11-11T08:12:53.195000Z",
+          "team": "Louisiana Nole Jackets",
+          "owner": "Thomas Silas",
+          "player_added": "Audric Estime",
+          "player_dropped": null,
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-11T08:12:53.195000Z",
+          "team": "TRUNDLE NATION",
+          "owner": "McGowin Jernigan",
+          "player_added": "Aaron Rodgers",
+          "player_dropped": null,
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-11T08:12:53.195000Z",
+          "team": "Pepperdine Pangolins",
+          "owner": "Jasper Bowles",
+          "player_added": "Packers D/ST",
+          "player_dropped": "Travis Etienne Jr.",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-11T08:12:53.195000Z",
+          "team": "Louisiana Nole Jackets",
+          "owner": "Thomas Silas",
+          "player_added": "Corey Kiner",
+          "player_dropped": null,
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-11T08:12:53.195000Z",
+          "team": "TRUNDLE NATION",
+          "owner": "McGowin Jernigan",
+          "player_added": "Geno Smith",
+          "player_dropped": null,
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-11T08:12:53.195000Z",
+          "team": "The Laestrygonian Giants",
+          "owner": "Carly Schnable",
+          "player_added": "Ravens D/ST",
+          "player_dropped": "Giants D/ST",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-11T08:12:53.195000Z",
+          "team": "South-of-America Scallywags",
+          "owner": "Matthew Hitpas",
+          "player_added": "Rams D/ST",
+          "player_dropped": "Browns D/ST",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-11T08:12:53.195000Z",
+          "team": "Ocala Bankers",
+          "owner": "Ryan Miller",
+          "player_added": "Courtland Sutton",
+          "player_dropped": "Patriots D/ST",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-11T08:12:53.195000Z",
+          "team": "Pepperdine Pangolins",
+          "owner": "Jasper Bowles",
+          "player_added": "Drew Lock",
+          "player_dropped": "Baker Mayfield",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-11T08:12:53.195000Z",
+          "team": "Glendale Guinea Pigs",
+          "owner": "Jake Turner",
+          "player_added": "Tank Dell",
+          "player_dropped": "TreVeyon Henderson",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-11T03:50:58.816000Z",
+          "team": "TRUNDLE NATION",
+          "owner": "McGowin Jernigan",
+          "player_added": null,
+          "player_dropped": "Kyler Murray",
+          "type": "Drop",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-10T19:28:58.564000Z",
+          "team": "Louisiana Nole Jackets",
+          "owner": "Thomas Silas",
+          "player_added": null,
+          "player_dropped": "Michael Wilson",
+          "type": "Drop",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-10T14:03:23.383000Z",
+          "team": "TRUNDLE NATION",
+          "owner": "McGowin Jernigan",
+          "player_added": null,
+          "player_dropped": "Malik Willis",
+          "type": "Drop",
+          "bid_amount": 0
+        },
         {
           "date": "2026-11-09T21:06:31.676000Z",
           "team": "South-of-America Scallywags",
