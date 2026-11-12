@@ -525,6 +525,13 @@ function renderTradeCard(t, showYear) {
 
 const WAIVER_TRADE_YEAR = 2026;
 
+function tradeOwners(t) {
+  // Every manager on either side of this trade, however the deal's items
+  // are grouped by team name internally - the same translation renderTradeCard
+  // uses (t.team_owners maps a team name to the owner it belongs to).
+  return Object.values(t.team_owners || {});
+}
+
 function renderTrades(data) {
   const root = document.getElementById("panel-trades");
   root.innerHTML = "";
@@ -536,17 +543,35 @@ function renderTrades(data) {
   });
   all.sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
 
-  const card = el("div", { class: "card" }, [
-    el("h2", {}, `${WAIVER_TRADE_YEAR} trades`),
-    el("p", { class: "sub" }, `${all.length} trade${all.length === 1 ? "" : "s"} in ${WAIVER_TRADE_YEAR}.`),
-  ]);
+  const managers = Array.from(new Set(all.flatMap(tradeOwners))).sort((a, b) => a.localeCompare(b));
 
-  if (!all.length) {
-    card.appendChild(el("div", { class: "empty-state" }, "No trades recorded yet."));
-  } else {
-    all.forEach((t) => card.appendChild(renderTradeCard(t, true)));
-  }
+  const controls = el("div", { class: "controls" });
+  const select = el("select", { id: "trade-manager-select" }, [el("option", { value: "" }, "All managers")]);
+  managers.forEach((m) => select.appendChild(el("option", { value: m }, m)));
+  controls.appendChild(el("label", {}, "Manager"));
+  controls.appendChild(select);
+  root.appendChild(controls);
+
+  const card = el("div", { class: "card" }, [el("h2", {}, `${WAIVER_TRADE_YEAR} trades`), el("p", { class: "sub" })]);
   root.appendChild(card);
+
+  function render(manager) {
+    const filtered = manager ? all.filter((t) => tradeOwners(t).includes(manager)) : all;
+
+    card.querySelector("p.sub").textContent = manager
+      ? `${filtered.length} trade${filtered.length === 1 ? "" : "s"} involving ${manager} in ${WAIVER_TRADE_YEAR}.`
+      : `${all.length} trade${all.length === 1 ? "" : "s"} in ${WAIVER_TRADE_YEAR}.`;
+
+    card.querySelectorAll(".trade-card, .empty-state").forEach((n) => n.remove());
+    if (!filtered.length) {
+      card.appendChild(el("div", { class: "empty-state" }, manager ? `No trades found involving ${manager}.` : "No trades recorded yet."));
+    } else {
+      filtered.forEach((t) => card.appendChild(renderTradeCard(t, true)));
+    }
+  }
+
+  select.addEventListener("change", (e) => render(e.target.value));
+  render("");
 }
 
 function renderWaivers(data) {
