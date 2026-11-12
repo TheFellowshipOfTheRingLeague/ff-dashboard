@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T14:03:11.030289Z",
+  "generated_at": "2026-11-12T14:05:11.112317Z",
   "league_id": 1485136557,
   "start_year": 2021,
   "current_season_year": 2026,
@@ -7225,6 +7225,96 @@
         }
       ],
       "waiver_adds": [
+        {
+          "date": "2026-11-12T09:05:26.571000Z",
+          "team": "Pepperdine Pangolins",
+          "owner": "Jasper Bowles",
+          "player_added": "TreVeyon Henderson",
+          "player_dropped": null,
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-11T20:50:37.010000Z",
+          "team": "Louisiana Nole Jackets",
+          "owner": "Thomas Silas",
+          "player_added": "Wan'Dale Robinson",
+          "player_dropped": null,
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-11T20:49:06.713000Z",
+          "team": "Louisiana Nole Jackets",
+          "owner": "Thomas Silas",
+          "player_added": null,
+          "player_dropped": "Bengals D/ST",
+          "type": "Drop",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-11T20:23:18.774000Z",
+          "team": "Ocala Bankers",
+          "owner": "Ryan Miller",
+          "player_added": null,
+          "player_dropped": "Ryan Flournoy",
+          "type": "Drop",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-11T20:17:54.331000Z",
+          "team": "Ocala Bankers",
+          "owner": "Ryan Miller",
+          "player_added": "Kyle Pitts Sr.",
+          "player_dropped": "Michael Mayer",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-11T20:17:45.418000Z",
+          "team": "Marietta Money Launderers",
+          "owner": "Austin Solomom",
+          "player_added": "Mack Hollins",
+          "player_dropped": "Marvin Harrison Jr.",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-11T20:15:53.878000Z",
+          "team": "Marietta Money Launderers",
+          "owner": "Austin Solomom",
+          "player_added": "Hunter Henry",
+          "player_dropped": null,
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-11T20:15:47.122000Z",
+          "team": "Marietta Money Launderers",
+          "owner": "Austin Solomom",
+          "player_added": null,
+          "player_dropped": "Kimani Vidal",
+          "type": "Drop",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-11T20:14:17.998000Z",
+          "team": "Marietta Money Launderers",
+          "owner": "Austin Solomom",
+          "player_added": "Colts D/ST",
+          "player_dropped": "Chiefs D/ST",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-11T20:07:36.814000Z",
+          "team": "Pepperdine Pangolins",
+          "owner": "Jasper Bowles",
+          "player_added": null,
+          "player_dropped": "Eli Raridon",
+          "type": "Drop",
+          "bid_amount": 0
+        },
         {
           "date": "2026-11-11T08:12:53.195000Z",
           "team": "Louisiana Nole Jackets",
