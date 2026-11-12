@@ -11764,7 +11764,7 @@
             {
               "name": "DeVonta Smith",
               "position": "WR",
-              "slot": "IR",
+              "slot": "BE",
               "pro_team": "PHI",
               "points": 0
             },
@@ -11820,7 +11820,7 @@
             {
               "name": "Lamar Jackson",
               "position": "QB",
-              "slot": "BE",
+              "slot": "IR",
               "pro_team": "BAL",
               "points": 0
             },
