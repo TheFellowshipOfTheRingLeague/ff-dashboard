@@ -11342,7 +11342,7 @@
               "position": "RB",
               "slot": "BE",
               "pro_team": "NYG",
-              "points": 0
+              "points": 0.3
             },
             {
               "name": "Jahmyr Gibbs",
@@ -11496,7 +11496,7 @@
             {
               "name": "Puka Nacua",
               "position": "WR",
-              "slot": "BE",
+              "slot": "IR",
               "pro_team": "LAR",
               "points": 0
             },
@@ -11578,13 +11578,6 @@
               "points": 0
             },
             {
-              "name": "Terrance Ferguson",
-              "position": "TE",
-              "slot": "IR",
-              "pro_team": "LAR",
-              "points": 0
-            },
-            {
               "name": "Mike Washington Jr.",
               "position": "RB",
               "slot": "BE",
@@ -11610,6 +11603,13 @@
               "position": "WR",
               "slot": "WR",
               "pro_team": "NE",
+              "points": 0
+            },
+            {
+              "name": "Travis Etienne Jr.",
+              "position": "RB",
+              "slot": "BE",
+              "pro_team": "NO",
               "points": 0
             }
           ]
@@ -11721,7 +11721,7 @@
               "position": "WR",
               "slot": "BE",
               "pro_team": "WSH",
-              "points": 0
+              "points": 12.2
             },
             {
               "name": "Seth McGowan",
@@ -11745,7 +11745,7 @@
         "is_playoff": false,
         "home": {
           "owner": "Thomas Goodroe",
-          "score": 0,
+          "score": 7.4,
           "lineup": [
             {
               "name": "Ashton Jeanty",
@@ -11759,7 +11759,7 @@
               "position": "WR",
               "slot": "WR",
               "pro_team": "NYG",
-              "points": 0
+              "points": 7.4
             },
             {
               "name": "DeVonta Smith",
@@ -11985,7 +11985,7 @@
         "is_playoff": false,
         "home": {
           "owner": "Thomas Silas",
-          "score": 0,
+          "score": 63.66,
           "lineup": [
             {
               "name": "CeeDee Lamb",
@@ -12020,7 +12020,7 @@
               "position": "QB",
               "slot": "QB",
               "pro_team": "WSH",
-              "points": 0
+              "points": 26.76
             },
             {
               "name": "Rome Odunze",
@@ -12055,14 +12055,14 @@
               "position": "RB",
               "slot": "RB",
               "pro_team": "WSH",
-              "points": 0
+              "points": 6.2
             },
             {
               "name": "Isaiah Likely",
               "position": "TE",
               "slot": "RB/WR/TE",
               "pro_team": "NYG",
-              "points": 0
+              "points": 30.7
             },
             {
               "name": "Tyler Shough",
@@ -12088,14 +12088,14 @@
             {
               "name": "Corey Kiner",
               "position": "RB",
-              "slot": "RB",
+              "slot": "BE",
               "pro_team": "NE",
               "points": 0
             },
             {
               "name": "Audric Estime",
               "position": "RB",
-              "slot": "BE",
+              "slot": "RB",
               "pro_team": "NO",
               "points": 0
             },
@@ -12260,7 +12260,7 @@
               "position": "RB",
               "slot": "BE",
               "pro_team": "NYG",
-              "points": 0
+              "points": 27.2
             },
             {
               "name": "Tetairoa McMillan",
@@ -12399,7 +12399,7 @@
               "position": "WR",
               "slot": "BE",
               "pro_team": "WSH",
-              "points": 0
+              "points": 20.3
             },
             {
               "name": "Caleb Williams",
