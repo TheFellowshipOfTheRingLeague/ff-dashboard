@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13T14:01:38.169104Z",
+  "generated_at": "2026-11-14T13:41:58.429289Z",
   "league_id": 1485136557,
   "start_year": 2021,
   "current_season_year": 2026,
@@ -7225,6 +7225,15 @@
         }
       ],
       "waiver_adds": [
+        {
+          "date": "2026-11-13T19:35:20.887000Z",
+          "team": "Woodland Powerbottoms",
+          "owner": "Thomas Goodroe",
+          "player_added": "Emmett Johnson",
+          "player_dropped": null,
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
         {
           "date": "2026-11-13T00:53:05.359000Z",
           "team": "Marietta Money Launderers",

@@ -11670,7 +11670,7 @@
             {
               "name": "Denzel Boston",
               "position": "WR",
-              "slot": "RB/WR/TE",
+              "slot": "BE",
               "pro_team": "CLE",
               "points": 0
             },
@@ -11691,7 +11691,7 @@
             {
               "name": "Keenan Allen",
               "position": "WR",
-              "slot": "BE",
+              "slot": "RB/WR/TE",
               "pro_team": "SF",
               "points": 0
             },
@@ -11764,7 +11764,7 @@
             {
               "name": "DeVonta Smith",
               "position": "WR",
-              "slot": "BE",
+              "slot": "IR",
               "pro_team": "PHI",
               "points": 0
             },
@@ -11813,14 +11813,14 @@
             {
               "name": "Jordyn Tyson",
               "position": "WR",
-              "slot": "BE",
+              "slot": "WR",
               "pro_team": "NO",
               "points": 0
             },
             {
               "name": "Lamar Jackson",
               "position": "QB",
-              "slot": "IR",
+              "slot": "BE",
               "pro_team": "BAL",
               "points": 0
             },
@@ -11855,8 +11855,15 @@
             {
               "name": "Carnell Tate",
               "position": "WR",
-              "slot": "WR",
+              "slot": "BE",
               "pro_team": "TEN",
+              "points": 0
+            },
+            {
+              "name": "Emmett Johnson",
+              "position": "RB",
+              "slot": "BE",
+              "pro_team": "KC",
               "points": 0
             }
           ]
@@ -11917,7 +11924,7 @@
             {
               "name": "Woody Marks",
               "position": "RB",
-              "slot": "RB/WR/TE",
+              "slot": "BE",
               "pro_team": "HOU",
               "points": 0
             },
@@ -11959,7 +11966,7 @@
             {
               "name": "Caleb Douglas",
               "position": "WR",
-              "slot": "WR",
+              "slot": "RB/WR/TE",
               "pro_team": "MIA",
               "points": 0
             },
@@ -11973,7 +11980,7 @@
             {
               "name": "Tank Dell",
               "position": "WR",
-              "slot": "BE",
+              "slot": "WR",
               "pro_team": "HOU",
               "points": 0
             }
