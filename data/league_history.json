@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T13:41:58.429289Z",
+  "generated_at": "2026-11-15T13:42:40.739451Z",
   "league_id": 1485136557,
   "start_year": 2021,
   "current_season_year": 2026,
@@ -7225,6 +7225,51 @@
         }
       ],
       "waiver_adds": [
+        {
+          "date": "2026-11-15T13:12:11.148000Z",
+          "team": "O'Malleys Alley Cats",
+          "owner": "Jake Brown",
+          "player_added": "Alvin Kamara",
+          "player_dropped": null,
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-15T13:11:18.554000Z",
+          "team": "O'Malleys Alley Cats",
+          "owner": "Jake Brown",
+          "player_added": null,
+          "player_dropped": "Saints D/ST",
+          "type": "Drop",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-15T13:11:11.226000Z",
+          "team": "O'Malleys Alley Cats",
+          "owner": "Jake Brown",
+          "player_added": "Dolphins D/ST",
+          "player_dropped": null,
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-15T00:40:43.696000Z",
+          "team": "Pepperdine Pangolins",
+          "owner": "Jasper Bowles",
+          "player_added": "Tutu Atwell",
+          "player_dropped": null,
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-15T00:40:14.967000Z",
+          "team": "Pepperdine Pangolins",
+          "owner": "Jasper Bowles",
+          "player_added": null,
+          "player_dropped": "TreVeyon Henderson",
+          "type": "Drop",
+          "bid_amount": 0
+        },
         {
           "date": "2026-11-13T19:35:20.887000Z",
           "team": "Woodland Powerbottoms",

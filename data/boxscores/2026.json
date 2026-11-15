@@ -11463,13 +11463,6 @@
               "points": 0
             },
             {
-              "name": "Saints D/ST",
-              "position": "D/ST",
-              "slot": "D/ST",
-              "pro_team": "NO",
-              "points": 0
-            },
-            {
               "name": "Jahan Dotson",
               "position": "WR",
               "slot": "BE",
@@ -11481,6 +11474,20 @@
               "position": "WR",
               "slot": "RB/WR/TE",
               "pro_team": "DET",
+              "points": 0
+            },
+            {
+              "name": "Dolphins D/ST",
+              "position": "D/ST",
+              "slot": "D/ST",
+              "pro_team": "MIA",
+              "points": 0
+            },
+            {
+              "name": "Alvin Kamara",
+              "position": "RB",
+              "slot": "BE",
+              "pro_team": "NO",
               "points": 0
             }
           ]
@@ -11503,7 +11510,7 @@
             {
               "name": "Kenneth Walker III",
               "position": "RB",
-              "slot": "RB",
+              "slot": "BE",
               "pro_team": "KC",
               "points": 0
             },
@@ -11559,7 +11566,7 @@
             {
               "name": "Jordan Mason",
               "position": "RB",
-              "slot": "BE",
+              "slot": "RB",
               "pro_team": "MIN",
               "points": 0
             },
@@ -11750,7 +11757,7 @@
             {
               "name": "Ashton Jeanty",
               "position": "RB",
-              "slot": "RB/WR/TE",
+              "slot": "BE",
               "pro_team": "LV",
               "points": 0
             },
@@ -11862,7 +11869,7 @@
             {
               "name": "Emmett Johnson",
               "position": "RB",
-              "slot": "BE",
+              "slot": "RB/WR/TE",
               "pro_team": "KC",
               "points": 0
             }
@@ -12039,7 +12046,7 @@
             {
               "name": "Rhamondre Stevenson",
               "position": "RB",
-              "slot": "BE",
+              "slot": "RB",
               "pro_team": "NE",
               "points": 0
             },
@@ -12102,7 +12109,7 @@
             {
               "name": "Audric Estime",
               "position": "RB",
-              "slot": "RB",
+              "slot": "BE",
               "pro_team": "NO",
               "points": 0
             },
@@ -12479,10 +12486,10 @@
               "points": 0
             },
             {
-              "name": "TreVeyon Henderson",
-              "position": "RB",
+              "name": "Tutu Atwell",
+              "position": "WR",
               "slot": "BE",
-              "pro_team": "NE",
+              "pro_team": "LAR",
               "points": 0
             }
           ]
