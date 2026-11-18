@@ -12514,7 +12514,7 @@
             {
               "name": "Kenneth Walker III",
               "position": "RB",
-              "slot": "BE",
+              "slot": "RB",
               "pro_team": "KC",
               "points": 0
             },
@@ -12535,42 +12535,42 @@
             {
               "name": "Colston Loveland",
               "position": "TE",
-              "slot": "BE",
+              "slot": "TE",
               "pro_team": "CHI",
               "points": 0
             },
             {
               "name": "David Montgomery",
               "position": "RB",
-              "slot": "BE",
+              "slot": "RB/WR/TE",
               "pro_team": "HOU",
               "points": 0
             },
             {
               "name": "Christian Watson",
               "position": "WR",
-              "slot": "WR",
+              "slot": "BE",
               "pro_team": "GB",
               "points": 0
             },
             {
               "name": "Jaylen Warren",
               "position": "RB",
-              "slot": "RB/WR/TE",
+              "slot": "BE",
               "pro_team": "PIT",
               "points": 0
             },
             {
               "name": "Dak Prescott",
               "position": "QB",
-              "slot": "BE",
+              "slot": "QB",
               "pro_team": "DAL",
               "points": 0
             },
             {
               "name": "Jordan Mason",
               "position": "RB",
-              "slot": "RB",
+              "slot": "BE",
               "pro_team": "MIN",
               "points": 0
             },
@@ -12584,7 +12584,7 @@
             {
               "name": "Jared Goff",
               "position": "QB",
-              "slot": "QB",
+              "slot": "BE",
               "pro_team": "DET",
               "points": 0
             },
@@ -12596,31 +12596,31 @@
               "points": 0
             },
             {
-              "name": "Colts D/ST",
-              "position": "D/ST",
-              "slot": "D/ST",
-              "pro_team": "IND",
-              "points": 0
-            },
-            {
-              "name": "Hunter Henry",
-              "position": "TE",
-              "slot": "TE",
-              "pro_team": "NE",
-              "points": 0
-            },
-            {
-              "name": "Mack Hollins",
-              "position": "WR",
-              "slot": "WR",
-              "pro_team": "NE",
-              "points": 0
-            },
-            {
               "name": "Travis Etienne Jr.",
               "position": "RB",
               "slot": "BE",
               "pro_team": "NO",
+              "points": 0
+            },
+            {
+              "name": "Elic Ayomanor",
+              "position": "WR",
+              "slot": "WR",
+              "pro_team": "TEN",
+              "points": 0
+            },
+            {
+              "name": "Lions D/ST",
+              "position": "D/ST",
+              "slot": "D/ST",
+              "pro_team": "DET",
+              "points": 0
+            },
+            {
+              "name": "Chimere Dike",
+              "position": "WR",
+              "slot": "WR",
+              "pro_team": "TEN",
               "points": 0
             }
           ]
@@ -12632,7 +12632,7 @@
             {
               "name": "Saquon Barkley",
               "position": "RB",
-              "slot": "BE",
+              "slot": "RB/WR/TE",
               "pro_team": "PHI",
               "points": 0
             },
@@ -12653,7 +12653,7 @@
             {
               "name": "Jaylen Waddle",
               "position": "WR",
-              "slot": "BE",
+              "slot": "WR",
               "pro_team": "DEN",
               "points": 0
             },
@@ -12681,7 +12681,7 @@
             {
               "name": "Jacory Croskey-Merritt",
               "position": "RB",
-              "slot": "IR",
+              "slot": "BE",
               "pro_team": "WSH",
               "points": 0
             },
@@ -12695,14 +12695,14 @@
             {
               "name": "Jakobi Meyers",
               "position": "WR",
-              "slot": "WR",
+              "slot": "BE",
               "pro_team": "JAX",
               "points": 0
             },
             {
               "name": "Harold Fannin Jr.",
               "position": "TE",
-              "slot": "RB/WR/TE",
+              "slot": "BE",
               "pro_team": "CLE",
               "points": 0
             },
@@ -12721,13 +12721,6 @@
               "points": 0
             },
             {
-              "name": "Devin Singletary",
-              "position": "RB",
-              "slot": "BE",
-              "pro_team": "NYG",
-              "points": 0
-            },
-            {
               "name": "Jahmyr Gibbs",
               "position": "RB",
               "slot": "RB",
@@ -12735,17 +12728,17 @@
               "points": 0
             },
             {
-              "name": "Geno Smith",
+              "name": "Aaron Rodgers",
               "position": "QB",
               "slot": "BE",
-              "pro_team": "NYJ",
+              "pro_team": "PIT",
               "points": 0
             },
             {
-              "name": "Aaron Rodgers",
+              "name": "Bo Nix",
               "position": "QB",
               "slot": "QB",
-              "pro_team": "PIT",
+              "pro_team": "DEN",
               "points": 0
             }
           ]
@@ -12782,21 +12775,21 @@
             {
               "name": "Blake Corum",
               "position": "RB",
-              "slot": "RB",
+              "slot": "BE",
               "pro_team": "LAR",
               "points": 0
             },
             {
               "name": "Brenton Strange",
               "position": "TE",
-              "slot": "BE",
+              "slot": "RB/WR/TE",
               "pro_team": "JAX",
               "points": 0
             },
             {
               "name": "Matthew Golden",
               "position": "WR",
-              "slot": "WR",
+              "slot": "BE",
               "pro_team": "GB",
               "points": 0
             },
@@ -12810,7 +12803,7 @@
             {
               "name": "Josh Downs",
               "position": "WR",
-              "slot": "BE",
+              "slot": "WR",
               "pro_team": "KC",
               "points": 0
             },
@@ -12822,16 +12815,9 @@
               "points": 0
             },
             {
-              "name": "Braelon Allen",
-              "position": "RB",
-              "slot": "BE",
-              "pro_team": "NYJ",
-              "points": 0
-            },
-            {
               "name": "DeMario Douglas",
               "position": "WR",
-              "slot": "WR",
+              "slot": "BE",
               "pro_team": "NE",
               "points": 0
             },
@@ -12859,7 +12845,7 @@
             {
               "name": "Amon-Ra St. Brown",
               "position": "WR",
-              "slot": "RB/WR/TE",
+              "slot": "WR",
               "pro_team": "DET",
               "points": 0
             },
@@ -12873,8 +12859,15 @@
             {
               "name": "Alvin Kamara",
               "position": "RB",
-              "slot": "BE",
+              "slot": "RB",
               "pro_team": "NO",
+              "points": 0
+            },
+            {
+              "name": "Justice Hill",
+              "position": "RB",
+              "slot": "BE",
+              "pro_team": "BAL",
               "points": 0
             }
           ]
@@ -12900,7 +12893,7 @@
             {
               "name": "DeVonta Smith",
               "position": "WR",
-              "slot": "IR",
+              "slot": "BE",
               "pro_team": "PHI",
               "points": 0
             },
@@ -12914,7 +12907,7 @@
             {
               "name": "Luther Burden III",
               "position": "WR",
-              "slot": "RB/WR/TE",
+              "slot": "WR",
               "pro_team": "CHI",
               "points": 0
             },
@@ -12949,14 +12942,14 @@
             {
               "name": "Jordyn Tyson",
               "position": "WR",
-              "slot": "WR",
+              "slot": "BE",
               "pro_team": "NO",
               "points": 0
             },
             {
               "name": "Lamar Jackson",
               "position": "QB",
-              "slot": "BE",
+              "slot": "IR",
               "pro_team": "BAL",
               "points": 0
             },
@@ -12991,7 +12984,7 @@
             {
               "name": "Carnell Tate",
               "position": "WR",
-              "slot": "BE",
+              "slot": "RB/WR/TE",
               "pro_team": "TEN",
               "points": 0
             },
@@ -13036,28 +13029,28 @@
             {
               "name": "Drake Maye",
               "position": "QB",
-              "slot": "QB",
+              "slot": "BE",
               "pro_team": "NE",
               "points": 0
             },
             {
               "name": "Tyler Warren",
               "position": "TE",
-              "slot": "TE",
+              "slot": "BE",
               "pro_team": "IND",
               "points": 0
             },
             {
               "name": "Jonathon Brooks",
               "position": "RB",
-              "slot": "IR",
+              "slot": "BE",
               "pro_team": "CAR",
               "points": 0
             },
             {
               "name": "RJ Harvey",
               "position": "RB",
-              "slot": "BE",
+              "slot": "IR",
               "pro_team": "DEN",
               "points": 0
             },
@@ -13071,21 +13064,21 @@
             {
               "name": "Kirk Cousins",
               "position": "QB",
-              "slot": "BE",
+              "slot": "QB",
               "pro_team": "MIN",
               "points": 0
             },
             {
               "name": "T.J. Hockenson",
               "position": "TE",
-              "slot": "BE",
+              "slot": "TE",
               "pro_team": "MIN",
               "points": 0
             },
             {
               "name": "Keenan Allen",
               "position": "WR",
-              "slot": "RB/WR/TE",
+              "slot": "BE",
               "pro_team": "SF",
               "points": 0
             },
@@ -13104,13 +13097,6 @@
               "points": 0
             },
             {
-              "name": "Bam Knight",
-              "position": "RB",
-              "slot": "BE",
-              "pro_team": "ARI",
-              "points": 0
-            },
-            {
               "name": "Antonio Williams",
               "position": "WR",
               "slot": "BE",
@@ -13125,10 +13111,17 @@
               "points": 0
             },
             {
-              "name": "Rams D/ST",
+              "name": "Xavier Hutchinson",
+              "position": "WR",
+              "slot": "RB/WR/TE",
+              "pro_team": "HOU",
+              "points": 0
+            },
+            {
+              "name": "Bills D/ST",
               "position": "D/ST",
               "slot": "D/ST",
-              "pro_team": "LAR",
+              "pro_team": "BUF",
               "points": 0
             }
           ]
@@ -13161,7 +13154,7 @@
             {
               "name": "Bucky Irving",
               "position": "RB",
-              "slot": "BE",
+              "slot": "RB",
               "pro_team": "TB",
               "points": 0
             },
@@ -13175,14 +13168,14 @@
             {
               "name": "Rome Odunze",
               "position": "WR",
-              "slot": "BE",
+              "slot": "WR",
               "pro_team": "CHI",
               "points": 0
             },
             {
               "name": "Rhamondre Stevenson",
               "position": "RB",
-              "slot": "RB",
+              "slot": "BE",
               "pro_team": "NE",
               "points": 0
             },
@@ -13196,7 +13189,7 @@
             {
               "name": "Xavier Worthy",
               "position": "WR",
-              "slot": "WR",
+              "slot": "BE",
               "pro_team": "KC",
               "points": 0
             },
@@ -13290,14 +13283,14 @@
             {
               "name": "Emeka Egbuka",
               "position": "WR",
-              "slot": "BE",
+              "slot": "WR",
               "pro_team": "TB",
               "points": 0
             },
             {
               "name": "Mike Evans",
               "position": "WR",
-              "slot": "BE",
+              "slot": "WR",
               "pro_team": "SF",
               "points": 0
             },
@@ -13325,7 +13318,7 @@
             {
               "name": "Jonah Coleman",
               "position": "RB",
-              "slot": "BE",
+              "slot": "RB",
               "pro_team": "DEN",
               "points": 0
             },
@@ -13346,7 +13339,7 @@
             {
               "name": "Germie Bernard",
               "position": "WR",
-              "slot": "WR",
+              "slot": "BE",
               "pro_team": "PIT",
               "points": 0
             },
@@ -13360,21 +13353,21 @@
             {
               "name": "Caleb Douglas",
               "position": "WR",
-              "slot": "RB/WR/TE",
+              "slot": "BE",
               "pro_team": "MIA",
               "points": 0
             },
             {
               "name": "Kyren Williams",
               "position": "RB",
-              "slot": "RB",
+              "slot": "BE",
               "pro_team": "LAR",
               "points": 0
             },
             {
               "name": "Tank Dell",
               "position": "WR",
-              "slot": "WR",
+              "slot": "RB/WR/TE",
               "pro_team": "HOU",
               "points": 0
             }
@@ -13558,7 +13551,7 @@
             {
               "name": "Seahawks D/ST",
               "position": "D/ST",
-              "slot": "D/ST",
+              "slot": "BE",
               "pro_team": "SEA",
               "points": 0
             },
@@ -13574,13 +13567,6 @@
               "position": "WR",
               "slot": "WR",
               "pro_team": "BUF",
-              "points": 0
-            },
-            {
-              "name": "Tre Tucker",
-              "position": "WR",
-              "slot": "BE",
-              "pro_team": "LV",
               "points": 0
             },
             {
@@ -13624,6 +13610,13 @@
               "slot": "BE",
               "pro_team": "ATL",
               "points": 0
+            },
+            {
+              "name": "Chiefs D/ST",
+              "position": "D/ST",
+              "slot": "D/ST",
+              "pro_team": "KC",
+              "points": 0
             }
           ]
         },
@@ -13634,7 +13627,7 @@
             {
               "name": "Jaxon Smith-Njigba",
               "position": "WR",
-              "slot": "WR",
+              "slot": "RB/WR/TE",
               "pro_team": "SEA",
               "points": 0
             },
@@ -13655,7 +13648,7 @@
             {
               "name": "Quinshon Judkins",
               "position": "RB",
-              "slot": "RB",
+              "slot": "BE",
               "pro_team": "CLE",
               "points": 0
             },
@@ -13669,14 +13662,14 @@
             {
               "name": "Stefon Diggs",
               "position": "WR",
-              "slot": "BE",
+              "slot": "WR",
               "pro_team": "WSH",
               "points": 0
             },
             {
               "name": "Caleb Williams",
               "position": "QB",
-              "slot": "BE",
+              "slot": "QB",
               "pro_team": "CHI",
               "points": 0
             },
@@ -13697,14 +13690,14 @@
             {
               "name": "Broncos D/ST",
               "position": "D/ST",
-              "slot": "BE",
+              "slot": "D/ST",
               "pro_team": "DEN",
               "points": 0
             },
             {
               "name": "Zach Charbonnet",
               "position": "RB",
-              "slot": "RB/WR/TE",
+              "slot": "BE",
               "pro_team": "SEA",
               "points": 0
             },
@@ -13718,7 +13711,7 @@
             {
               "name": "Tyler Allgeier",
               "position": "RB",
-              "slot": "BE",
+              "slot": "RB",
               "pro_team": "ARI",
               "points": 0
             },
@@ -13732,22 +13725,22 @@
             {
               "name": "Drew Lock",
               "position": "QB",
-              "slot": "QB",
+              "slot": "BE",
               "pro_team": "SEA",
               "points": 0
             },
             {
               "name": "Packers D/ST",
               "position": "D/ST",
-              "slot": "D/ST",
+              "slot": "BE",
               "pro_team": "GB",
               "points": 0
             },
             {
-              "name": "Tutu Atwell",
+              "name": "Ryan Flournoy",
               "position": "WR",
               "slot": "BE",
-              "pro_team": "LAR",
+              "pro_team": "DAL",
               "points": 0
             }
           ]

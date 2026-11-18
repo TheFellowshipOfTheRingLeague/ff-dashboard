@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-17T14:03:15.040503Z",
+  "generated_at": "2026-11-18T14:06:53.314135Z",
   "league_id": 1485136557,
   "start_year": 2021,
   "current_season_year": 2026,
@@ -7261,6 +7261,123 @@
         }
       ],
       "waiver_adds": [
+        {
+          "date": "2026-11-18T12:39:53.072000Z",
+          "team": "Marietta Money Launderers",
+          "owner": "Austin Solomom",
+          "player_added": "Chimere Dike",
+          "player_dropped": null,
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-18T12:38:34.747000Z",
+          "team": "Marietta Money Launderers",
+          "owner": "Austin Solomom",
+          "player_added": null,
+          "player_dropped": "Mack Hollins",
+          "type": "Drop",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-18T12:29:05.492000Z",
+          "team": "Marietta Money Launderers",
+          "owner": "Austin Solomom",
+          "player_added": "Lions D/ST",
+          "player_dropped": null,
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-18T12:28:19.692000Z",
+          "team": "Marietta Money Launderers",
+          "owner": "Austin Solomom",
+          "player_added": "Elic Ayomanor",
+          "player_dropped": null,
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-18T12:27:13.822000Z",
+          "team": "Ocala Bankers",
+          "owner": "Ryan Miller",
+          "player_added": "Chiefs D/ST",
+          "player_dropped": "Tre Tucker",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-18T11:48:58.490000Z",
+          "team": "TRUNDLE NATION",
+          "owner": "McGowin Jernigan",
+          "player_added": null,
+          "player_dropped": "Devin Singletary",
+          "type": "Drop",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-18T08:44:14.074000Z",
+          "team": "South-of-America Scallywags",
+          "owner": "Matthew Hitpas",
+          "player_added": "Bills D/ST",
+          "player_dropped": "Rams D/ST",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-18T08:44:14.074000Z",
+          "team": "Pepperdine Pangolins",
+          "owner": "Jasper Bowles",
+          "player_added": "Ryan Flournoy",
+          "player_dropped": "Tutu Atwell",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-18T08:44:14.074000Z",
+          "team": "TRUNDLE NATION",
+          "owner": "McGowin Jernigan",
+          "player_added": "Bo Nix",
+          "player_dropped": "Geno Smith",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-18T08:44:14.074000Z",
+          "team": "South-of-America Scallywags",
+          "owner": "Matthew Hitpas",
+          "player_added": "Xavier Hutchinson",
+          "player_dropped": "Bam Knight",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-18T08:44:14.074000Z",
+          "team": "O'Malleys Alley Cats",
+          "owner": "Jake Brown",
+          "player_added": "Justice Hill",
+          "player_dropped": "Braelon Allen",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-17T17:28:55.552000Z",
+          "team": "Marietta Money Launderers",
+          "owner": "Austin Solomom",
+          "player_added": null,
+          "player_dropped": "Colts D/ST",
+          "type": "Drop",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-17T17:28:47.815000Z",
+          "team": "Marietta Money Launderers",
+          "owner": "Austin Solomom",
+          "player_added": null,
+          "player_dropped": "Hunter Henry",
+          "type": "Drop",
+          "bid_amount": 0
+        },
         {
           "date": "2026-11-15T13:12:11.148000Z",
           "team": "O'Malleys Alley Cats",
