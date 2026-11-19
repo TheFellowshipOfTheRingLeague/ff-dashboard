@@ -12879,7 +12879,7 @@
             {
               "name": "Ashton Jeanty",
               "position": "RB",
-              "slot": "RB",
+              "slot": "BE",
               "pro_team": "LV",
               "points": 0
             },
@@ -12907,7 +12907,7 @@
             {
               "name": "Luther Burden III",
               "position": "WR",
-              "slot": "WR",
+              "slot": "BE",
               "pro_team": "CHI",
               "points": 0
             },
@@ -12942,7 +12942,7 @@
             {
               "name": "Jordyn Tyson",
               "position": "WR",
-              "slot": "BE",
+              "slot": "WR",
               "pro_team": "NO",
               "points": 0
             },
@@ -12991,7 +12991,7 @@
             {
               "name": "Emmett Johnson",
               "position": "RB",
-              "slot": "BE",
+              "slot": "RB",
               "pro_team": "KC",
               "points": 0
             }
@@ -13243,10 +13243,10 @@
               "points": 0
             },
             {
-              "name": "Wan'Dale Robinson",
+              "name": "Laquon Treadwell",
               "position": "WR",
               "slot": "BE",
-              "pro_team": "TEN",
+              "pro_team": "IND",
               "points": 0
             }
           ]
@@ -13269,7 +13269,7 @@
             {
               "name": "Omarion Hampton",
               "position": "RB",
-              "slot": "BE",
+              "slot": "RB/WR/TE",
               "pro_team": "LAC",
               "points": 0
             },
@@ -13297,7 +13297,7 @@
             {
               "name": "Patrick Mahomes",
               "position": "QB",
-              "slot": "BE",
+              "slot": "QB",
               "pro_team": "KC",
               "points": 0
             },
@@ -13332,7 +13332,7 @@
             {
               "name": "C.J. Stroud",
               "position": "QB",
-              "slot": "QB",
+              "slot": "BE",
               "pro_team": "HOU",
               "points": 0
             },
@@ -13367,7 +13367,7 @@
             {
               "name": "Tank Dell",
               "position": "WR",
-              "slot": "RB/WR/TE",
+              "slot": "BE",
               "pro_team": "HOU",
               "points": 0
             }
@@ -13387,7 +13387,7 @@
             {
               "name": "Drake London",
               "position": "WR",
-              "slot": "WR",
+              "slot": "BE",
               "pro_team": "ATL",
               "points": 0
             },
@@ -13401,7 +13401,7 @@
             {
               "name": "Cam Skattebo",
               "position": "RB",
-              "slot": "BE",
+              "slot": "RB/WR/TE",
               "pro_team": "NYG",
               "points": 0
             },
@@ -13415,14 +13415,14 @@
             {
               "name": "DJ Moore",
               "position": "WR",
-              "slot": "RB/WR/TE",
+              "slot": "WR",
               "pro_team": "BUF",
               "points": 0
             },
             {
               "name": "Sam LaPorta",
               "position": "TE",
-              "slot": "TE",
+              "slot": "BE",
               "pro_team": "DET",
               "points": 0
             },
@@ -13457,7 +13457,7 @@
             {
               "name": "Dallas Goedert",
               "position": "TE",
-              "slot": "BE",
+              "slot": "TE",
               "pro_team": "PHI",
               "points": 0
             },
@@ -13490,10 +13490,10 @@
               "points": 0
             },
             {
-              "name": "Ravens D/ST",
+              "name": "Jets D/ST",
               "position": "D/ST",
               "slot": "D/ST",
-              "pro_team": "BAL",
+              "pro_team": "NYJ",
               "points": 0
             }
           ]
@@ -13627,7 +13627,7 @@
             {
               "name": "Jaxon Smith-Njigba",
               "position": "WR",
-              "slot": "RB/WR/TE",
+              "slot": "BE",
               "pro_team": "SEA",
               "points": 0
             },
@@ -13739,7 +13739,7 @@
             {
               "name": "Ryan Flournoy",
               "position": "WR",
-              "slot": "BE",
+              "slot": "RB/WR/TE",
               "pro_team": "DAL",
               "points": 0
             }

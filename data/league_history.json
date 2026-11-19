@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T14:06:53.314135Z",
+  "generated_at": "2026-11-19T14:09:56.871763Z",
   "league_id": 1485136557,
   "start_year": 2021,
   "current_season_year": 2026,
@@ -7261,6 +7261,33 @@
         }
       ],
       "waiver_adds": [
+        {
+          "date": "2026-11-18T19:49:49.501000Z",
+          "team": "Louisiana Nole Jackets",
+          "owner": "Thomas Silas",
+          "player_added": "Laquon Treadwell",
+          "player_dropped": null,
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-18T19:47:23.407000Z",
+          "team": "Louisiana Nole Jackets",
+          "owner": "Thomas Silas",
+          "player_added": null,
+          "player_dropped": "Wan'Dale Robinson",
+          "type": "Drop",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-18T16:03:15.960000Z",
+          "team": "The Laestrygonian Giants",
+          "owner": "Carly Schnable",
+          "player_added": "Jets D/ST",
+          "player_dropped": "Ravens D/ST",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
         {
           "date": "2026-11-18T12:39:53.072000Z",
           "team": "Marietta Money Launderers",
