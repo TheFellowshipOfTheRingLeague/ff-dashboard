@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T14:09:56.871763Z",
+  "generated_at": "2026-11-20T14:06:59.755275Z",
   "league_id": 1485136557,
   "start_year": 2021,
   "current_season_year": 2026,
@@ -6818,18 +6818,18 @@
               "player": "Seth McGowan",
               "from_team": "Woodland Powerbottoms",
               "to_team": "South-of-America Scallywags",
-              "points_since_trade": 13.7,
-              "games_since_trade": 1,
-              "ppg_since_trade": 13.7
+              "points_since_trade": 15.5,
+              "games_since_trade": 2,
+              "ppg_since_trade": 7.75
             }
           ],
           "verdict": {
             "side_totals": {
               "Woodland Powerbottoms": 0.0,
-              "South-of-America Scallywags": 25.9
+              "South-of-America Scallywags": 27.7
             },
             "leader_team": "South-of-America Scallywags",
-            "margin": 25.9
+            "margin": 27.7
           },
           "records_since_trade": {
             "South-of-America Scallywags": {
@@ -6989,9 +6989,9 @@
               "player": "C.J. Stroud",
               "from_team": "South-of-America Scallywags",
               "to_team": "Glendale Guinea Pigs",
-              "points_since_trade": 76.8,
-              "games_since_trade": 2,
-              "ppg_since_trade": 38.4
+              "points_since_trade": 104.26,
+              "games_since_trade": 3,
+              "ppg_since_trade": 34.75
             },
             {
               "player": "Aaron Rodgers",
@@ -7020,11 +7020,11 @@
           ],
           "verdict": {
             "side_totals": {
-              "Glendale Guinea Pigs": 140.7,
+              "Glendale Guinea Pigs": 168.16,
               "South-of-America Scallywags": 64.8
             },
             "leader_team": "Glendale Guinea Pigs",
-            "margin": 75.9
+            "margin": 103.36
           },
           "records_since_trade": {
             "South-of-America Scallywags": {
@@ -7261,6 +7261,15 @@
         }
       ],
       "waiver_adds": [
+        {
+          "date": "2026-11-19T19:27:29.820000Z",
+          "team": "Glendale Guinea Pigs",
+          "owner": "Jake Turner",
+          "player_added": "Chig Okonkwo",
+          "player_dropped": null,
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
         {
           "date": "2026-11-18T19:49:49.501000Z",
           "team": "Louisiana Nole Jackets",

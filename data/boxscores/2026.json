@@ -12502,7 +12502,7 @@
         "is_playoff": false,
         "home": {
           "owner": "Austin Solomom",
-          "score": 0,
+          "score": 16.4,
           "lineup": [
             {
               "name": "Puka Nacua",
@@ -12514,7 +12514,7 @@
             {
               "name": "Kenneth Walker III",
               "position": "RB",
-              "slot": "RB",
+              "slot": "BE",
               "pro_team": "KC",
               "points": 0
             },
@@ -12544,7 +12544,7 @@
               "position": "RB",
               "slot": "RB/WR/TE",
               "pro_team": "HOU",
-              "points": 0
+              "points": 16.4
             },
             {
               "name": "Christian Watson",
@@ -12556,7 +12556,7 @@
             {
               "name": "Jaylen Warren",
               "position": "RB",
-              "slot": "BE",
+              "slot": "RB",
               "pro_team": "PIT",
               "points": 0
             },
@@ -12627,7 +12627,7 @@
         },
         "away": {
           "owner": "McGowin Jernigan",
-          "score": 0,
+          "score": 15.8,
           "lineup": [
             {
               "name": "Saquon Barkley",
@@ -12641,7 +12641,7 @@
               "position": "WR",
               "slot": "WR",
               "pro_team": "HOU",
-              "points": 0
+              "points": 15.8
             },
             {
               "name": "Javonte Williams",
@@ -12874,7 +12874,7 @@
         },
         "away": {
           "owner": "Thomas Goodroe",
-          "score": 0,
+          "score": 15.0,
           "lineup": [
             {
               "name": "Ashton Jeanty",
@@ -12965,7 +12965,7 @@
               "position": "D/ST",
               "slot": "D/ST",
               "pro_team": "HOU",
-              "points": 0
+              "points": 15.0
             },
             {
               "name": "Chris Rodriguez Jr.",
@@ -13003,14 +13003,14 @@
         "is_playoff": false,
         "home": {
           "owner": "Matthew Hitpas",
-          "score": 0,
+          "score": 10.0,
           "lineup": [
             {
               "name": "Jonathan Taylor",
               "position": "RB",
               "slot": "RB",
               "pro_team": "IND",
-              "points": 0
+              "points": 6.7
             },
             {
               "name": "Rashee Rice",
@@ -13038,7 +13038,7 @@
               "position": "TE",
               "slot": "BE",
               "pro_team": "IND",
-              "points": 0
+              "points": 3.2
             },
             {
               "name": "Jonathon Brooks",
@@ -13078,14 +13078,14 @@
             {
               "name": "Keenan Allen",
               "position": "WR",
-              "slot": "BE",
+              "slot": "RB/WR/TE",
               "pro_team": "SF",
               "points": 0
             },
             {
               "name": "Omar Cooper Jr.",
               "position": "WR",
-              "slot": "WR",
+              "slot": "BE",
               "pro_team": "NYJ",
               "points": 0
             },
@@ -13108,14 +13108,14 @@
               "position": "RB",
               "slot": "BE",
               "pro_team": "IND",
-              "points": 0
+              "points": 1.8
             },
             {
               "name": "Xavier Hutchinson",
               "position": "WR",
-              "slot": "RB/WR/TE",
+              "slot": "WR",
               "pro_team": "HOU",
-              "points": 0
+              "points": 3.3
             },
             {
               "name": "Bills D/ST",
@@ -13290,7 +13290,7 @@
             {
               "name": "Mike Evans",
               "position": "WR",
-              "slot": "WR",
+              "slot": "BE",
               "pro_team": "SF",
               "points": 0
             },
@@ -13311,7 +13311,7 @@
             {
               "name": "Woody Marks",
               "position": "RB",
-              "slot": "BE",
+              "slot": "IR",
               "pro_team": "HOU",
               "points": 0
             },
@@ -13334,7 +13334,7 @@
               "position": "QB",
               "slot": "BE",
               "pro_team": "HOU",
-              "points": 0
+              "points": 27.46
             },
             {
               "name": "Germie Bernard",
@@ -13353,7 +13353,7 @@
             {
               "name": "Caleb Douglas",
               "position": "WR",
-              "slot": "BE",
+              "slot": "WR",
               "pro_team": "MIA",
               "points": 0
             },
@@ -13369,6 +13369,13 @@
               "position": "WR",
               "slot": "BE",
               "pro_team": "HOU",
+              "points": 5.7
+            },
+            {
+              "name": "Chig Okonkwo",
+              "position": "TE",
+              "slot": "BE",
+              "pro_team": "WSH",
               "points": 0
             }
           ]
