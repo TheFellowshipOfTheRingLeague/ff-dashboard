@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T14:06:59.755275Z",
+  "generated_at": "2026-11-21T13:48:09.526629Z",
   "league_id": 1485136557,
   "start_year": 2021,
   "current_season_year": 2026,
@@ -7261,6 +7261,24 @@
         }
       ],
       "waiver_adds": [
+        {
+          "date": "2026-11-21T05:01:21.016000Z",
+          "team": "Louisiana Nole Jackets",
+          "owner": "Thomas Silas",
+          "player_added": null,
+          "player_dropped": "Corey Kiner",
+          "type": "Drop",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-20T17:27:20.674000Z",
+          "team": "Marietta Money Launderers",
+          "owner": "Austin Solomom",
+          "player_added": null,
+          "player_dropped": "Puka Nacua",
+          "type": "Drop",
+          "bid_amount": 0
+        },
         {
           "date": "2026-11-19T19:27:29.820000Z",
           "team": "Glendale Guinea Pigs",
