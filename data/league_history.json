@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T13:48:09.526629Z",
+  "generated_at": "2026-11-22T13:48:15.979114Z",
   "league_id": 1485136557,
   "start_year": 2021,
   "current_season_year": 2026,
@@ -7261,6 +7261,15 @@
         }
       ],
       "waiver_adds": [
+        {
+          "date": "2026-11-21T16:20:07.467000Z",
+          "team": "Pepperdine Pangolins",
+          "owner": "Jasper Bowles",
+          "player_added": "Braelon Allen",
+          "player_dropped": "Brandon Aiyuk",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
         {
           "date": "2026-11-21T05:01:21.016000Z",
           "team": "Louisiana Nole Jackets",

@@ -12900,7 +12900,7 @@
             {
               "name": "Luther Burden III",
               "position": "WR",
-              "slot": "BE",
+              "slot": "WR",
               "pro_team": "CHI",
               "points": 0
             },
@@ -12935,7 +12935,7 @@
             {
               "name": "Jordyn Tyson",
               "position": "WR",
-              "slot": "WR",
+              "slot": "BE",
               "pro_team": "NO",
               "points": 0
             },
@@ -13175,7 +13175,7 @@
             {
               "name": "Kenny Gainwell",
               "position": "RB",
-              "slot": "BE",
+              "slot": "RB",
               "pro_team": "TB",
               "points": 0
             },
@@ -13189,7 +13189,7 @@
             {
               "name": "Rachaad White",
               "position": "RB",
-              "slot": "RB",
+              "slot": "BE",
               "pro_team": "WSH",
               "points": 0
             },
@@ -13709,13 +13709,6 @@
               "points": 0
             },
             {
-              "name": "Brandon Aiyuk",
-              "position": "WR",
-              "slot": "BE",
-              "pro_team": "SF",
-              "points": 0
-            },
-            {
               "name": "Drew Lock",
               "position": "QB",
               "slot": "BE",
@@ -13734,6 +13727,13 @@
               "position": "WR",
               "slot": "RB/WR/TE",
               "pro_team": "DAL",
+              "points": 0
+            },
+            {
+              "name": "Braelon Allen",
+              "position": "RB",
+              "slot": "BE",
+              "pro_team": "NYJ",
               "points": 0
             }
           ]
