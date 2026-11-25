@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T14:11:49.140684Z",
+  "generated_at": "2026-11-25T14:10:02.093481Z",
   "league_id": 1485136557,
   "start_year": 2021,
   "current_season_year": 2026,
@@ -7261,6 +7261,78 @@
         }
       ],
       "waiver_adds": [
+        {
+          "date": "2026-11-25T12:53:47.655000Z",
+          "team": "South-of-America Scallywags",
+          "owner": "Matthew Hitpas",
+          "player_added": "49ers D/ST",
+          "player_dropped": "Bills D/ST",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-25T12:06:02.620000Z",
+          "team": "Marietta Money Launderers",
+          "owner": "Austin Solomom",
+          "player_added": "Pat Bryant",
+          "player_dropped": "Mike Washington Jr.",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-25T12:03:55.539000Z",
+          "team": "Marietta Money Launderers",
+          "owner": "Austin Solomom",
+          "player_added": "Tre Tucker",
+          "player_dropped": "Elic Ayomanor",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-25T12:03:04.447000Z",
+          "team": "Marietta Money Launderers",
+          "owner": "Austin Solomom",
+          "player_added": "Commanders D/ST",
+          "player_dropped": "Lions D/ST",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-25T08:31:58.288000Z",
+          "team": "Pepperdine Pangolins",
+          "owner": "Jasper Bowles",
+          "player_added": "Deshaun Watson",
+          "player_dropped": "Packers D/ST",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-25T08:31:58.288000Z",
+          "team": "Pepperdine Pangolins",
+          "owner": "Jasper Bowles",
+          "player_added": "Mack Hollins",
+          "player_dropped": "Drew Lock",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-25T08:31:58.288000Z",
+          "team": "TRUNDLE NATION",
+          "owner": "McGowin Jernigan",
+          "player_added": "J.J. McCarthy",
+          "player_dropped": "Aaron Rodgers",
+          "type": "Waiver",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-24T15:46:11.131000Z",
+          "team": "Woodland Powerbottoms",
+          "owner": "Thomas Goodroe",
+          "player_added": null,
+          "player_dropped": "Mark Andrews",
+          "type": "Drop",
+          "bid_amount": 0
+        },
         {
           "date": "2026-11-22T18:56:22.939000Z",
           "team": "Ocala Bankers",
