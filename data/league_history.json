@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25T14:10:02.093481Z",
+  "generated_at": "2026-11-26T14:09:46.719037Z",
   "league_id": 1485136557,
   "start_year": 2021,
   "current_season_year": 2026,
@@ -6859,9 +6859,9 @@
               "player": "Kyren Williams",
               "from_team": "O'Malleys Alley Cats",
               "to_team": "Glendale Guinea Pigs",
-              "points_since_trade": 27.2,
-              "games_since_trade": 3,
-              "ppg_since_trade": 9.07
+              "points_since_trade": 43.7,
+              "games_since_trade": 4,
+              "ppg_since_trade": 10.93
             },
             {
               "player": "Tony Pollard",
@@ -6882,11 +6882,11 @@
           ],
           "verdict": {
             "side_totals": {
-              "Glendale Guinea Pigs": 27.2,
+              "Glendale Guinea Pigs": 43.7,
               "O'Malleys Alley Cats": 88.3
             },
             "leader_team": "O'Malleys Alley Cats",
-            "margin": 61.1
+            "margin": 44.6
           },
           "records_since_trade": {
             "O'Malleys Alley Cats": {
@@ -6997,9 +6997,9 @@
               "player": "Aaron Rodgers",
               "from_team": "Glendale Guinea Pigs",
               "to_team": "South-of-America Scallywags",
-              "points_since_trade": 42.48,
-              "games_since_trade": 3,
-              "ppg_since_trade": 14.16
+              "points_since_trade": 0.0,
+              "games_since_trade": 0,
+              "ppg_since_trade": null
             },
             {
               "player": "Omar Cooper Jr.",
@@ -7021,10 +7021,10 @@
           "verdict": {
             "side_totals": {
               "Glendale Guinea Pigs": 186.76,
-              "South-of-America Scallywags": 101.78
+              "South-of-America Scallywags": 59.3
             },
             "leader_team": "Glendale Guinea Pigs",
-            "margin": 84.98
+            "margin": 127.46
           },
           "records_since_trade": {
             "South-of-America Scallywags": {
@@ -7233,18 +7233,18 @@
               "player": "Matthew Golden",
               "from_team": "Ocala Bankers",
               "to_team": "O'Malleys Alley Cats",
-              "points_since_trade": 154.6,
-              "games_since_trade": 8,
-              "ppg_since_trade": 19.33
+              "points_since_trade": 159.5,
+              "games_since_trade": 9,
+              "ppg_since_trade": 17.72
             }
           ],
           "verdict": {
             "side_totals": {
               "Ocala Bankers": 133.6,
-              "O'Malleys Alley Cats": 154.6
+              "O'Malleys Alley Cats": 159.5
             },
             "leader_team": "O'Malleys Alley Cats",
-            "margin": 21.0
+            "margin": 25.9
           },
           "records_since_trade": {
             "O'Malleys Alley Cats": {
@@ -7261,6 +7261,33 @@
         }
       ],
       "waiver_adds": [
+        {
+          "date": "2026-11-26T00:56:07.388000Z",
+          "team": "Woodland Powerbottoms",
+          "owner": "Thomas Goodroe",
+          "player_added": "Giants D/ST",
+          "player_dropped": null,
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-25T18:28:26.607000Z",
+          "team": "The Laestrygonian Giants",
+          "owner": "Carly Schnable",
+          "player_added": "Rams D/ST",
+          "player_dropped": "Jets D/ST",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
+        {
+          "date": "2026-11-25T17:53:01.261000Z",
+          "team": "Ocala Bankers",
+          "owner": "Ryan Miller",
+          "player_added": "Dylan Sampson",
+          "player_dropped": "Chiefs D/ST",
+          "type": "Free Agent",
+          "bid_amount": 0
+        },
         {
           "date": "2026-11-25T12:53:47.655000Z",
           "team": "South-of-America Scallywags",
