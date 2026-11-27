@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-26T14:09:46.719037Z",
+  "generated_at": "2026-11-27T14:11:35.720592Z",
   "league_id": 1485136557,
   "start_year": 2021,
   "current_season_year": 2026,
@@ -6753,26 +6753,26 @@
               "player": "Amon-Ra St. Brown",
               "from_team": "TRUNDLE NATION",
               "to_team": "O'Malleys Alley Cats",
-              "points_since_trade": 42.5,
-              "games_since_trade": 2,
-              "ppg_since_trade": 21.25
+              "points_since_trade": 65.1,
+              "games_since_trade": 3,
+              "ppg_since_trade": 21.7
             },
             {
               "player": "Jahmyr Gibbs",
               "from_team": "O'Malleys Alley Cats",
               "to_team": "TRUNDLE NATION",
-              "points_since_trade": 73.0,
-              "games_since_trade": 2,
-              "ppg_since_trade": 36.5
+              "points_since_trade": 124.2,
+              "games_since_trade": 3,
+              "ppg_since_trade": 41.4
             }
           ],
           "verdict": {
             "side_totals": {
-              "O'Malleys Alley Cats": 42.5,
-              "TRUNDLE NATION": 73.0
+              "O'Malleys Alley Cats": 65.1,
+              "TRUNDLE NATION": 124.2
             },
             "leader_team": "TRUNDLE NATION",
-            "margin": 30.5
+            "margin": 59.1
           },
           "records_since_trade": {
             "TRUNDLE NATION": {
@@ -6924,9 +6924,9 @@
               "player": "James Cook III",
               "from_team": "Woodland Powerbottoms",
               "to_team": "Ocala Bankers",
-              "points_since_trade": 77.7,
-              "games_since_trade": 4,
-              "ppg_since_trade": 19.43
+              "points_since_trade": 98.2,
+              "games_since_trade": 5,
+              "ppg_since_trade": 19.64
             },
             {
               "player": "Bijan Robinson",
@@ -6939,11 +6939,11 @@
           ],
           "verdict": {
             "side_totals": {
-              "Ocala Bankers": 116.9,
+              "Ocala Bankers": 137.4,
               "Woodland Powerbottoms": 53.0
             },
             "leader_team": "Ocala Bankers",
-            "margin": 63.9
+            "margin": 84.4
           },
           "records_since_trade": {
             "Woodland Powerbottoms": {
@@ -7055,16 +7055,16 @@
               "from_team": "Ocala Bankers",
               "to_team": "TRUNDLE NATION",
               "points_since_trade": 11.8,
-              "games_since_trade": 4,
-              "ppg_since_trade": 2.95
+              "games_since_trade": 5,
+              "ppg_since_trade": 2.36
             },
             {
               "player": "Roschon Johnson",
               "from_team": "TRUNDLE NATION",
               "to_team": "Ocala Bankers",
               "points_since_trade": 5.1,
-              "games_since_trade": 4,
-              "ppg_since_trade": 1.27
+              "games_since_trade": 5,
+              "ppg_since_trade": 1.02
             }
           ],
           "verdict": {
@@ -7176,18 +7176,18 @@
               "player": "Josh Downs",
               "from_team": "Woodland Powerbottoms",
               "to_team": "O'Malleys Alley Cats",
-              "points_since_trade": 55.4,
-              "games_since_trade": 6,
-              "ppg_since_trade": 9.23
+              "points_since_trade": 57.7,
+              "games_since_trade": 7,
+              "ppg_since_trade": 8.24
             }
           ],
           "verdict": {
             "side_totals": {
-              "O'Malleys Alley Cats": 155.42,
+              "O'Malleys Alley Cats": 157.72,
               "Woodland Powerbottoms": 0.0
             },
             "leader_team": "O'Malleys Alley Cats",
-            "margin": 155.42
+            "margin": 157.72
           },
           "records_since_trade": {
             "Woodland Powerbottoms": {

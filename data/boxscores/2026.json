@@ -13746,14 +13746,14 @@
         "is_playoff": false,
         "home": {
           "owner": "McGowin Jernigan",
-          "score": 0,
+          "score": 86.2,
           "lineup": [
             {
               "name": "Saquon Barkley",
               "position": "RB",
               "slot": "RB/WR/TE",
               "pro_team": "PHI",
-              "points": 0
+              "points": 0.7
             },
             {
               "name": "Nico Collins",
@@ -13767,12 +13767,12 @@
               "position": "RB",
               "slot": "RB",
               "pro_team": "DAL",
-              "points": 0
+              "points": 34.3
             },
             {
               "name": "Jaylen Waddle",
               "position": "WR",
-              "slot": "BE",
+              "slot": "WR",
               "pro_team": "DEN",
               "points": 0
             },
@@ -13835,7 +13835,7 @@
             {
               "name": "Adonai Mitchell",
               "position": "WR",
-              "slot": "WR",
+              "slot": "BE",
               "pro_team": "NYJ",
               "points": 0
             },
@@ -13844,7 +13844,7 @@
               "position": "RB",
               "slot": "RB",
               "pro_team": "DET",
-              "points": 0
+              "points": 51.2
             },
             {
               "name": "Bo Nix",
@@ -13864,7 +13864,7 @@
         },
         "away": {
           "owner": "Thomas Goodroe",
-          "score": 3.4,
+          "score": 30.5,
           "lineup": [
             {
               "name": "Ashton Jeanty",
@@ -13885,7 +13885,7 @@
               "position": "WR",
               "slot": "BE",
               "pro_team": "PHI",
-              "points": 0
+              "points": 47.0
             },
             {
               "name": "Bhayshul Tuten",
@@ -13899,7 +13899,7 @@
               "position": "WR",
               "slot": "WR",
               "pro_team": "CHI",
-              "points": 0
+              "points": 7.5
             },
             {
               "name": "Parker Washington",
@@ -13927,7 +13927,7 @@
               "position": "TE",
               "slot": "IR",
               "pro_team": "BUF",
-              "points": 0
+              "points": 3.3
             },
             {
               "name": "Jordyn Tyson",
@@ -13976,7 +13976,7 @@
               "position": "RB",
               "slot": "RB",
               "pro_team": "KC",
-              "points": 0
+              "points": 19.6
             },
             {
               "name": "Giants D/ST",
@@ -13993,14 +13993,14 @@
         "is_playoff": false,
         "home": {
           "owner": "Thomas Silas",
-          "score": 0,
+          "score": 49.1,
           "lineup": [
             {
               "name": "CeeDee Lamb",
               "position": "WR",
               "slot": "WR",
               "pro_team": "DAL",
-              "points": 0
+              "points": 21.4
             },
             {
               "name": "Garrett Wilson",
@@ -14035,7 +14035,7 @@
               "position": "WR",
               "slot": "WR",
               "pro_team": "CHI",
-              "points": 0
+              "points": 27.7
             },
             {
               "name": "Rhamondre Stevenson",
@@ -14111,7 +14111,7 @@
         },
         "away": {
           "owner": "Austin Solomom",
-          "score": 16.5,
+          "score": 34.82,
           "lineup": [
             {
               "name": "Kenneth Walker III",
@@ -14139,7 +14139,7 @@
               "position": "TE",
               "slot": "TE",
               "pro_team": "CHI",
-              "points": 0
+              "points": -0.5
             },
             {
               "name": "David Montgomery",
@@ -14167,7 +14167,7 @@
               "position": "QB",
               "slot": "BE",
               "pro_team": "DAL",
-              "points": 0
+              "points": 29.54
             },
             {
               "name": "Jordan Mason",
@@ -14181,14 +14181,14 @@
               "position": "RB",
               "slot": "BE",
               "pro_team": "CHI",
-              "points": 0
+              "points": 15.9
             },
             {
               "name": "Jared Goff",
               "position": "QB",
               "slot": "QB",
               "pro_team": "DET",
-              "points": 0
+              "points": 18.82
             },
             {
               "name": "Travis Etienne Jr.",
@@ -14233,7 +14233,7 @@
         "is_playoff": false,
         "home": {
           "owner": "Carly Schnable",
-          "score": 12.0,
+          "score": 38.1,
           "lineup": [
             {
               "name": "Christian McCaffrey",
@@ -14245,7 +14245,7 @@
             {
               "name": "Drake London",
               "position": "WR",
-              "slot": "BE",
+              "slot": "WR",
               "pro_team": "ATL",
               "points": 0
             },
@@ -14254,12 +14254,12 @@
               "position": "WR",
               "slot": "WR",
               "pro_team": "DAL",
-              "points": 0
+              "points": 11.7
             },
             {
               "name": "Cam Skattebo",
               "position": "RB",
-              "slot": "RB/WR/TE",
+              "slot": "RB",
               "pro_team": "NYG",
               "points": 0
             },
@@ -14273,16 +14273,16 @@
             {
               "name": "DJ Moore",
               "position": "WR",
-              "slot": "WR",
+              "slot": "BE",
               "pro_team": "BUF",
-              "points": 0
+              "points": 3.5
             },
             {
               "name": "Sam LaPorta",
               "position": "TE",
-              "slot": "BE",
+              "slot": "TE",
               "pro_team": "DET",
-              "points": 0
+              "points": 14.4
             },
             {
               "name": "Joe Burrow",
@@ -14294,7 +14294,7 @@
             {
               "name": "Chuba Hubbard",
               "position": "RB",
-              "slot": "RB",
+              "slot": "RB/WR/TE",
               "pro_team": "CAR",
               "points": 0
             },
@@ -14315,9 +14315,9 @@
             {
               "name": "Dallas Goedert",
               "position": "TE",
-              "slot": "TE",
+              "slot": "BE",
               "pro_team": "PHI",
-              "points": 0
+              "points": 1.9
             },
             {
               "name": "Jalen Nailor",
@@ -14358,7 +14358,7 @@
         },
         "away": {
           "owner": "Jake Brown",
-          "score": 0,
+          "score": 24.9,
           "lineup": [
             {
               "name": "Chris Olave",
@@ -14377,7 +14377,7 @@
             {
               "name": "Brock Purdy",
               "position": "QB",
-              "slot": "QB",
+              "slot": "BE",
               "pro_team": "SF",
               "points": 0
             },
@@ -14391,7 +14391,7 @@
             {
               "name": "Brenton Strange",
               "position": "TE",
-              "slot": "TE",
+              "slot": "BE",
               "pro_team": "JAX",
               "points": 0
             },
@@ -14405,7 +14405,7 @@
             {
               "name": "Darren Waller",
               "position": "TE",
-              "slot": "BE",
+              "slot": "TE",
               "pro_team": "CAR",
               "points": 0
             },
@@ -14414,12 +14414,12 @@
               "position": "WR",
               "slot": "WR",
               "pro_team": "KC",
-              "points": 0
+              "points": 2.3
             },
             {
               "name": "Bryce Young",
               "position": "QB",
-              "slot": "BE",
+              "slot": "QB",
               "pro_team": "CAR",
               "points": 0
             },
@@ -14456,7 +14456,7 @@
               "position": "WR",
               "slot": "WR",
               "pro_team": "DET",
-              "points": 0
+              "points": 22.6
             },
             {
               "name": "Alvin Kamara",
@@ -14487,7 +14487,7 @@
         "is_playoff": false,
         "home": {
           "owner": "Jasper Bowles",
-          "score": 0,
+          "score": 56.4,
           "lineup": [
             {
               "name": "Jaxon Smith-Njigba",
@@ -14522,7 +14522,7 @@
               "position": "WR",
               "slot": "WR",
               "pro_team": "DET",
-              "points": 0
+              "points": 14.0
             },
             {
               "name": "Stefon Diggs",
@@ -14536,14 +14536,14 @@
               "position": "QB",
               "slot": "QB",
               "pro_team": "CHI",
-              "points": 0
+              "points": 31.3
             },
             {
               "name": "Travis Kelce",
               "position": "TE",
               "slot": "TE",
               "pro_team": "KC",
-              "points": 0
+              "points": 11.1
             },
             {
               "name": "Josh Jacobs",
@@ -14612,7 +14612,7 @@
         },
         "away": {
           "owner": "Matthew Hitpas",
-          "score": 0,
+          "score": 3.9,
           "lineup": [
             {
               "name": "Jonathan Taylor",
@@ -14626,7 +14626,7 @@
               "position": "WR",
               "slot": "WR",
               "pro_team": "KC",
-              "points": 0
+              "points": 3.9
             },
             {
               "name": "Tee Higgins",
@@ -14741,7 +14741,7 @@
         "is_playoff": false,
         "home": {
           "owner": "Ryan Miller",
-          "score": 0,
+          "score": 59.54,
           "lineup": [
             {
               "name": "A.J. Brown",
@@ -14755,14 +14755,14 @@
               "position": "QB",
               "slot": "QB",
               "pro_team": "BUF",
-              "points": 0
+              "points": 3.54
             },
             {
               "name": "D'Andre Swift",
               "position": "RB",
               "slot": "RB",
               "pro_team": "CHI",
-              "points": 0
+              "points": 29.2
             },
             {
               "name": "Ladd McConkey",
@@ -14804,7 +14804,7 @@
               "position": "WR",
               "slot": "WR",
               "pro_team": "BUF",
-              "points": 0
+              "points": 6.3
             },
             {
               "name": "Rico Dowdle",
@@ -14825,7 +14825,7 @@
               "position": "RB",
               "slot": "RB",
               "pro_team": "BUF",
-              "points": 0
+              "points": 20.5
             },
             {
               "name": "Courtland Sutton",
@@ -14901,7 +14901,7 @@
               "position": "QB",
               "slot": "BE",
               "pro_team": "KC",
-              "points": 0
+              "points": 7.16
             },
             {
               "name": "Vikings D/ST",
@@ -14929,7 +14929,7 @@
               "position": "WR",
               "slot": "BE",
               "pro_team": "PHI",
-              "points": 0
+              "points": 16.1
             },
             {
               "name": "C.J. Stroud",
